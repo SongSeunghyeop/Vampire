@@ -1,51 +1,54 @@
 #include "MyGameObject.h"
 
-void ya::MyGameObject::Initialize()
+namespace ya
 {
-	for (myComponent* mcomp : mComponents)
+	void MyGameObject::Initialize()
 	{
-		if (mcomp == NULL) continue;
+		for (myComponent* mcomp : mComponents)
+		{
+			if (mcomp == NULL) continue;
 
-		mcomp->Initialize();
+			mcomp->Initialize();
+		}
 	}
-}
-
-void ya::MyGameObject::Update()
-{
-	for (myComponent* mcomp : mComponents)
+	void MyGameObject::Update()
 	{
-		if (mcomp == NULL) continue;
+		for (myComponent* mcomp : mComponents)
+		{
+			if (mcomp == NULL) continue;
 
-		mcomp->Update();
+			mcomp->Update();
+		}
 	}
-}
-
-void ya::MyGameObject::Render(HDC hdc)
-{
-	for (myComponent* mcomp : mComponents)
+	void MyGameObject::Render(HDC hdc)
 	{
-		if (mcomp == NULL) continue;
+		for (myComponent* mcomp : mComponents)
+		{
+			if (mcomp == NULL) continue;
 
-		mcomp->Render(hdc);
+			mcomp->Render(hdc);
+		}
 	}
-}
-
-void ya::MyGameObject::Release()
-{
-	for (myComponent* mcomp : mComponents)
+	void MyGameObject::Release()
 	{
-		if (mcomp == NULL) continue;
+		for (myComponent* mcomp : mComponents)
+		{
+			if (mcomp == NULL) continue;
 
-		mcomp->Release ();
+			mcomp->Release ();
+		}
 	}
-}
+	MyGameObject::MyGameObject()
+	{
 
-ya::MyGameObject::MyGameObject()
-{
+	}
+	MyGameObject::~MyGameObject()
+	{
 
-}
-
-ya::MyGameObject::~MyGameObject()
-{
-
+	}
+	void MyGameObject::setPos(float x, float y)
+	{
+		this->mPos.x = x;
+		this->mPos.y = y;
+	}
 }

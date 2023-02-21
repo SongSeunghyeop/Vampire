@@ -14,8 +14,12 @@ namespace ya
 	}
 	void PlayScene::Initialize()
 	{
+		for (int i = 0; i < 3; i++)
+		{
 		Dragon* dragon = new Dragon(); // 플레이어 생성
+		dragon->SetName(L"Player");
 		AddGameObj(dragon, eLayerType::PLAYER);
+		}
 
 		myScene::Initialize();
 	}

@@ -14,6 +14,7 @@ namespace ya
 
 		MyGameObject();
 		virtual ~MyGameObject();
+		void setPos(float x, float y);
 
 	protected:
 		Vector2 mPos;

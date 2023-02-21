@@ -19,6 +19,17 @@ namespace ya
 		this->mhwnd = hwnd;
 		this->mhdc = GetDC(hwnd);
 
+		RECT rect = { 0,0,1600,900 };
+		AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
+
+		SetWindowPos(mhwnd, NULL, 100, 50, rect.right -  rect.left, rect.bottom -  rect.top, 0);
+		ShowWindow(hwnd, true);
+
+		backBuffer = CreateCompatibleBitmap(mhdc, 1600, 900);
+		backHdc = CreateCompatibleDC(mhdc);
+		HGDIOBJ defaultBmp = SelectObject(backHdc, backBuffer);
+		DeleteObject(defaultBmp);
+
 		Time::Initialize();
 		Input::Initialize();
 		mySceneManager::Initialize();
@@ -36,8 +47,14 @@ namespace ya
 	}
 	void myApplication::Render()
 	{
-		Time::Render(mhdc);
-		Input::Render(mhdc);
-		mySceneManager::Render(mhdc);
+		Rectangle(backHdc, -1, -1, 1605, 905);
+
+		Time::Render(backHdc);
+		Input::Render(backHdc);
+
+		mySceneManager::Render(backHdc);
+
+		//백버퍼의 그림 원본(구현용)에 복사
+		BitBlt(mhdc, 0, 0, 1600, 900, backHdc, 0, 0, SRCCOPY);
 	}
 }

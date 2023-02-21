@@ -22,6 +22,9 @@ namespace ya
 		Vector2 mPos;
 	private:
 		HWND mhwnd;
-		HDC mhdc;
+		HDC mhdc; // 원본 도화지(구현용)
+
+		HBITMAP backBuffer; 
+		HDC backHdc; // 메모리상의 백버퍼 도화지(보이지 않음)
 	};
 }
