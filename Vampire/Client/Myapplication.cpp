@@ -52,7 +52,7 @@ namespace ya
 		Input::Render(backHdc);
 		mySceneManager::Render(backHdc); // 전부다 백버퍼에 렌더링
 
-		//백버퍼의 그림 원본(구현용)에 복사
+		//백버퍼의 그림 원본(구현용)에 복사 ( 흰색의 화면까지 전체가 계속 포함되어서 복사가 되는 것이므로 깜빡이지 않는다 
 		BitBlt(mhdc, 0, 0, 1600, 900, backHdc, 0, 0, SRCCOPY); // 구현용 hdc에 그대로 복사
 	}
 }
