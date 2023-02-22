@@ -1,6 +1,6 @@
 #include "Entity.h"
 
-namespace ya
+namespace my
 {
 	Entity::Entity()
 	{

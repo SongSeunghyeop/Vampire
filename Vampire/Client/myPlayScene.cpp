@@ -2,7 +2,7 @@
 #include "myScene.h"
 #include "Dragon.h"
 
-namespace ya
+namespace my
 {
 	PlayScene::PlayScene()
 	{

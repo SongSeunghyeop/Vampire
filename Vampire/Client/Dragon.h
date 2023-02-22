@@ -1,7 +1,8 @@
 #pragma once
 #include "MyGameObject.h"
+#include "myImage.h" 
 
-namespace ya
+namespace my
 {
 	class Dragon : public MyGameObject
 	{
@@ -15,7 +16,7 @@ namespace ya
 		virtual void Release();
 
 	private:
-
+		myImage* playerImg;
 	};
 }
 

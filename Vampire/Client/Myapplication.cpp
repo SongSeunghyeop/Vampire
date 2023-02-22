@@ -3,7 +3,7 @@
 #include "Time.h"
 #include "myInput.h"
 
-namespace ya 
+namespace my 
 {
 	myApplication::myApplication()
 		: mhwnd(NULL), mhdc(NULL)
@@ -17,14 +17,14 @@ namespace ya
 	void myApplication::Initialize(HWND hwnd)
 	{
 		this->mhwnd = hwnd; // 핸들
-		this->mhdc = GetDC(hwnd); // HDC : 비트맵에 그려주는 역할 // getDC : 현재 윈도우가 갖고있는 비트맵을 할당받는 DC가 목적지로 삼는 것
-
+		this->mhdc = GetDC(hwnd); // HDC : 비트맵에 그려주는 역할 
+		                                              // getDC : 현재 윈도우가 갖고있는 비트맵을 할당받는 DC가 목적지로 삼는 것
 		RECT rect = { 0,0,1600,900 }; // 윈도우 전체 크기의 사각형
+
 		AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false); // 해상도를 입력하면, 그에 맞게 수정
 		SetWindowPos(mhwnd, NULL, 20, 20, (rect.right -  rect.left) - 200, (rect.bottom -  rect.top) - 200, 0); // 윈도우 크기 및 위치 조정
 		ShowWindow(hwnd, true); // 윈도우 해상도 조절을 위한 함수(타이틀바, 테두리,메뉴바 등을 포함한 해상도이므로, 조절이 필요)
 		//윈도우 전체 덮을 흰색 사각형
-
 		backBuffer = CreateCompatibleBitmap(mhdc, 1600, 900); // 현재의 hdc에 호환되는 백버퍼 비트맵을 만듦(비트맵 = 도화지)
 		backHdc = CreateCompatibleDC(mhdc); // 현재 hdc에 호환되며 보이지 않는 메모리상의 HDC를 만듦
 		HBITMAP defaultBmp = (HBITMAP)SelectObject(backHdc, backBuffer); // 백버퍼용 비트맵 선택, 백 버퍼용 hdc의 기존 비트맵과 교체

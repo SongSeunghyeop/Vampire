@@ -1,10 +1,10 @@
 #include "Time.h"
 #include "Myapplication.h"
 
-extern ya::myApplication myapplication; // 외부변수
+extern my::myApplication myapplication; // 외부변수
 																// 외부의 cpp파일에 선언 및 정의된 전역변수를 다른 cpp파일에서 사용하고 싶을 때, exturn 클래스 변수명 선언으로 
 															    // 사용 가능
-namespace ya
+namespace my
 {
 	double Time::deltaTime = 0.01;
 	double Time::mSecond = 0.0f;

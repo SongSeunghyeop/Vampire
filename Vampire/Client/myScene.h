@@ -2,7 +2,7 @@
 #include "Entity.h"
 #include "myLayer.h"
 
-namespace ya
+namespace my
 {	
 	class myScene : public Entity
 	{

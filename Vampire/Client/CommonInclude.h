@@ -3,6 +3,7 @@
 #include <vector>
 #include <list>
 #include <map>
+#include <assert.h>
 #include <Windows.h>
 #include <stdlib.h>
 #include <malloc.h>

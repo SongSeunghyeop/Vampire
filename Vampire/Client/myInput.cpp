@@ -1,6 +1,6 @@
 #include "myInput.h"
 
-namespace ya
+namespace my
 {
 	int ASCII[(UINT)KeyCode::END]
 	{

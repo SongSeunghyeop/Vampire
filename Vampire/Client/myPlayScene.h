@@ -1,6 +1,6 @@
 #pragma once
 #include "myScene.h"
-namespace ya
+namespace my
 {
 	class PlayScene : public myScene
 	{

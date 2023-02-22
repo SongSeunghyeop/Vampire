@@ -1,7 +1,7 @@
 #pragma once
 #include "Entity.h"
 
-namespace ya 
+namespace my 
 {
 	class myComponent : public Entity
 	{

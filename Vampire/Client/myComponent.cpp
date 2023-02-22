@@ -1,18 +1,18 @@
 #include "myComponent.h"
 
-void ya::myComponent::Initialize()
+void my::myComponent::Initialize()
 {
 
 }
-
-void ya::myComponent::Update()
+void my::myComponent::Update()
 {
+
 }
-
-void ya::myComponent::Render(HDC hdc)
+void my::myComponent::Render(HDC hdc)
 {
+
 }
-
-void ya::myComponent::Release()
+void my::myComponent::Release()
 {
+
 }

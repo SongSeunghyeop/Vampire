@@ -1,6 +1,6 @@
 #include "myLayer.h"
 
-namespace ya
+namespace my
 {
 	void myLayer::Initialize()
 	{

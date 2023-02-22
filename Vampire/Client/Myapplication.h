@@ -2,7 +2,7 @@
 #include "VampireEngine.h"
 //게임의 전체를 총괄
 
-namespace ya
+namespace my
 {
 	class myApplication
 	{
@@ -17,13 +17,13 @@ namespace ya
 		//void Release(); // 게임 종료, 메모리 해제
 
 		HWND GetHwnd() { return mhwnd; }
+		HDC		GetHdc() { return mhdc; }
 
 	public:
 		Vector2 mPos;
 	private:
 		HWND mhwnd;
 		HDC mhdc; // 원본 도화지(구현용)
-
 		HBITMAP backBuffer; 
 		HDC backHdc; // 메모리상의 백버퍼 도화지(보이지 않음)
 	};

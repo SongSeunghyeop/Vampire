@@ -1,7 +1,7 @@
 #include "mySceneManager.h"
 #include "myPlayScene.h"
 
-namespace ya 
+namespace my 
 {
 	std::vector<myScene*> mySceneManager::mScenes = {};
 

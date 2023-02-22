@@ -1,7 +1,7 @@
 #pragma once
 #include "VampireEngine.h"
 
-namespace ya
+namespace my
 {
 	enum class KeyCode
 	{

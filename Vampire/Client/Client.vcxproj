@@ -138,9 +138,12 @@
     <ClInclude Include="Myapplication.h" />
     <ClInclude Include="myComponent.h" />
     <ClInclude Include="MyGameObject.h" />
+    <ClInclude Include="myImage.h" />
     <ClInclude Include="myInput.h" />
     <ClInclude Include="myLayer.h" />
     <ClInclude Include="myPlayScene.h" />
+    <ClInclude Include="myResource.h" />
+    <ClInclude Include="myResourceManager.h" />
     <ClInclude Include="myScene.h" />
     <ClInclude Include="mySceneManager.h" />
     <ClInclude Include="Time.h" />
@@ -156,9 +159,12 @@
     <ClCompile Include="Myapplication.cpp" />
     <ClCompile Include="myComponent.cpp" />
     <ClCompile Include="MyGameObject.cpp" />
+    <ClCompile Include="myImage.cpp" />
     <ClCompile Include="myInput.cpp" />
     <ClCompile Include="myLayer.cpp" />
     <ClCompile Include="myPlayScene.cpp" />
+    <ClCompile Include="myResource.cpp" />
+    <ClCompile Include="myResourceManager.cpp" />
     <ClCompile Include="myScene.cpp" />
     <ClCompile Include="mySceneManager.cpp" />
     <ClCompile Include="Time.cpp" />

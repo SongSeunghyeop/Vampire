@@ -1,6 +1,6 @@
 #include "MyGameObject.h"
 
-namespace ya
+namespace my
 {
 	void MyGameObject::Initialize()
 	{

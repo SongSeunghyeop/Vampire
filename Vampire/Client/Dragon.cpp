@@ -1,8 +1,10 @@
 #include "Dragon.h"
 #include "Time.h"
 #include "myInput.h"
+#include "myResourceManager.h"
+#include "myImage.h"
 
-namespace ya
+namespace my
 {
 	Dragon::Dragon()
 	{
@@ -12,9 +14,10 @@ namespace ya
 	{
 
 	}
-
 	void Dragon::Initialize()
 	{
+		playerImg = ResourceManager::Load<myImage>(L"Player", L"..\\Resources\\Idle.bmp");
+
 		MyGameObject::Initialize();
 	}
 	void Dragon::Update()
@@ -42,18 +45,7 @@ namespace ya
 	{
 		MyGameObject::Render(hdc);
 
-		HBRUSH brush = CreateSolidBrush(RGB(0, 0, 255));
-		HGDIOBJ oldBrush = SelectObject(hdc, brush);
-
-		HPEN pen = CreatePen(PS_SOLID, 2, RGB(255, 0, 255));
-		HGDIOBJ oldPen = SelectObject(hdc, pen);
-
-		Rectangle(hdc, mPos.x, mPos.y, mPos.x + 100, mPos.y + 100);
-
-		SelectObject(hdc, oldPen);
-		DeleteObject(pen);
-		SelectObject(hdc, oldBrush);
-		DeleteObject(brush);
+		BitBlt(hdc, mPos.x, mPos.y, playerImg->GetWidth(), playerImg->GetHeight(), playerImg->GetHdc(), 0, 0, SRCCOPY);
 	}
 	void Dragon::Release()
 	{

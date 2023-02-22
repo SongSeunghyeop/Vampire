@@ -1,6 +1,6 @@
 #include "myScene.h"
 
-namespace ya
+namespace my
 {
 	void myScene::Initialize()
 	{
