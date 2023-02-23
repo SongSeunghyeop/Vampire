@@ -1,6 +1,7 @@
 #include "mySceneManager.h"
 #include "myPlayScene.h"
 #include "myTitleScene.h"
+#include "myMenuScene.h"
 
 namespace my 
 {
@@ -13,8 +14,10 @@ namespace my
 																			 // 현재 max는 4개이므로 4개의 배열을 0으로 초기화
 		mScenes[(UINT)eSceneType::Title] = new TitleScene(); // 플레이 씬부터 동적할당
 		mScenes[(UINT)eSceneType::Play] = new PlayScene(); // 플레이 씬부터 동적할당
+		mScenes[(UINT)eSceneType::Menu] = new menuScene(); // 플레이 씬부터 동적할당
 		mScenes[(UINT)eSceneType::Title]->SetName(L"TITLE");
 		mScenes[(UINT)eSceneType::Play]->SetName(L"PLAY");
+		mScenes[(UINT)eSceneType::Menu]->SetName(L"MENU");
 
 		activeScene = mScenes[(UINT)eSceneType::Title];
 
@@ -23,7 +26,7 @@ namespace my
 			if (scene == NULL) continue;
 
 			scene->Initialize();
-		}
+ 		}
 	}
 
 	void mySceneManager::Update()

@@ -1,5 +1,8 @@
 #include "myPlayScene.h"
 #include "myScene.h"
+#include "mySceneManager.h"
+#include "myInput.h"
+
 namespace my
 {
 	PlayScene::PlayScene()
@@ -24,6 +27,11 @@ namespace my
 	void PlayScene::Update()
 	{
 		myScene::Update();
+
+		if (Input::GetKeyState(KeyCode::ESC) == KeyState::Down)
+		{
+			mySceneManager::LoadScene(eSceneType::Menu);
+		}
 	}
 	void PlayScene::Render(HDC hdc)
 	{

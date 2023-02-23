@@ -32,7 +32,6 @@ namespace my
 		Transform* trans = GetComponent<Transform>();
 		Vector2 pos = trans->getPos();
 
-
 		BitBlt(hdc, pos.x, pos.y, fieldImg->GetWidth(), fieldImg->GetHeight(), fieldImg->GetHdc(), 0, 0, SRCCOPY);
 	}
 	void Field::Release()

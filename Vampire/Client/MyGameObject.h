@@ -19,7 +19,7 @@ namespace my
 		T* AddComponent()
 		{
 			T* comp = new T();
-			UINT compType = (UINT) comp->getType();	
+			UINT compType = (UINT) comp->getType();	// getType() = 컴포넌트 타입(Enum class) 반환
 			mComponents[compType] = comp;
 
 			return comp;

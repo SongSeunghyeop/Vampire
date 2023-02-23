@@ -73,6 +73,9 @@
     <Filter Include="Engine\Component\Components">
       <UniqueIdentifier>{510139cb-3595-4a08-80b6-4e57bfdfda12}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Scene\MenuScene">
+      <UniqueIdentifier>{085e0e05-2a7d-413c-b0b9-b414ed1a5863}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -153,6 +156,12 @@
     <ClInclude Include="Transform.h">
       <Filter>Engine\Component\Components</Filter>
     </ClInclude>
+    <ClInclude Include="menu.h">
+      <Filter>Engine\GameObject\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="myMenuScene.h">
+      <Filter>Engine\Scene\MenuScene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -214,6 +223,12 @@
     </ClCompile>
     <ClCompile Include="Transform.cpp">
       <Filter>Engine\Component\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.cpp">
+      <Filter>Engine\GameObject\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="myMenuScene.cpp">
+      <Filter>Engine\Scene\MenuScene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
