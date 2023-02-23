@@ -34,6 +34,15 @@ namespace my
 		}
 	}
 
+	void myScene::OnEnter()
+	{
+
+	}
+	void myScene::OnExit()
+	{
+
+	}
+
 	void myScene::AddGameObj(MyGameObject* obj, eLayerType Layer)
 	{
 		mLayer[(UINT)Layer].AddGameObj(obj);

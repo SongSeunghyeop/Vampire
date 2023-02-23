@@ -1,8 +1,9 @@
+#include "myResourceManager.h"
 #include "Dragon.h"
 #include "Time.h"
 #include "myInput.h"
-#include "myResourceManager.h"
 #include "myImage.h"
+
 
 namespace my
 {
@@ -24,28 +25,35 @@ namespace my
 	{
 		MyGameObject::Update();
 
+		Transform* trans = GetComponent<Transform>(); 
+		Vector2 pos = trans->getPos();
+
 		if (Input::GetKeyState(KeyCode::A) == KeyState::Pressed)
 		{
-			mPos.x -= 200.0f * Time::getDeltaTime();	
+			pos.x -= 200.0f * Time::getDeltaTime();
 		}
 		if (Input::GetKeyState(KeyCode::D) == KeyState::Pressed)
 		{
-			mPos.x += 200.0f * Time::getDeltaTime();
+			pos.x += 200.0f * Time::getDeltaTime();
 		}
 		if (Input::GetKeyState(KeyCode::W) == KeyState::Pressed)
 		{
-			mPos.y -= 200.0f * Time::getDeltaTime();
+			pos.y -= 200.0f * Time::getDeltaTime();
 		}
 		if (Input::GetKeyState(KeyCode::S) == KeyState::Pressed)
-		{
-			mPos.y += 200.0f * Time::getDeltaTime();
+		{ 
+			pos.y += 200.0f * Time::getDeltaTime();
 		}
+		trans->setPos(pos.x, pos.y);
 	}
 	void Dragon::Render(HDC hdc)
 	{
 		MyGameObject::Render(hdc);
 
-		BitBlt(hdc, mPos.x, mPos.y, playerImg->GetWidth(), playerImg->GetHeight(), playerImg->GetHdc(), 0, 0, SRCCOPY);
+		Transform* trans = GetComponent<Transform>();
+		Vector2 pos = trans->getPos();
+
+		BitBlt(hdc, pos.x, pos.y, playerImg->GetWidth(), playerImg->GetHeight(), playerImg->GetHdc(), 0, 0, SRCCOPY);
 	}
 	void Dragon::Release()
 	{

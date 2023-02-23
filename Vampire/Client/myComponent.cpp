@@ -1,5 +1,14 @@
 #include "myComponent.h"
 
+my::myComponent::myComponent(ComponentType Type)
+	 : myType(Type)
+{
+
+}
+my::myComponent::~myComponent()
+{
+
+}
 void my::myComponent::Initialize()
 {
 

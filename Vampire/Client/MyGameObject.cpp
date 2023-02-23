@@ -1,4 +1,5 @@
 #include "MyGameObject.h"
+#include "Transform.h"
 
 namespace my
 {
@@ -40,15 +41,11 @@ namespace my
 	}
 	MyGameObject::MyGameObject()
 	{
-
+		mComponents.resize((UINT)ComponentType::END);
+		AddComponent<Transform>();
 	}
 	MyGameObject::~MyGameObject()
 	{
 
-	}
-	void MyGameObject::setPos(float x, float y)
-	{
-		this->mPos.x = x;
-		this->mPos.y = y;
 	}
 }

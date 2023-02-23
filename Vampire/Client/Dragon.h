@@ -1,6 +1,7 @@
 #pragma once
 #include "MyGameObject.h"
 #include "myImage.h" 
+#include "Transform.h"
 
 namespace my
 {
@@ -16,7 +17,7 @@ namespace my
 		virtual void Release();
 
 	private:
-		myImage* playerImg;
+		myImage* playerImg; 
 	};
 }
 

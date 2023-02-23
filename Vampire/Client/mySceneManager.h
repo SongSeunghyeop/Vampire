@@ -11,8 +11,11 @@ namespace my
 		static void Render(HDC hdc);
 		static void Release();
 
+		static void LoadScene(eSceneType type);
+
 	private:
 		static std::vector<myScene*> mScenes;
+		static myScene* activeScene; 
 	};
 }
 

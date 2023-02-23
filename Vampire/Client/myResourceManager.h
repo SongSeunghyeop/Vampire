@@ -13,10 +13,10 @@ namespace my
 			// 없다면 end 반환
 			std::map<std::wstring, Resource*> ::iterator it = mResources.find(key);
 
-			if (it != mResources.end()) // it 값이 배열에 속해있지 않다면 end 값 반환
+			if (it != mResources.end()) // it값이 배열에 속해있지 않다면 end반환
 				return dynamic_cast<T*>(it->second); // 리소스 반환
 
-			return NULL; // it값이 배열에 이미 있다면 널값 반환
+			return NULL; // it값이 배열에 아직 없다면 널값 반환
 		}
 
 		template <typename T>
@@ -39,6 +39,15 @@ namespace my
 			mResources.insert(make_pair(key, resource));
 
 			return dynamic_cast<T*>(resource);
+		}
+
+		static void Release()
+		{
+			for (auto pair : mResources)
+			{
+				delete pair.second;
+				pair.second = NULL;
+			}
 		}
 
 	private:

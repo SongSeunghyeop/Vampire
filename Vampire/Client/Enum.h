@@ -20,3 +20,13 @@ enum class eLayerType
 	UI,
 	END,
 };
+
+enum class ComponentType
+{
+	TRANSFORM,
+	COLLIDER,
+	SPRITERENDERER,
+	ANIMATOR,
+	AUDIO,
+	END,
+};

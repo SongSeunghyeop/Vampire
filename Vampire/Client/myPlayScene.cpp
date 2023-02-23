@@ -1,7 +1,5 @@
 #include "myPlayScene.h"
 #include "myScene.h"
-#include "Dragon.h"
-
 namespace my
 {
 	PlayScene::PlayScene()
@@ -14,12 +12,12 @@ namespace my
 	}
 	void PlayScene::Initialize()
 	{
-		for (int i = 0; i < 3; i++)
-		{
-		Dragon* dragon = new Dragon(); // 플레이어 생성
+		dragon = new Dragon(); // 플레이어 생성
+		Field* field = new Field(); // 배경 생성
 		dragon->SetName(L"Player");
+		field->SetName(L"Field");
+		AddGameObj(field, eLayerType::FIELD);
 		AddGameObj(dragon, eLayerType::PLAYER);
-		}
 
 		myScene::Initialize();
 	}
@@ -34,5 +32,13 @@ namespace my
 	void PlayScene::Release()
 	{
 		myScene::Release();
+	}
+	void PlayScene::OnEnter()
+	{
+
+	}
+	void PlayScene::OnExit()
+	{
+
 	}
 }

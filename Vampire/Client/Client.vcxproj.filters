@@ -67,6 +67,12 @@
     <Filter Include="Image">
       <UniqueIdentifier>{ca3e6695-2886-46f9-aa0f-e8dc56d7c8a6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\GameObject\Objects">
+      <UniqueIdentifier>{b4ca6915-b144-4f44-8043-30db012afdb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Component\Components">
+      <UniqueIdentifier>{510139cb-3595-4a08-80b6-4e57bfdfda12}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -99,9 +105,6 @@
     <ClInclude Include="myScene.h">
       <Filter>Engine\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="MyGameObject.h">
-      <Filter>Engine\GameObject</Filter>
-    </ClInclude>
     <ClInclude Include="myComponent.h">
       <Filter>Engine\Component</Filter>
     </ClInclude>
@@ -116,9 +119,6 @@
     </ClInclude>
     <ClInclude Include="myPlayScene.h">
       <Filter>Engine\Scene\PlayScene</Filter>
-    </ClInclude>
-    <ClInclude Include="Dragon.h">
-      <Filter>Engine\GameObject</Filter>
     </ClInclude>
     <ClInclude Include="Time.h">
       <Filter>Engine\Time</Filter>
@@ -135,6 +135,24 @@
     <ClInclude Include="myImage.h">
       <Filter>Image</Filter>
     </ClInclude>
+    <ClInclude Include="myTitleScene.h">
+      <Filter>Engine\Scene\TitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="MyGameObject.h">
+      <Filter>Engine\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Dragon.h">
+      <Filter>Engine\GameObject\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Field.h">
+      <Filter>Engine\GameObject\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Title.h">
+      <Filter>Engine\GameObject\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>Engine\Component\Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -148,9 +166,6 @@
     </ClCompile>
     <ClCompile Include="myScene.cpp">
       <Filter>Engine\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="MyGameObject.cpp">
-      <Filter>Engine\GameObject</Filter>
     </ClCompile>
     <ClCompile Include="myComponent.cpp">
       <Filter>Engine\Component</Filter>
@@ -167,9 +182,6 @@
     <ClCompile Include="myPlayScene.cpp">
       <Filter>Engine\Scene\PlayScene</Filter>
     </ClCompile>
-    <ClCompile Include="Dragon.cpp">
-      <Filter>Engine\GameObject</Filter>
-    </ClCompile>
     <ClCompile Include="Time.cpp">
       <Filter>Engine\Time</Filter>
     </ClCompile>
@@ -184,6 +196,24 @@
     </ClCompile>
     <ClCompile Include="myImage.cpp">
       <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="myTitleScene.cpp">
+      <Filter>Engine\Scene\TitleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="MyGameObject.cpp">
+      <Filter>Engine\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Dragon.cpp">
+      <Filter>Engine\GameObject\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Field.cpp">
+      <Filter>Engine\GameObject\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Title.cpp">
+      <Filter>Engine\GameObject\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Engine\Component\Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

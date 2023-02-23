@@ -3,6 +3,8 @@
 #include "framework.h"
 #include "Client.h"
 #include "Myapplication.h"
+#include "myResourceManager.h"
+#include "mySceneManager.h"
 
 #define MAX_LOADSTRING 100
 // 전역 변수: 
@@ -65,6 +67,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
             myapplication.Run(); // 메세지가 없으면 실행
         }
     }
+
+    my::mySceneManager::Release();
+    my::ResourceManager::Release();
 
     if (WM_QUIT == msg.message) {  }
     return (int) msg.wParam;

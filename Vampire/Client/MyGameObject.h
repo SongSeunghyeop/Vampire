@@ -14,11 +14,27 @@ namespace my
 
 		MyGameObject();
 		virtual ~MyGameObject();
-		void setPos(float x, float y);
 
-	protected:
-		Vector2 mPos;
+		template <typename T>
+		T* AddComponent()
+		{
+			T* comp = new T();
+			UINT compType = (UINT) comp->getType();	
+			mComponents[compType] = comp;
 
+			return comp;
+		}
+		template <typename T>
+		T* GetComponent()
+		{
+			for (myComponent* c : mComponents)
+			{
+				if (dynamic_cast<T*>(c)) // RTTI
+					return dynamic_cast<T*>(c);
+
+				return NULL;
+			}
+		}
 	private:
 		std::vector<myComponent*> mComponents;
 	};
