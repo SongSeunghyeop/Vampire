@@ -128,18 +128,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CharactorSelect.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="CommonInclude.h" />
-    <ClInclude Include="Dragon.h" />
-    <ClInclude Include="Entity.h" />
+    <ClInclude Include="Krochi.h" />
+    <ClInclude Include="myEntity.h" />
     <ClInclude Include="Enum.h" />
     <ClInclude Include="Field.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="menu.h" />
-    <ClInclude Include="Myapplication.h" />
+    <ClInclude Include="myApplication.h" />
     <ClInclude Include="myComponent.h" />
-    <ClInclude Include="MyGameObject.h" />
+    <ClInclude Include="myGameObject.h" />
     <ClInclude Include="myImage.h" />
     <ClInclude Include="myInput.h" />
     <ClInclude Include="myLayer.h" />
@@ -152,21 +153,22 @@
     <ClInclude Include="myTitleScene.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Title.h" />
-    <ClInclude Include="Transform.h" />
+    <ClInclude Include="myTransform.h" />
     <ClInclude Include="VampireEngine.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Dragon.cpp" />
-    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="CharactorSelect.cpp" />
+    <ClCompile Include="Krochi.cpp" />
+    <ClCompile Include="myEntity.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Math.cpp" />
     <ClCompile Include="menu.cpp" />
-    <ClCompile Include="Myapplication.cpp" />
+    <ClCompile Include="myApplication.cpp" />
     <ClCompile Include="myComponent.cpp" />
-    <ClCompile Include="MyGameObject.cpp" />
+    <ClCompile Include="myGameObject.cpp" />
     <ClCompile Include="myImage.cpp" />
     <ClCompile Include="myInput.cpp" />
     <ClCompile Include="myLayer.cpp" />
@@ -179,7 +181,7 @@
     <ClCompile Include="myTitleScene.cpp" />
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="Title.cpp" />
-    <ClCompile Include="Transform.cpp" />
+    <ClCompile Include="myTransform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Client.rc" />

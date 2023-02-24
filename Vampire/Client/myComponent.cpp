@@ -1,27 +1,27 @@
 #include "myComponent.h"
 
-my::myComponent::myComponent(ComponentType Type)
+my::Component::Component(eComponentType Type)
 	 : myType(Type)
 {
 
 }
-my::myComponent::~myComponent()
+my::Component::~Component()
 {
 
 }
-void my::myComponent::Initialize()
+void my::Component::Initialize()
 {
 
 }
-void my::myComponent::Update()
+void my::Component::Update()
 {
 
 }
-void my::myComponent::Render(HDC hdc)
+void my::Component::Render(HDC hdc)
 {
 
 }
-void my::myComponent::Release()
+void my::Component::Release()
 {
 
 }

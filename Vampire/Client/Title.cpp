@@ -16,25 +16,29 @@ namespace my
 	}
 	void Title::Initialize()
 	{
-		titleImg = ResourceManager::Load<myImage>(L"Title", L"..\\Resources\\Title.bmp");
+		titleImg = ResourceManager::Load<Image>(L"Title", L"..\\Resources\\Title.bmp"); // 이미지의 키와 경로 정보를 받음
 
-		MyGameObject::Initialize();
+		GameObject::Initialize();
 	}
 	void Title::Update()
 	{
-		MyGameObject::Update();
+		GameObject::Update();
 	}
 	void Title::Render(HDC hdc)
 	{
-		MyGameObject::Render(hdc);
+		GameObject::Render(hdc);
 
 		Transform* trans = GetComponent<Transform>();
 		Vector2 pos = trans->getPos();
 
-		BitBlt(hdc, pos.x, pos.y, titleImg->GetWidth(), titleImg->GetHeight(), titleImg->GetHdc(), 0, 0, SRCCOPY);
+		HBRUSH black = CreateSolidBrush(RGB(0, 0, 0));
+		Rectangle(hdc, -1, -1, 3000, 1500);
+		HBRUSH oldbrush = (HBRUSH)SelectObject(hdc, black);
+		DeleteObject(oldbrush);
+		StretchBlt(hdc, 150, 0, 1200, 750, titleImg->GetHdc(), 0, 0, titleImg->GetWidth(), titleImg->GetHeight(), SRCCOPY);
 	}
 	void Title::Release()
 	{
-		MyGameObject::Release();
+		GameObject::Release();
 	}
 }

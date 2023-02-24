@@ -3,7 +3,7 @@
 #include "Time.h"
 #include "myInput.h"
 #include "myImage.h"
-#include "Transform.h"
+#include "myTransform.h"
 
 namespace my
 {
@@ -17,17 +17,17 @@ namespace my
 	}
 	void Field::Initialize()
 	{
-		fieldImg = ResourceManager::Load<myImage>(L"Field", L"..\\Resources\\Field.bmp");
+		fieldImg = ResourceManager::Load<Image>(L"Field", L"..\\Resources\\Field.bmp");
 
-		MyGameObject::Initialize();
+		GameObject::Initialize();
 	}
 	void Field::Update()
 	{
-		MyGameObject::Update();
+		GameObject::Update();
 	}
 	void Field::Render(HDC hdc)
 	{
-		MyGameObject::Render(hdc);
+		GameObject::Render(hdc);
 
 		Transform* trans = GetComponent<Transform>();
 		Vector2 pos = trans->getPos();
@@ -36,6 +36,6 @@ namespace my
 	}
 	void Field::Release()
 	{
-		MyGameObject::Release();
+		GameObject::Release();
 	}
 }

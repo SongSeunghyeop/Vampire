@@ -22,7 +22,7 @@ enum class eLayerType
 	END,
 };
 
-enum class ComponentType
+enum class eComponentType
 {
 	TRANSFORM,
 	COLLIDER,

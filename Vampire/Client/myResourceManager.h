@@ -20,11 +20,11 @@ namespace my
 		}
 
 		template <typename T>
-		static T* Load(const std::wstring& key, const std::wstring& path)
+		static T* Load(const std::wstring& key, const std::wstring& path) // Image 또는 Sound
 		{
 			T* resource = ResourceManager::Find<T>(key);
 
-			if (resource != NULL)
+			if (resource != NULL) // 리소스가 배열에 없었다면
 				return resource;
 
 			resource = new T();

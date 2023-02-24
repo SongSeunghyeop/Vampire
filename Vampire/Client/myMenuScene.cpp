@@ -5,44 +5,48 @@
 
 namespace my
 {
-	menuScene::menuScene()
+	MenuScene::MenuScene()
 	{
 
 	}
-	menuScene::~menuScene()
+	MenuScene::~MenuScene()
 	{
 
 	}
-	void menuScene::Initialize()
+	void MenuScene::Initialize()
 	{
 		Menu* menu = new Menu();
 		menu->SetName(L"Title");
 		AddGameObj(menu, eLayerType::UI);
-		myScene::Initialize();
+		Scene::Initialize();
 	}
-	void menuScene::Update()
+	void MenuScene::Update()
 	{
-		myScene::Update();
+		Scene::Update();
 
-		if (Input::GetKeyState(KeyCode::ESC) == KeyState::Down)
+		if (Input::GetKeyState(eKeyCode::ESC) == eKeyState::Down)
 		{
-			mySceneManager::LoadScene(eSceneType::Play);
+			SceneManager::LoadScene(eSceneType::Play);
+		}
+		if (Input::GetKeyState(eKeyCode::Q) == eKeyState::Down)
+		{
+			SceneManager::LoadScene(eSceneType::Title);
 		}
 	}
-	void menuScene::Render(HDC hdc)
+	void MenuScene::Render(HDC hdc)
 	{
-		myScene::Render(hdc);
+		Scene::Render(hdc);
 	}
-	void menuScene::Release()
+	void MenuScene::Release()
 	{
-		myScene::Release();
+		Scene::Release();
 	}
 
-	void menuScene::OnEnter()
+	void MenuScene::OnEnter()
 	{
 
 	}
-	void menuScene::OnExit()
+	void MenuScene::OnExit()
 	{
 
 	}

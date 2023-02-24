@@ -1,5 +1,5 @@
 #pragma once
-#include "Entity.h"
+#include "myEntity.h"
 
 namespace my
 {
@@ -24,14 +24,5 @@ namespace my
 		//map에서의 리소스 키, 경로
 		std::wstring fileKey;
 		std::wstring filePath;
-	};
-
-	class Image : public Resource
-	{
-
-	};
-	class Sound : public Resource
-	{
-
 	};
 }

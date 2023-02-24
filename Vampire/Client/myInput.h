@@ -3,7 +3,7 @@
 
 namespace my
 {
-	enum class KeyCode
+	enum class eKeyCode
 	{
 		Q, W, E, R, T, Y, U, I, O, P,
 		A, S, D, F, G, H, J, K, L,
@@ -11,7 +11,7 @@ namespace my
 		END,
 	};
 
-	enum class KeyState
+	enum class eKeyState
 	{
 		Down,
 		Up,
@@ -24,8 +24,8 @@ namespace my
 	public:
 		struct Key
 		{
-			KeyCode Kcode;
-			KeyState Kstate;
+			eKeyCode Kcode;
+			eKeyState Kstate;
 			bool bePressed; // ¥≠∑»¿ª ∂ß
 		};
 
@@ -33,7 +33,7 @@ namespace my
 		static void Update();
 		static void Render(HDC hdc);	
 
-		inline static KeyState GetKeyState(KeyCode kcode)
+		inline static eKeyState GetKeyState(eKeyCode kcode)
 		{
 			return mKeys[(UINT)kcode].Kstate;
 		}

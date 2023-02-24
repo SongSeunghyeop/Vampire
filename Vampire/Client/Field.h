@@ -4,7 +4,7 @@
 
 namespace my
 {
-	class Field : public MyGameObject
+	class Field : public GameObject
 	{
 	public:
 		Field();
@@ -16,7 +16,7 @@ namespace my
 		virtual void Release();
 
 	private:
-		myImage* fieldImg;
+		Image* fieldImg;
 	};
 }
 

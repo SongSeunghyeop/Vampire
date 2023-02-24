@@ -2,7 +2,7 @@
 
 namespace my
 {
-	int ASCII[(UINT)KeyCode::END]
+	int ASCII[(UINT)eKeyCode::END]
 	{
 		'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
 		'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
@@ -13,11 +13,11 @@ namespace my
 
 	void Input::Initialize()
 	{
-		for (int i = 0; i < (UINT)KeyCode::END; i++)
+		for (int i = 0; i < (UINT)eKeyCode::END; i++)
 		{
 			Key keyInfo;
-			keyInfo.Kcode = (KeyCode)i;
-			keyInfo.Kstate = KeyState::None;
+			keyInfo.Kcode = (eKeyCode)i;
+			keyInfo.Kstate = eKeyState::None;
 			keyInfo.bePressed = false;
 
 			mKeys.push_back(keyInfo);
@@ -25,23 +25,23 @@ namespace my
 	}
 	void Input::Update()
 	{
-		for (UINT i = 0; i < (UINT)KeyCode::END; i++)
+		for (UINT i = 0; i < (UINT)eKeyCode::END; i++)
 		{
 			if (GetAsyncKeyState(ASCII[i]) && 0x8000) // i번째 키가 입력되었을 때
 			{
 				if (mKeys[i].bePressed) //그 키가 이전에 입력되어있는 상태라면 
-					mKeys[i].Kstate = KeyState::Pressed;
+					mKeys[i].Kstate = eKeyState::Pressed;
 				else
-					mKeys[i].Kstate = KeyState::Down;
+					mKeys[i].Kstate = eKeyState::Down;
 
 				mKeys[i].bePressed = true;
 			}
 			else  // i번째 키가 입력되어지지 않았다면
 			{
 				if (mKeys[i].bePressed) //그 키가 이전에 입력되어있는 상태라면 
-					mKeys[i].Kstate = KeyState::Up; // 이전에 입력되어져 있었다면 키를 뗀 것이므로
+					mKeys[i].Kstate = eKeyState::Up; // 이전에 입력되어져 있었다면 키를 뗀 것이므로
 				else // 그게 아니라면
-					mKeys[i].Kstate = KeyState::None;
+					mKeys[i].Kstate = eKeyState::None;
 
 				mKeys[i].bePressed = false;
 			}

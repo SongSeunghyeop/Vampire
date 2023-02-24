@@ -1,11 +1,11 @@
 #pragma once
 #include "MyGameObject.h"
 #include "myImage.h" 
-#include "Transform.h"
+#include "myTransform.h"
 
 namespace my
 {
-	class Menu : public MyGameObject
+	class Menu : public GameObject
 	{
 	public:
 		Menu();
@@ -17,7 +17,7 @@ namespace my
 		virtual void Release();
 
 	private:
-		myImage* menuImg;
+		Image* menuImg;
 	};
 }
 

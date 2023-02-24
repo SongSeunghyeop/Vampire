@@ -3,7 +3,7 @@
 
 namespace my 
 {
-	class mySceneManager
+	class SceneManager
 	{
 	public:
 		static void Initialize();
@@ -14,8 +14,8 @@ namespace my
 		static void LoadScene(eSceneType type);
 
 	private:
-		static std::vector<myScene*> mScenes;
-		static myScene* activeScene; 
+		static std::vector<Scene*> mScenes;
+		static Scene* activeScene; 
 	};
 }
 

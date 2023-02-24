@@ -1,21 +1,21 @@
 #pragma once
-#include "Entity.h"
+#include "myEntity.h"
 
 namespace my 
 {
-	class myComponent : public Entity
+	class Component : public Entity
 	{
 	public:
-		myComponent(ComponentType Type);
-	    ~myComponent();
+		Component(eComponentType Type);
+	    ~Component();
 
 		virtual void Initialize();
 		virtual void Update();
 		virtual void Render(HDC hdc);
 		virtual void Release();
 
-		ComponentType getType() { return myType; }
+		eComponentType getType() { return myType; }
 	private:
-		const ComponentType myType;
+		const eComponentType myType;
 	};
 }

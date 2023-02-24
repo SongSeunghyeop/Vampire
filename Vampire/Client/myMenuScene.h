@@ -4,11 +4,11 @@
 
 namespace my
 {
-	class menuScene : public myScene
+	class MenuScene : public Scene
 	{
 	public:
-		menuScene();
-		~menuScene();
+		MenuScene();
+		~MenuScene();
 
 		virtual void Initialize();
 		virtual void Update();

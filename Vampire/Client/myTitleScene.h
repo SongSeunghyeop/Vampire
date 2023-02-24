@@ -4,7 +4,7 @@
 
 namespace my
 {
-	class TitleScene : public myScene
+	class TitleScene : public Scene
 	{
 	public:
 		TitleScene();

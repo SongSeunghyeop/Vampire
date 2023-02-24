@@ -3,11 +3,11 @@
 
 namespace my
 {
-	class myImage : public Resource // 이미지리소스
+	class Image : public Resource // 이미지리소스
 	{
 	public:
-		myImage();
-		~myImage();
+		Image();
+		~Image();
 
 		virtual HRESULT Load(const std::wstring& path) override; // 리소스 Load 함수 상속
 

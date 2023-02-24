@@ -1,14 +1,14 @@
 #pragma once
-#include "Entity.h"
+#include "myEntity.h"
 #include "myLayer.h"
 
 namespace my
 {	
-	class myScene : public Entity
+	class Scene : public Entity
 	{
 	public:
-		myScene();
-		virtual ~myScene();
+		Scene();
+		virtual ~Scene();
 
 		virtual void Initialize();
 		virtual void Update();
@@ -18,10 +18,10 @@ namespace my
 		virtual void OnEnter();
 		virtual void OnExit ();
 
-		void AddGameObj(MyGameObject* obj, eLayerType Layer);
+		void AddGameObj(GameObject* obj, eLayerType Layer);
 
 	private:
-		std::vector <myLayer> mLayer;
+		std::vector <Layer> mLayer;
 	};
 }
 

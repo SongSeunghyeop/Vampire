@@ -1,51 +1,52 @@
-#include "MyGameObject.h"
-#include "Transform.h"
+#include "myGameObject.h"
+#include "myTransform.h"
 
 namespace my
 {
-	void MyGameObject::Initialize()
+	GameObject::GameObject()
 	{
-		for (myComponent* mcomp : mComponents)
+		mComponents.resize((UINT)eComponentType::END);
+		AddComponent<Transform>();
+	}
+	GameObject::~GameObject()
+	{
+
+	}
+
+	void GameObject::Initialize()
+	{
+		for (Component* mcomp : mComponents)
 		{
 			if (mcomp == NULL) continue;
 
 			mcomp->Initialize();
 		}
 	}
-	void MyGameObject::Update()
+	void GameObject::Update()
 	{
-		for (myComponent* mcomp : mComponents)
+		for (Component* mcomp : mComponents)
 		{
 			if (mcomp == NULL) continue;
 
 			mcomp->Update();
 		}
 	}
-	void MyGameObject::Render(HDC hdc)
+	void GameObject::Render(HDC hdc)
 	{
-		for (myComponent* mcomp : mComponents)
+		for (Component* mcomp : mComponents)
 		{
 			if (mcomp == NULL) continue;
 
 			mcomp->Render(hdc);
 		}
 	}
-	void MyGameObject::Release()
+	void GameObject::Release()
 	{
-		for (myComponent* mcomp : mComponents)
+		for (Component* mcomp : mComponents)
 		{
 			if (mcomp == NULL) continue;
 
 			mcomp->Release ();
 		}
-	}
-	MyGameObject::MyGameObject()
-	{
-		mComponents.resize((UINT)ComponentType::END);
-		AddComponent<Transform>();
-	}
-	MyGameObject::~MyGameObject()
-	{
-
 	}
 }

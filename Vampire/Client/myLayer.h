@@ -1,23 +1,23 @@
 #pragma once
-#include "Entity.h"
-#include "MyGameObject.h"
+#include "myEntity.h"
+#include "myGameObject.h"
 
 namespace my 
 {
-	class myLayer : public Entity
+	class Layer : public Entity
 	{
 	public:
-		myLayer();
-		virtual ~myLayer();
+		Layer();
+		virtual ~Layer();
 
 		virtual void Initialize();
 		virtual void Update();
 		virtual void Render(HDC hdc);
 		virtual void Release();
 
-		void AddGameObj(MyGameObject* obj);
+		void AddGameObj(GameObject* obj);
 
 	private:
-		std::vector<MyGameObject*> mGameobj;
+		std::vector<GameObject*> mGameobj;
 	};
 }

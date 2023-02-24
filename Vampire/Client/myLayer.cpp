@@ -2,54 +2,55 @@
 
 namespace my
 {
-	void myLayer::Initialize()
+	Layer::Layer()
 	{
-		for (MyGameObject* gameobj : mGameobj)
+
+	}
+	Layer::~Layer()
+	{
+
+	}
+
+	void Layer::Initialize()
+	{
+		for (GameObject* gameobj : mGameobj)
 		{
 			if (gameobj == NULL) continue;
 
 			gameobj->Initialize();
 		}
 	}
-	void myLayer::Update()
+	void Layer::Update()
 	{
-		for (MyGameObject* gameobj : mGameobj)
+		for (GameObject* gameobj : mGameobj)
 		{
 			if (gameobj == NULL) continue;
 
 			gameobj->Update();
 		}
 	}
-	void myLayer::Render(HDC hdc)
+	void Layer::Render(HDC hdc)
 	{
-		for (MyGameObject* gameobj : mGameobj)
+		for (GameObject* gameobj : mGameobj)
 		{
 			if (gameobj == NULL) continue;
 
 			gameobj->Render(hdc);
 		}
 	}
-	void myLayer::Release()
+	void Layer::Release()
 	{
-		for (MyGameObject* gameobj : mGameobj)
+		for (GameObject* gameobj : mGameobj)
 		{
 			if (gameobj == NULL) continue;
 
 			gameobj->Release();
 		}
 	}
-	void myLayer::AddGameObj(MyGameObject* obj)
+	void Layer::AddGameObj(GameObject* obj)
 	{
 		if (obj == NULL) return;
 
 		mGameobj.push_back(obj);
-	}
-	myLayer::myLayer()
-	{
-
-	}
-	myLayer::~myLayer()
-	{
-
 	}
 }

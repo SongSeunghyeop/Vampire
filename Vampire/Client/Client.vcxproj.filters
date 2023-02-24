@@ -5,10 +5,6 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="헤더 파일">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="리소스 파일">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
@@ -76,19 +72,26 @@
     <Filter Include="Engine\Scene\MenuScene">
       <UniqueIdentifier>{085e0e05-2a7d-413c-b0b9-b414ed1a5863}</UniqueIdentifier>
     </Filter>
+    <Filter Include="리소스 파일\헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Engine\GameObject\Objects\Title">
+      <UniqueIdentifier>{5d03fc5f-bc30-4702-8d2b-0cfdb86fac59}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>리소스 파일\헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>리소스 파일\헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>리소스 파일\헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Client.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>리소스 파일\헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="CommonInclude.h">
       <Filter>Engine\Common</Filter>
@@ -102,7 +105,7 @@
     <ClInclude Include="VampireEngine.h">
       <Filter>Engine\Common</Filter>
     </ClInclude>
-    <ClInclude Include="Entity.h">
+    <ClInclude Include="myEntity.h">
       <Filter>Engine\Common</Filter>
     </ClInclude>
     <ClInclude Include="myScene.h">
@@ -114,7 +117,7 @@
     <ClInclude Include="mySceneManager.h">
       <Filter>Engine\SceneManager</Filter>
     </ClInclude>
-    <ClInclude Include="Myapplication.h">
+    <ClInclude Include="myApplication.h">
       <Filter>Engine\Application</Filter>
     </ClInclude>
     <ClInclude Include="myLayer.h">
@@ -141,19 +144,16 @@
     <ClInclude Include="myTitleScene.h">
       <Filter>Engine\Scene\TitleScene</Filter>
     </ClInclude>
-    <ClInclude Include="MyGameObject.h">
+    <ClInclude Include="myGameObject.h">
       <Filter>Engine\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="Dragon.h">
+    <ClInclude Include="Krochi.h">
       <Filter>Engine\GameObject\Objects</Filter>
     </ClInclude>
     <ClInclude Include="Field.h">
       <Filter>Engine\GameObject\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Title.h">
-      <Filter>Engine\GameObject\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Transform.h">
+    <ClInclude Include="myTransform.h">
       <Filter>Engine\Component\Components</Filter>
     </ClInclude>
     <ClInclude Include="menu.h">
@@ -161,6 +161,12 @@
     </ClInclude>
     <ClInclude Include="myMenuScene.h">
       <Filter>Engine\Scene\MenuScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Title.h">
+      <Filter>Engine\GameObject\Objects\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="CharactorSelect.h">
+      <Filter>Engine\GameObject\Objects\Title</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -170,7 +176,7 @@
     <ClCompile Include="Math.cpp">
       <Filter>Engine\Common</Filter>
     </ClCompile>
-    <ClCompile Include="Entity.cpp">
+    <ClCompile Include="myEntity.cpp">
       <Filter>Engine\Common</Filter>
     </ClCompile>
     <ClCompile Include="myScene.cpp">
@@ -182,7 +188,7 @@
     <ClCompile Include="mySceneManager.cpp">
       <Filter>Engine\SceneManager</Filter>
     </ClCompile>
-    <ClCompile Include="Myapplication.cpp">
+    <ClCompile Include="myApplication.cpp">
       <Filter>Engine\Application</Filter>
     </ClCompile>
     <ClCompile Include="myLayer.cpp">
@@ -209,19 +215,16 @@
     <ClCompile Include="myTitleScene.cpp">
       <Filter>Engine\Scene\TitleScene</Filter>
     </ClCompile>
-    <ClCompile Include="MyGameObject.cpp">
+    <ClCompile Include="myGameObject.cpp">
       <Filter>Engine\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="Dragon.cpp">
+    <ClCompile Include="Krochi.cpp">
       <Filter>Engine\GameObject\Objects</Filter>
     </ClCompile>
     <ClCompile Include="Field.cpp">
       <Filter>Engine\GameObject\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="Title.cpp">
-      <Filter>Engine\GameObject\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Transform.cpp">
+    <ClCompile Include="myTransform.cpp">
       <Filter>Engine\Component\Components</Filter>
     </ClCompile>
     <ClCompile Include="menu.cpp">
@@ -229,6 +232,12 @@
     </ClCompile>
     <ClCompile Include="myMenuScene.cpp">
       <Filter>Engine\Scene\MenuScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Title.cpp">
+      <Filter>Engine\GameObject\Objects\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="CharactorSelect.cpp">
+      <Filter>Engine\GameObject\Objects\Title</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

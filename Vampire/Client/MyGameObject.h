@@ -1,10 +1,10 @@
 #pragma once
-#include "Entity.h"
+#include "myEntity.h"
 #include "myComponent.h"
 
 namespace my
 {
-	class MyGameObject : public Entity
+	class GameObject : public Entity
 	{
 	public:
 	    virtual void Initialize();
@@ -12,8 +12,8 @@ namespace my
 	    virtual void Render(HDC hdc);
 	    virtual void Release();
 
-		MyGameObject();
-		virtual ~MyGameObject();
+		GameObject();
+		virtual ~GameObject();
 
 		template <typename T>
 		T* AddComponent()
@@ -27,7 +27,7 @@ namespace my
 		template <typename T>
 		T* GetComponent()
 		{
-			for (myComponent* c : mComponents)
+			for (Component* c : mComponents)
 			{
 				if (dynamic_cast<T*>(c)) // RTTI
 					return dynamic_cast<T*>(c);
@@ -36,7 +36,7 @@ namespace my
 			}
 		}
 	private:
-		std::vector<myComponent*> mComponents;
+		std::vector<Component*> mComponents;
 	};
 }
 

@@ -2,6 +2,7 @@
 #include "myScene.h"
 #include "mySceneManager.h"
 #include "Title.h"
+#include "CharactorSelect.h"
 
 namespace my
 {
@@ -18,24 +19,27 @@ namespace my
 		Title *title = new Title();
 		title->SetName(L"Title");
 		AddGameObj(title, eLayerType::FIELD);
-		myScene::Initialize();
+		Scene::Initialize();
 	}
 	void TitleScene::Update()
 	{
-		myScene::Update();
+		Scene::Update();
 
-		if (Input::GetKeyState(KeyCode::Q) == KeyState::Down)
+		if (Input::GetKeyState(eKeyCode::Q) == eKeyState::Down)
 		{
-			mySceneManager::LoadScene(eSceneType::Play);
+			/*CharactorSelect* cs = new CharactorSelect();
+			AddGameObj(cs, eLayerType::UI);
+			cs->Initialize();*/
+			SceneManager::LoadScene(eSceneType::Play);
 		}
 	}
 	void TitleScene::Render(HDC hdc)
 	{
-		myScene::Render(hdc);
+		Scene::Render(hdc);
 	}
 	void TitleScene::Release()
 	{
-		myScene::Release();
+		Scene::Release();
 	}
 
 	void TitleScene::OnEnter()

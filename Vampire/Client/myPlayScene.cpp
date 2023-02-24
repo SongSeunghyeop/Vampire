@@ -15,31 +15,31 @@ namespace my
 	}
 	void PlayScene::Initialize()
 	{
-		dragon = new Dragon(); // 플레이어 생성
+		krochi = new Krochi(); // 플레이어 생성
 		Field* field = new Field(); // 배경 생성
-		dragon->SetName(L"Player");
+		krochi->SetName(L"Player");
 		field->SetName(L"Field");
 		AddGameObj(field, eLayerType::FIELD);
-		AddGameObj(dragon, eLayerType::PLAYER);
+		AddGameObj(krochi, eLayerType::PLAYER);
 
-		myScene::Initialize();
+		Scene::Initialize();
 	}
 	void PlayScene::Update()
 	{
-		myScene::Update();
+		Scene::Update();
 
-		if (Input::GetKeyState(KeyCode::ESC) == KeyState::Down)
+		if (Input::GetKeyState(eKeyCode::ESC) == eKeyState::Down)
 		{
-			mySceneManager::LoadScene(eSceneType::Menu);
+			SceneManager::LoadScene(eSceneType::Menu);
 		}
 	}
 	void PlayScene::Render(HDC hdc)
 	{
-		myScene::Render(hdc);
+		Scene::Render(hdc);
 	}
 	void PlayScene::Release()
 	{
-		myScene::Release();
+		Scene::Release();
 	}
 	void PlayScene::OnEnter()
 	{

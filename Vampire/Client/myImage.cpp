@@ -1,11 +1,11 @@
 #include "myImage.h"
 #include "myApplication.h"
 
-extern my::myApplication myapplication;
+extern my::Application myapplication;
 
 namespace my
 {
-	myImage::myImage()
+	Image::Image()
 		: mBitmap(NULL)
 		, mHdc(NULL)
 		, mWidth(0)
@@ -13,11 +13,11 @@ namespace my
 	{
 
 	}
-	myImage::~myImage()
+	Image::~Image()
 	{
 
 	}
-	HRESULT myImage::Load(const std::wstring& path)
+	HRESULT Image::Load(const std::wstring& path)
 	{
 		mBitmap = (HBITMAP)LoadImageW(nullptr  // 받은 이미지 비트맵에 저장
 			, path.c_str(), IMAGE_BITMAP
@@ -26,7 +26,7 @@ namespace my
 		if (mBitmap == nullptr) // 비트맵에 받은 이지지가 없으면 
 			return E_FAIL; // false 리턴 
 
-		BITMAP bitInfo = {};
+		BITMAP bitInfo = {}; // 비트맵의 폭, 높이, 색상 등의 정보
 		GetObject(mBitmap, sizeof(BITMAP), &bitInfo);
 
 		mWidth = bitInfo.bmWidth; // 받은 리소스를 저장한 비트맵의 가로

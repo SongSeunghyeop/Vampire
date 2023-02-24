@@ -16,25 +16,25 @@ namespace my
 	}
 	void Menu::Initialize()
 	{
-		menuImg = ResourceManager::Load<myImage>(L"Menu", L"..\\Resources\\menu.bmp");
+		menuImg = ResourceManager::Load<Image>(L"Menu", L"..\\Resources\\menu.bmp");
 
-		MyGameObject::Initialize();
+		GameObject::Initialize();
 	}
 	void Menu::Update()
 	{
-		MyGameObject::Update();
+		GameObject::Update();
 	}
 	void Menu::Render(HDC hdc)
 	{
-		MyGameObject::Render(hdc);
+		GameObject::Render(hdc);
 
 		Transform* trans = GetComponent<Transform>();
 		Vector2 pos = trans->getPos();
 
-		BitBlt(hdc, pos.x, pos.y, menuImg->GetWidth(), menuImg->GetHeight(), menuImg->GetHdc(), 0, 0, SRCCOPY);
+		StretchBlt(hdc, 200, 100, 1100, 550, menuImg->GetHdc(), 0, 0, menuImg->GetWidth(), menuImg->GetHeight(), SRCCOPY);
 	}
 	void Menu::Release()
 	{
-		MyGameObject::Release();
+		GameObject::Release();
 	}
 }

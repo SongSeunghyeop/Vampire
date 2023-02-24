@@ -1,11 +1,11 @@
 #pragma once
 #include "myScene.h"
-#include "Dragon.h"
+#include "Krochi.h"
 #include "Field.h"
 
 namespace my
 {
-	class PlayScene : public myScene
+	class PlayScene : public Scene
 	{
 	public:
 		PlayScene();
@@ -20,6 +20,6 @@ namespace my
 		virtual void OnExit();
 
 	private:
-		Dragon* dragon;
+		Krochi* krochi;
 	};
 }
