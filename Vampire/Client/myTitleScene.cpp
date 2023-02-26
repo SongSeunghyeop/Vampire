@@ -6,6 +6,7 @@
 
 namespace my
 {
+
 	TitleScene::TitleScene()
 	{
 
@@ -24,13 +25,9 @@ namespace my
 	void TitleScene::Update()
 	{
 		Scene::Update();
-
 		if (Input::GetKeyState(eKeyCode::Q) == eKeyState::Down)
 		{
-			/*CharactorSelect* cs = new CharactorSelect();
-			AddGameObj(cs, eLayerType::UI);
-			cs->Initialize();*/
-			SceneManager::LoadScene(eSceneType::Play);
+			SceneManager::LoadScene(eSceneType::TitleUI);
 		}
 	}
 	void TitleScene::Render(HDC hdc)

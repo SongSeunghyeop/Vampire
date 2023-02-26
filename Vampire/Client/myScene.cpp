@@ -48,6 +48,11 @@ namespace my
 		mLayer[(UINT)Layer].AddGameObj(obj);
 	}
 
+	void Scene::DelGameObj(GameObject* obj, eLayerType Layer)
+	{
+		mLayer[(UINT)Layer].DelGameObj(obj);
+	}
+
 	Scene::Scene()
 	{
 		//mLayer.reserve(5);

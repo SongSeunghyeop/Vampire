@@ -30,7 +30,7 @@ namespace my
 
 		if (Input::GetKeyState(eKeyCode::ESC) == eKeyState::Down)
 		{
-			SceneManager::LoadScene(eSceneType::Menu);
+			SceneManager::LoadScene(eSceneType::InGameMenu);
 		}
 	}
 	void PlayScene::Render(HDC hdc)

@@ -5,11 +5,11 @@
 
 namespace my
 {
-	class Title : public GameObject
+	class Intro : public GameObject
 	{
 	public:
-		Title();
-		~Title();
+		Intro();
+		~Intro();
 
 		virtual void Initialize();
 		virtual void Update();
@@ -18,12 +18,9 @@ namespace my
 
 	private:
 		Image* titleImg;
-		Image* start;
-		Image* start2;
-		Image* button1;
-		Image* money;
-		Image* Exit;
-		Image* Option;
+		Image* IntroM;
+
+		static double mSecond;
 	};
 }
 

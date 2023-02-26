@@ -2,15 +2,18 @@
 
 enum class eSceneType
 {
+	Intro,
 	Title,
+	TitleUI,
 	Play,
-	Menu,
+	InGameMenu,
 	Ending,
 	Max,
 };
 
 enum class eLayerType
 { // 그려지는 순서
+	BACKGROUND,
 	FIELD,
 	ITEMS,
 	MONSTERS,

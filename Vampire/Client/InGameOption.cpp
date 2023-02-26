@@ -1,26 +1,26 @@
-#include "myMenuScene.h"
+#include "InGameOption.h"
 #include "myScene.h"
 #include "mySceneManager.h"
 #include "Menu.h"
 
 namespace my
 {
-	MenuScene::MenuScene()
+	InGameOption::InGameOption()
 	{
 
 	}
-	MenuScene::~MenuScene()
+	InGameOption::~InGameOption()
 	{
 
 	}
-	void MenuScene::Initialize()
+	void InGameOption::Initialize()
 	{
 		Menu* menu = new Menu();
 		menu->SetName(L"Title");
 		AddGameObj(menu, eLayerType::UI);
 		Scene::Initialize();
 	}
-	void MenuScene::Update()
+	void InGameOption::Update()
 	{
 		Scene::Update();
 
@@ -33,20 +33,20 @@ namespace my
 			SceneManager::LoadScene(eSceneType::Title);
 		}
 	}
-	void MenuScene::Render(HDC hdc)
+	void InGameOption::Render(HDC hdc)
 	{
 		Scene::Render(hdc);
 	}
-	void MenuScene::Release()
+	void InGameOption::Release()
 	{
 		Scene::Release();
 	}
 
-	void MenuScene::OnEnter()
+	void InGameOption::OnEnter()
 	{
 
 	}
-	void MenuScene::OnExit()
+	void InGameOption::OnExit()
 	{
 
 	}

@@ -19,8 +19,10 @@ namespace my
 		virtual void OnExit ();
 
 		void AddGameObj(GameObject* obj, eLayerType Layer);
+		void DelGameObj(GameObject* obj, eLayerType Layer);
 
-	private:
+		//void GotoBack(GameObject* obj, eLayerType Layer);
+	protected:
 		std::vector <Layer> mLayer;
 	};
 }

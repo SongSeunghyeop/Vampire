@@ -16,6 +16,7 @@ namespace my
 		virtual void Release();
 
 		void AddGameObj(GameObject* obj);
+		void DelGameObj(GameObject* obj);
 
 	private:
 		std::vector<GameObject*> mGameobj;

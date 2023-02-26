@@ -53,4 +53,9 @@ namespace my
 
 		mGameobj.push_back(obj);
 	}
+	void Layer::DelGameObj(GameObject* obj)
+	{
+		if (obj == NULL) return;
+		mGameobj.pop_back();
+	}
 }

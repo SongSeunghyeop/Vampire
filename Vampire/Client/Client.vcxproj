@@ -128,6 +128,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Intro.h" />
+    <ClInclude Include="LevelUP.h" />
+    <ClInclude Include="myIntroScene.h" />
+    <ClInclude Include="TitleSceneUI.h" />
     <ClInclude Include="CharactorSelect.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="CommonInclude.h" />
@@ -144,7 +148,7 @@
     <ClInclude Include="myImage.h" />
     <ClInclude Include="myInput.h" />
     <ClInclude Include="myLayer.h" />
-    <ClInclude Include="myMenuScene.h" />
+    <ClInclude Include="InGameOption.h" />
     <ClInclude Include="myPlayScene.h" />
     <ClInclude Include="myResource.h" />
     <ClInclude Include="myResourceManager.h" />
@@ -154,11 +158,16 @@
     <ClInclude Include="Time.h" />
     <ClInclude Include="Title.h" />
     <ClInclude Include="myTransform.h" />
+    <ClInclude Include="Treasure.h" />
     <ClInclude Include="VampireEngine.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Intro.cpp" />
+    <ClCompile Include="LevelUP.cpp" />
+    <ClCompile Include="myIntroScene.cpp" />
+    <ClCompile Include="TitleSceneUI.cpp" />
     <ClCompile Include="CharactorSelect.cpp" />
     <ClCompile Include="Krochi.cpp" />
     <ClCompile Include="myEntity.cpp" />
@@ -172,7 +181,7 @@
     <ClCompile Include="myImage.cpp" />
     <ClCompile Include="myInput.cpp" />
     <ClCompile Include="myLayer.cpp" />
-    <ClCompile Include="myMenuScene.cpp" />
+    <ClCompile Include="InGameOption.cpp" />
     <ClCompile Include="myPlayScene.cpp" />
     <ClCompile Include="myResource.cpp" />
     <ClCompile Include="myResourceManager.cpp" />
@@ -182,6 +191,7 @@
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="Title.cpp" />
     <ClCompile Include="myTransform.cpp" />
+    <ClCompile Include="Treasure.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Client.rc" />
