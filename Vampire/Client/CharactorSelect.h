@@ -18,6 +18,8 @@ namespace my
 
 	private:
 		Image* SelectUI;
+		Image* Title;
+		Image* Money;
 	};
 }
 

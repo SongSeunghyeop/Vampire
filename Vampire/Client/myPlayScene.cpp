@@ -16,10 +16,14 @@ namespace my
 	void PlayScene::Initialize()
 	{
 		krochi = new Krochi(); // 플레이어 생성
-		Field* field = new Field(); // 배경 생성
+		enemy1 = new Enemy1(); // 에너미 생성
+		field = new Field(); // 배경 생성
+
 		krochi->SetName(L"Player");
+		enemy1->SetName(L"Enemy1");
 		field->SetName(L"Field");
 		AddGameObj(field, eLayerType::FIELD);
+		AddGameObj(enemy1, eLayerType::ENEMY);
 		AddGameObj(krochi, eLayerType::PLAYER);
 
 		Scene::Initialize();

@@ -2,7 +2,7 @@
 #include "myPlayScene.h"
 #include "myTitleScene.h"
 #include "myIntroScene.h"
-#include "TitleSceneUI.h"
+#include "TitleUI.h"
 #include "InGameOption.h"
 
 namespace my 
@@ -16,7 +16,7 @@ namespace my
 																			 // 현재 max는 4개이므로 4개의 배열을 0으로 초기화
 		mScenes[(UINT)eSceneType::Intro] = new IntroScene(); 
 		mScenes[(UINT)eSceneType::Title] = new TitleScene(); 
-		mScenes[(UINT)eSceneType::TitleUI] = new TitleSceneUI(); 
+		mScenes[(UINT)eSceneType::TitleUI] = new TitleUI(); 
 		mScenes[(UINT)eSceneType::Play] = new PlayScene(); 
 		mScenes[(UINT)eSceneType::InGameMenu] = new InGameOption(); 
 
@@ -36,7 +36,7 @@ namespace my
 	}
 
 	void SceneManager::Update()
-	{
+	{	
 		activeScene->Update();
 	}
 

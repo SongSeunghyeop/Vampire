@@ -1,16 +1,14 @@
 #pragma once
 #include "myScene.h"
-#include "Krochi.h"
-#include "Enemy1.h"
-#include "Field.h"
+#include "myInput.h"
 
 namespace my
 {
-	class PlayScene : public Scene
+	class TitleUI : public Scene
 	{
 	public:
-		PlayScene();
-		~PlayScene();
+		TitleUI();
+		~TitleUI();
 
 		virtual void Initialize();
 		virtual void Update();
@@ -21,8 +19,5 @@ namespace my
 		virtual void OnExit();
 
 	private:
-		Field* field;
-		Krochi* krochi;
-		Enemy1* enemy1;
 	};
 }

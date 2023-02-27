@@ -16,7 +16,7 @@ enum class eLayerType
 	BACKGROUND,
 	FIELD,
 	ITEMS,
-	MONSTERS,
+	ENEMY,
 	MAINITEMS,
 	PLAYER,
 	EFFECT,

@@ -73,17 +73,23 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Engine\GameObject\Objects\Title">
-      <UniqueIdentifier>{5d03fc5f-bc30-4702-8d2b-0cfdb86fac59}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\Scene\InGameUI">
       <UniqueIdentifier>{085e0e05-2a7d-413c-b0b9-b414ed1a5863}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\Scene\TitleUI">
-      <UniqueIdentifier>{828d6f08-ae8a-42cd-99fa-65d186d3996a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\Scene\IntroScene">
       <UniqueIdentifier>{f340e9a4-1620-4ec0-a70d-34076ac3b803}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Scene\TitleScene\TitleUI">
+      <UniqueIdentifier>{d72ff972-4155-4c06-a1dc-fdb1417ad520}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject\Objects\Players">
+      <UniqueIdentifier>{bad7682c-4502-495e-9147-269fa1c452ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject\Objects\Intro &amp; Title">
+      <UniqueIdentifier>{5d03fc5f-bc30-4702-8d2b-0cfdb86fac59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject\Objects\Enemies">
+      <UniqueIdentifier>{acfeebc9-6881-4422-b14c-73a44c3b92b8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -153,9 +159,6 @@
     <ClInclude Include="myGameObject.h">
       <Filter>Engine\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="Krochi.h">
-      <Filter>Engine\GameObject\Objects</Filter>
-    </ClInclude>
     <ClInclude Include="Field.h">
       <Filter>Engine\GameObject\Objects</Filter>
     </ClInclude>
@@ -169,13 +172,7 @@
       <Filter>Engine\Scene\InGameUI</Filter>
     </ClInclude>
     <ClInclude Include="Title.h">
-      <Filter>Engine\GameObject\Objects\Title</Filter>
-    </ClInclude>
-    <ClInclude Include="CharactorSelect.h">
-      <Filter>Engine\GameObject\Objects\Title</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleSceneUI.h">
-      <Filter>Engine\Scene\TitleUI</Filter>
+      <Filter>Engine\GameObject\Objects\Intro &amp; Title</Filter>
     </ClInclude>
     <ClInclude Include="LevelUP.h">
       <Filter>Engine\Scene\InGameUI</Filter>
@@ -186,8 +183,20 @@
     <ClInclude Include="myIntroScene.h">
       <Filter>Engine\Scene\IntroScene</Filter>
     </ClInclude>
+    <ClInclude Include="TitleUI.h">
+      <Filter>Engine\Scene\TitleScene\TitleUI</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterSelect.h">
+      <Filter>Engine\GameObject\Objects\Intro &amp; Title</Filter>
+    </ClInclude>
+    <ClInclude Include="Krochi.h">
+      <Filter>Engine\GameObject\Objects\Players</Filter>
+    </ClInclude>
     <ClInclude Include="Intro.h">
-      <Filter>Engine\GameObject\Objects</Filter>
+      <Filter>Engine\GameObject\Objects\Intro &amp; Title</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy1.h">
+      <Filter>Engine\GameObject\Objects\Enemies</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -239,9 +248,6 @@
     <ClCompile Include="myGameObject.cpp">
       <Filter>Engine\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="Krochi.cpp">
-      <Filter>Engine\GameObject\Objects</Filter>
-    </ClCompile>
     <ClCompile Include="Field.cpp">
       <Filter>Engine\GameObject\Objects</Filter>
     </ClCompile>
@@ -255,13 +261,7 @@
       <Filter>Engine\Scene\InGameUI</Filter>
     </ClCompile>
     <ClCompile Include="Title.cpp">
-      <Filter>Engine\GameObject\Objects\Title</Filter>
-    </ClCompile>
-    <ClCompile Include="CharactorSelect.cpp">
-      <Filter>Engine\GameObject\Objects\Title</Filter>
-    </ClCompile>
-    <ClCompile Include="TitleSceneUI.cpp">
-      <Filter>Engine\Scene\TitleUI</Filter>
+      <Filter>Engine\GameObject\Objects\Intro &amp; Title</Filter>
     </ClCompile>
     <ClCompile Include="LevelUP.cpp">
       <Filter>Engine\Scene\InGameUI</Filter>
@@ -272,8 +272,20 @@
     <ClCompile Include="myIntroScene.cpp">
       <Filter>Engine\Scene\IntroScene</Filter>
     </ClCompile>
+    <ClCompile Include="TitleUI.cpp">
+      <Filter>Engine\Scene\TitleScene\TitleUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterSelect.cpp">
+      <Filter>Engine\GameObject\Objects\Intro &amp; Title</Filter>
+    </ClCompile>
+    <ClCompile Include="Krochi.cpp">
+      <Filter>Engine\GameObject\Objects\Players</Filter>
+    </ClCompile>
     <ClCompile Include="Intro.cpp">
-      <Filter>Engine\GameObject\Objects</Filter>
+      <Filter>Engine\GameObject\Objects\Intro &amp; Title</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy1.cpp">
+      <Filter>Engine\GameObject\Objects\Enemies</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

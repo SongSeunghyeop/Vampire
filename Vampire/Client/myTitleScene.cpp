@@ -6,7 +6,6 @@
 
 namespace my
 {
-
 	TitleScene::TitleScene()
 	{
 
@@ -24,11 +23,15 @@ namespace my
 	}
 	void TitleScene::Update()
 	{
-		Scene::Update();
-		if (Input::GetKeyState(eKeyCode::Q) == eKeyState::Down)
+		for (UINT i = 0; i < (UINT)eKeyCode::END; i++)
 		{
-			SceneManager::LoadScene(eSceneType::TitleUI);
+			if (Input::GetKeyState((eKeyCode)i) == eKeyState::Down)
+			{
+				SceneManager::LoadScene(eSceneType::TitleUI); // 바로 화면 전환
+			}
 		}
+
+		Scene::Update();
 	}
 	void TitleScene::Render(HDC hdc)
 	{

@@ -5,11 +5,11 @@
 
 namespace my
 {
-	class Title : public GameObject
+	class Enemy1 : public GameObject
 	{
 	public:
-		Title();
-		~Title();
+		Enemy1();
+		~Enemy1();
 
 		virtual void Initialize();
 		virtual void Update();
@@ -17,14 +17,8 @@ namespace my
 		virtual void Release();
 
 	private:
-		Image* titleImg;
-		Image* start;
-		Image* start2;
-		Image* button1;
-		Image* money;
-		Image* Exit;
-		Image* Option;
-		Image* SelectUI;
+		Image* Enemy1_Img;
+		Vector2 EnemyPos;
 	};
 }
 

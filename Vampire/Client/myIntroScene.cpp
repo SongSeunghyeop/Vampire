@@ -25,9 +25,13 @@ namespace my
 	void IntroScene::Update()
 	{
 		Scene::Update();
-		if (Input::GetKeyState(eKeyCode::Q) == eKeyState::Down)
+
+		for (UINT i = 0; i < (UINT)eKeyCode::END; i++)
 		{
-			SceneManager::LoadScene(eSceneType::Title);
+        	if (Input::GetKeyState((eKeyCode)i) == eKeyState::Down)
+			{
+				SceneManager::LoadScene(eSceneType::Title); // 바로 화면 전환
+			}
 		}
 	}
 	void IntroScene::Render(HDC hdc)

@@ -128,11 +128,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CharacterSelect.h" />
+    <ClInclude Include="Enemy1.h" />
     <ClInclude Include="Intro.h" />
     <ClInclude Include="LevelUP.h" />
     <ClInclude Include="myIntroScene.h" />
-    <ClInclude Include="TitleSceneUI.h" />
-    <ClInclude Include="CharactorSelect.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="CommonInclude.h" />
     <ClInclude Include="Krochi.h" />
@@ -155,6 +155,7 @@
     <ClInclude Include="myScene.h" />
     <ClInclude Include="mySceneManager.h" />
     <ClInclude Include="myTitleScene.h" />
+    <ClInclude Include="TitleUI.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Title.h" />
     <ClInclude Include="myTransform.h" />
@@ -164,11 +165,11 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CharacterSelect.cpp" />
+    <ClCompile Include="Enemy1.cpp" />
     <ClCompile Include="Intro.cpp" />
     <ClCompile Include="LevelUP.cpp" />
     <ClCompile Include="myIntroScene.cpp" />
-    <ClCompile Include="TitleSceneUI.cpp" />
-    <ClCompile Include="CharactorSelect.cpp" />
     <ClCompile Include="Krochi.cpp" />
     <ClCompile Include="myEntity.cpp" />
     <ClCompile Include="Field.cpp" />
@@ -191,6 +192,7 @@
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="Title.cpp" />
     <ClCompile Include="myTransform.cpp" />
+    <ClCompile Include="TitleUI.cpp" />
     <ClCompile Include="Treasure.cpp" />
   </ItemGroup>
   <ItemGroup>

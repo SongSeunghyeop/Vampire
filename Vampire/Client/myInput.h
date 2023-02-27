@@ -7,8 +7,8 @@ namespace my
 	{
 		Q, W, E, R, T, Y, U, I, O, P,
 		A, S, D, F, G, H, J, K, L,
-		Z, X, C, V, B, N, M, ESC,
-		END,
+		Z, X, C, V, B, N, M, 
+		ESC, ENTER, SPACE, END,
 	};
 
 	enum class eKeyState
