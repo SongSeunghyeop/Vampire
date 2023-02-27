@@ -15,9 +15,12 @@ namespace my
 		virtual void Update();
 		virtual void Render(HDC hdc);
 		virtual void Release();
+		
+		static Vector2 getPlayerPos() { return Krochi::Playerpos; }
 
 	private:
-		Image* playerImg; 
+		Image* playerImg;
+		static Vector2 Playerpos;
 	};
 }
 

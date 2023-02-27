@@ -1,7 +1,7 @@
 #pragma once
 #include "MyGameObject.h"
 #include "myImage.h" 
-#include "myTransform.h"
+#include "Krochi.h"
 
 namespace my
 {
@@ -19,6 +19,7 @@ namespace my
 	private:
 		Image* Enemy1_Img;
 		Vector2 EnemyPos;
+		Vector2 Ppos;
 	};
 }
 

@@ -1,7 +1,6 @@
 #include "myResourceManager.h"
 #include "Enemy1.h"
 #include "Time.h"
-#include "myInput.h"
 #include "myImage.h"
 
 #pragma comment(lib, "msimg32.lib")
@@ -19,20 +18,28 @@ namespace my
 	void Enemy1::Initialize()
 	{
 		Enemy1_Img = ResourceManager::Load<Image>(L"Enemy1", L"..\\Resources\\Enemy1.bmp");
-
 		GameObject::Initialize();
 	}
 	void Enemy1::Update()
 	{
 		GameObject::Update();
 
+		Ppos = Krochi::getPlayerPos();
+
 		//Transform* trans = GetComponent<Transform>();
 
 		//trans->setPos(1000,500);
 		//Vector2 pos = trans->getPos();
 		
-		EnemyPos.x -= 50.0f * Time::getDeltaTime();
-		EnemyPos.y -= 50.0f * Time::getDeltaTime();
+		if(EnemyPos.x > Ppos.x)
+			EnemyPos.x -= 30.0f * Time::getDeltaTime();
+		else if (EnemyPos.x < Ppos.x)
+			EnemyPos.x += 30.0f * Time::getDeltaTime();
+
+		if (EnemyPos.y > Ppos.y)
+			EnemyPos.y -= 50.0f * Time::getDeltaTime();
+		else if (EnemyPos.y < Ppos.y)
+			EnemyPos.y += 50.0f * Time::getDeltaTime();
 
 		//trans->setPos(pos.x, pos.y);
 	}
