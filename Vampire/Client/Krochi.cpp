@@ -25,7 +25,8 @@ namespace my
 
 		GameObject::Initialize();
 		Transform* trans = GetComponent<Transform>();
-		trans->setPos((winRect.right - winRect.left) / 2 - 68, (winRect.bottom - winRect.top) / 2 - 70);
+		winPos = Application::getWindowPos();
+		trans->setPos((winPos.x) / 2 - 68, (winPos.y) / 2 - 70);
 		Krochi::Playerpos = trans->getPos();
 	}
 	void Krochi::Update()

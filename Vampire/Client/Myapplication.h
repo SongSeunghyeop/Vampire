@@ -20,15 +20,14 @@ namespace my
 		HDC		GetHdc() { return mhdc; }
 
 	public:
-		Vector2 mPos;
-
-		static RECT getRect() 
+		static Vector2 getWindowPos() 
 		{
-			return rect;
+			return WindowPos;
 		}
+
 	private:
-		static RECT rect;
-		int Rwidth, Rheight;
+		RECT rect;
+		static Vector2 WindowPos;
 
 		HWND mhwnd;
 		HDC mhdc; // 원본(구현용)

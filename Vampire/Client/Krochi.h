@@ -6,6 +6,7 @@
 
 namespace my
 {
+
 	class Krochi : public GameObject
 	{
 	public:
@@ -22,7 +23,7 @@ namespace my
 	private:
 		Image* playerImg;
 		static Vector2 Playerpos;
-		RECT winRect = Application::getRect();
+		Vector2 winPos;
 		float motionTime;
 		int motion;
 	};
