@@ -2,6 +2,7 @@
 #include "myScene.h"
 #include "Krochi.h"
 #include "Enemy1.h"
+#include "EnemyPool.h"
 #include "Field.h"
 
 namespace my
@@ -24,5 +25,6 @@ namespace my
 		Field* field;
 		Krochi* krochi;
 		Enemy1* enemy1;
+		EnemyPool* enemyPool;
 	};
 }

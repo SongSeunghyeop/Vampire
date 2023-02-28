@@ -130,8 +130,11 @@
   <ItemGroup>
     <ClInclude Include="CharacterSelect.h" />
     <ClInclude Include="Enemy1.h" />
+    <ClInclude Include="EnemyPool.h" />
     <ClInclude Include="Intro.h" />
     <ClInclude Include="LevelUP.h" />
+    <ClInclude Include="myAnimation.h" />
+    <ClInclude Include="myAnimator.h" />
     <ClInclude Include="myIntroScene.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="CommonInclude.h" />
@@ -167,8 +170,11 @@
   <ItemGroup>
     <ClCompile Include="CharacterSelect.cpp" />
     <ClCompile Include="Enemy1.cpp" />
+    <ClCompile Include="EnemyPool.cpp" />
     <ClCompile Include="Intro.cpp" />
     <ClCompile Include="LevelUP.cpp" />
+    <ClCompile Include="myAnimation.cpp" />
+    <ClCompile Include="myAnimator.cpp" />
     <ClCompile Include="myIntroScene.cpp" />
     <ClCompile Include="Krochi.cpp" />
     <ClCompile Include="myEntity.cpp" />

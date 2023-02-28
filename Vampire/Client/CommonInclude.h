@@ -9,3 +9,6 @@
 #include <malloc.h>
 #include <memory.h>
 #include <tchar.h>
+#include <cstdlib>
+#include <ctime> 
+#include <functional>

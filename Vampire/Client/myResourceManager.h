@@ -24,7 +24,7 @@ namespace my
 		{
 			T* resource = ResourceManager::Find<T>(key);
 
-			if (resource != NULL) // 리소스가 배열에 없었다면
+			if (resource != NULL) // 리소스가 배열에 이미 있었다면
 				return resource;
 
 			resource = new T();

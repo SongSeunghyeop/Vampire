@@ -91,6 +91,9 @@
     <Filter Include="Engine\GameObject\Objects\Enemies">
       <UniqueIdentifier>{acfeebc9-6881-4422-b14c-73a44c3b92b8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\GameObject\Objects\EnemyPool">
+      <UniqueIdentifier>{37ccc47c-1fbd-4827-8ae2-f3f6c7b0dc09}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -198,6 +201,15 @@
     <ClInclude Include="Enemy1.h">
       <Filter>Engine\GameObject\Objects\Enemies</Filter>
     </ClInclude>
+    <ClInclude Include="EnemyPool.h">
+      <Filter>Engine\GameObject\Objects\EnemyPool</Filter>
+    </ClInclude>
+    <ClInclude Include="myAnimation.h">
+      <Filter>Engine\Component\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="myAnimator.h">
+      <Filter>Engine\Component\Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -286,6 +298,15 @@
     </ClCompile>
     <ClCompile Include="Enemy1.cpp">
       <Filter>Engine\GameObject\Objects\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyPool.cpp">
+      <Filter>Engine\GameObject\Objects\EnemyPool</Filter>
+    </ClCompile>
+    <ClCompile Include="myAnimation.cpp">
+      <Filter>Engine\Component\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="myAnimator.cpp">
+      <Filter>Engine\Component\Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

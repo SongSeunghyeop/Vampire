@@ -1,5 +1,6 @@
 #pragma once
 #include "MyGameObject.h"
+#include "MyApplication.h"
 #include "myImage.h" 
 #include "myTransform.h"
 
@@ -21,6 +22,9 @@ namespace my
 	private:
 		Image* playerImg;
 		static Vector2 Playerpos;
+		RECT winRect = Application::getRect();
+		float motionTime;
+		int motion;
 	};
 }
 

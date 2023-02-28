@@ -21,7 +21,15 @@ namespace my
 
 	public:
 		Vector2 mPos;
+
+		static RECT getRect() 
+		{
+			return rect;
+		}
 	private:
+		static RECT rect;
+		int Rwidth, Rheight;
+
 		HWND mhwnd;
 		HDC mhdc; // 원본(구현용)
 		HBITMAP backBuffer; 

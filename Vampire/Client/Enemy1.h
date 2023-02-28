@@ -16,6 +16,8 @@ namespace my
 		virtual void Render(HDC hdc);
 		virtual void Release();
 
+		Vector2 getRandomPos();
+
 	private:
 		Image* Enemy1_Img;
 		Vector2 EnemyPos;
