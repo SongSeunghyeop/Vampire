@@ -3,6 +3,8 @@
 
 namespace my 
 {
+	class GameObject;
+
 	class Component : public Entity
 	{
 	public:
@@ -15,7 +17,10 @@ namespace my
 		virtual void Release();
 
 		eComponentType getType() { return myType; }
+		void setOwner(GameObject* owner) { myOwner = owner;  }
+		GameObject* getOwner() { return myOwner; }
 	private:
 		const eComponentType myType;
+		GameObject* myOwner;
 	};
 }

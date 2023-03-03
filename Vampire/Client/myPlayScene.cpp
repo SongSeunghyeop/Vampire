@@ -7,7 +7,7 @@ namespace my
 {
 	PlayScene::PlayScene()
 	{
-		enemyPool = new EnemyPool(20); // 100개의 적 객체를 미리 생성
+		enemyPool = new EnemyPool(30); // 100개의 적 객체를 미리 생성
 																  // EnemyPool 클래스에서 가지고 있는 enemy배열에 100개의 객체를 동적 할당
 	}
 	PlayScene::~PlayScene()
@@ -24,7 +24,7 @@ namespace my
 		AddGameObj(field, eLayerType::FIELD);
 		AddGameObj(krochi, eLayerType::PLAYER);
 
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 30; i++) {
 			Enemy1* enemy1 = enemyPool->GetEnemy(); // 에너미 풀에 이미 동적할당되어져있는 100개의 에너미 객체로 하나씩 for문을 돌면서 초기화
 			                                                                           // 그러니까 에너미 풀에 만들고자 하는 에너미 객체를 미리 만들어놓고 하나씩 대입시켜줌
 			AddGameObj(enemy1, eLayerType::ENEMY);
@@ -47,8 +47,8 @@ namespace my
 	}
 	void PlayScene::Release()
 	{
-		delete enemyPool; // delete 에너미 풀을 하면 동적 할당한 에너미 객체들이 전부 사라짐
 		Scene::Release();
+		delete enemyPool; // delete 에너미 풀을 하면 동적 할당한 에너미 객체들이 전부 사라짐
 	}
 	void PlayScene::OnEnter()
 	{

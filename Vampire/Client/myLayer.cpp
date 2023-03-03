@@ -8,7 +8,11 @@ namespace my
 	}
 	Layer::~Layer()
 	{
-
+		for (GameObject* gameObj : mGameobj)
+		{
+			delete gameObj;
+			gameObj = nullptr;
+		}
 	}
 
 	void Layer::Initialize()

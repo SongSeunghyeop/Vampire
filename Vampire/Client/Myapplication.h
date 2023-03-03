@@ -20,18 +20,19 @@ namespace my
 		HDC		GetHdc() { return mhdc; }
 
 	public:
-		static Vector2 getWindowPos() 
+		Vector2 getWindowPos() 
 		{
 			return WindowPos;
 		}
 
 	private:
 		RECT rect;
-		static Vector2 WindowPos;
+		Vector2 WindowPos;
 
 		HWND mhwnd;
 		HDC mhdc; // 원본(구현용)
 		HBITMAP backBuffer; 
 		HDC backHdc; // 메모리상의 백버퍼 (보이지 않음)
+		Vector2 mPos;
 	};
 }

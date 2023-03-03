@@ -1,30 +1,30 @@
 #include "myResourceManager.h"
-#include "menu.h"
+#include "InGameMenu.h"
 #include "Time.h"
 #include "myInput.h"
 #include "myImage.h"
 
 namespace my
 {
-	Menu::Menu()
+	InGameMenu::InGameMenu()
 	{
 
 	}
-	Menu::~Menu()
+	InGameMenu::~InGameMenu()
 	{
 
 	}
-	void Menu::Initialize()
+	void InGameMenu::Initialize()
 	{
 		menuImg = ResourceManager::Load<Image>(L"Menu", L"..\\Resources\\menu.bmp");
 
 		GameObject::Initialize();
 	}
-	void Menu::Update()
+	void InGameMenu::Update()
 	{
 		GameObject::Update();
 	}
-	void Menu::Render(HDC hdc)
+	void InGameMenu::Render(HDC hdc)
 	{
 		GameObject::Render(hdc);
 
@@ -33,7 +33,7 @@ namespace my
 
 		StretchBlt(hdc, 200, 100, 1100, 550, menuImg->GetHdc(), 0, 0, menuImg->GetWidth(), menuImg->GetHeight(), SRCCOPY);
 	}
-	void Menu::Release()
+	void InGameMenu::Release()
 	{
 		GameObject::Release();
 	}

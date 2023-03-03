@@ -135,6 +135,7 @@
     <ClInclude Include="LevelUP.h" />
     <ClInclude Include="myAnimation.h" />
     <ClInclude Include="myAnimator.h" />
+    <ClInclude Include="myCollider.h" />
     <ClInclude Include="myIntroScene.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="CommonInclude.h" />
@@ -144,7 +145,7 @@
     <ClInclude Include="Field.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Math.h" />
-    <ClInclude Include="menu.h" />
+    <ClInclude Include="InGameMenu.h" />
     <ClInclude Include="myApplication.h" />
     <ClInclude Include="myComponent.h" />
     <ClInclude Include="myGameObject.h" />
@@ -175,13 +176,14 @@
     <ClCompile Include="LevelUP.cpp" />
     <ClCompile Include="myAnimation.cpp" />
     <ClCompile Include="myAnimator.cpp" />
+    <ClCompile Include="myCollider.cpp" />
     <ClCompile Include="myIntroScene.cpp" />
     <ClCompile Include="Krochi.cpp" />
     <ClCompile Include="myEntity.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Math.cpp" />
-    <ClCompile Include="menu.cpp" />
+    <ClCompile Include="InGameMenu.cpp" />
     <ClCompile Include="myApplication.cpp" />
     <ClCompile Include="myComponent.cpp" />
     <ClCompile Include="myGameObject.cpp" />

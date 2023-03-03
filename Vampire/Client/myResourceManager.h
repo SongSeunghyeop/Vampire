@@ -35,10 +35,17 @@ namespace my
 				return NULL;
 			}
 
-			resource->setInfo(key, path);
+			resource->setKey(key);
+			resource->setPath(path);
+
 			mResources.insert(make_pair(key, resource));
 
 			return dynamic_cast<T*>(resource);
+		}
+		template <typename T>
+		static void Insert(const std::wstring& key, T* resource)
+		{
+			mResources.insert(std::make_pair(key, resource));
 		}
 
 		static void Release()

@@ -1,10 +1,38 @@
 #include "myImage.h"
 #include "myApplication.h"
+#include "myResourceManager.h"
 
 extern my::Application myapplication;
 
 namespace my
 {
+	Image* Image::Create(const std::wstring& name, UINT widht, UINT height)
+	{
+		if (widht == 0 || height == 0)
+			return nullptr;
+
+		Image* image = ResourceManager::Find<Image>(name);
+		if (image != nullptr)
+			return image;
+
+		image = new Image();
+		HDC mainHdc = myapplication.GetHdc();
+
+		image->mBitmap = CreateCompatibleBitmap(mainHdc, widht, height);
+		image->mHdc = CreateCompatibleDC(mainHdc);
+
+		HBITMAP oldBitmap = (HBITMAP)SelectObject(image->mHdc, image->mBitmap);
+		DeleteObject(oldBitmap);
+
+		image->mWidth = widht;
+		image->mHeight = height;
+
+		image->setKey(name);
+		ResourceManager::Insert<Image>(name, image);
+
+		return image;
+	}
+
 	Image::Image()
 		: mBitmap(NULL)
 		, mHdc(NULL)

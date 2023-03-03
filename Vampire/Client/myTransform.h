@@ -14,14 +14,14 @@ namespace my
 		virtual void Render(HDC hdc);
 		virtual void Release();
 
-		void setPos(float x, float y);
-		void setSize(float x, float y);
-
+		void setPos(Vector2 pos);
+		void setScale(Vector2 scale);
 		Vector2 getPos();
-		Vector2 getSize();
+		Vector2 getScale();
+
 	private:
 		Vector2 mPos;
-		Vector2 mSize;
+		Vector2 mScale;
 	};
 }
 

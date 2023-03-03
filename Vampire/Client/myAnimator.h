@@ -1,6 +1,8 @@
+#pragma once
 #include "myComponent.h"
 #include "myAnimation.h"
 #include "myImage.h"
+#include "myTransform.h"
 
 namespace my
 {
@@ -16,45 +18,54 @@ namespace my
 			void operator()()
 			{
 				if (mEvent)
-				{
 					mEvent();
-				}
 			}
+
+			//void(*name)(int, int);
 			std::function<void()> mEvent;
 		};
 
-		struct EventFunc
+		struct Events
 		{
 			Event mStartEvent;
 			Event mCompleteEvent;
 			Event mEndEvent;
+
+			//mStartEvent();
+			//mStartEvent = test;
 		};
 
 		Animator();
 		~Animator();
 
-		virtual void Initialize();
-		virtual void Update();
-		virtual void Render(HDC hdc);
-		virtual void Release();
+		virtual void Initialize() override;
+		virtual void Update() override;
+		virtual void Render(HDC hdc) override;
+		virtual void Release() override;
 
-		void CreateAnimation(); // 하나의 파일의 모든 애니메이션
-		void CreateAnimations(); // 애니메이션이 여러 파일로 나눠져있음
+		//완성된 스프라이트 시트를 지정해서 애니메이션 제작하는 함수
+		void CreateAnimation(const std::wstring& name
+			, Image* sheet
+			, Vector2 leftTop
+			, UINT coulmn, UINT row, UINT spriteLength
+			, Vector2 offset, float duration);
 
-		Animation* FindAnimtion(const std::wstring& name);
+		// 폴더에 들어있는 스프라이트들을 이용해서 애니메이션 제작해주는 함수
+		void CreateAnimations(const std::wstring& path, Vector2 offset, float duration);
+
+		Animation* FindAnimation(const std::wstring& name);
 		void Play(const std::wstring& name, bool loop);
 
-		EventFunc* FindEvent(const std::wstring& name);
-
-		std::function<void>& GetStartEvent(const std::wstring& name);
+		Events* FindEvents(const std::wstring& name);
+		/*std::function<void>& GetStartEvent(const std::wstring& name);
 		std::function<void>& GetCompleteEvent(const std::wstring& name);
-		std::function<void>& GetEndEvent(const std::wstring& name);
+		std::function<void>& GetEndEvent(const std::wstring& name);*/
 
 	private:
 		std::map<std::wstring, Animation*> mAnimations;
-		std::map<std::wstring, EventFunc*> mEvents;
-
-		Animation activeAnimation;
-		Image* mSpritesheet;
+		std::map<std::wstring, Events*> mEvents;
+		Animation* activeAnimation;
+		Image* mSpriteSheet;
+		bool mbLoop;
 	};
 }

@@ -38,6 +38,21 @@ namespace my
 			return mKeys[(UINT)kcode].Kstate;
 		}
 
+		static __forceinline bool GetKey(eKeyCode keyCode)
+		{
+			return mKeys[static_cast<UINT>(keyCode)].Kstate == eKeyState::Pressed;
+		}
+
+		static __forceinline bool GetKeyDown(eKeyCode keyCode)
+		{
+			return mKeys[static_cast<UINT>(keyCode)].Kstate == eKeyState::Down;
+		}
+
+		static __forceinline bool GetKeyUp(eKeyCode keyCode)
+		{
+			return mKeys[static_cast<UINT>(keyCode)].Kstate == eKeyState::Up;
+		}
+
 	private:
 		static std::vector<Key> mKeys;
 	};

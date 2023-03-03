@@ -15,8 +15,8 @@ namespace my
 			initialized = true;
 		}
 		Vector2 randomPos;
-		randomPos.x = rand() % 1100 + 301; // 1부터 1000 사이의 랜덤한 정수 생성
-		randomPos.y = rand() % 750 + 1;// 1부터 1000 사이의 랜덤한 정수 생성
+		randomPos.x = rand() % 1200 + 301; // 1부터 1000 사이의 랜덤한 정수 생성
+		randomPos.y = rand() % 650 + 101;// 1부터 1000 사이의 랜덤한 정수 생성
 		return randomPos;
 	}
 
@@ -41,13 +41,13 @@ namespace my
 
 		GameObject::Update();
 
-		if(EnemyPos.x > Ppos.x)
+		if(EnemyPos.x > Ppos.x )
 			EnemyPos.x -= 40.0f * Time::getDeltaTime();
-		else if (EnemyPos.x < Ppos.x)
+		if (EnemyPos.x < Ppos.x)
 			EnemyPos.x += 40.0f * Time::getDeltaTime();
 		if (EnemyPos.y > Ppos.y)
 			EnemyPos.y -= 40.0f * Time::getDeltaTime();
-		else if (EnemyPos.y < Ppos.y)
+		if (EnemyPos.y < Ppos.y)
 			EnemyPos.y += 40.0f * Time::getDeltaTime();
 
 	}

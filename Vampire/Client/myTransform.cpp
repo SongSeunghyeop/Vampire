@@ -4,6 +4,8 @@ namespace my
 {
 	Transform::Transform()
 		:Component(eComponentType::TRANSFORM)
+		, mPos(Vector2::Zero)
+		, mScale(Vector2::One)
 	{
 	}
 	Transform::~Transform()
@@ -21,22 +23,21 @@ namespace my
 	void Transform::Release()
 	{
 	}
-	void Transform::setPos(float x, float y)
+	void Transform::setPos(Vector2 pos)
 	{
-		this->mPos.x = x;
-		this->mPos.y = y;
+		mPos = pos;
 	}
-	void Transform::setSize(float x, float y)
+	void Transform::setScale(Vector2 scale)
 	{
-		this->mPos.x = x;
-		this->mPos.y = y;
+		this->mScale.x = scale.x;
+		this->mScale.y = scale.y;
 	}
 	Vector2 Transform::getPos()
 	{
 		return mPos;
 	}
-	Vector2 Transform::getSize()
+	Vector2 Transform::getScale()
 	{
-		return mSize;
+		return mScale;
 	}
 }

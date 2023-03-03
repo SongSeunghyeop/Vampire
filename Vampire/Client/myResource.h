@@ -15,10 +15,8 @@ namespace my
 		const std::wstring& GetKey() { return fileKey; } //키 반환
 		const std::wstring& GetPath() { return filePath; } // 경로 반환
 
-		void setInfo(const std::wstring& key, const std::wstring& path) // 키와 경로 설정
-		{ 
-			this->fileKey = key; this->filePath = path;  
-		};
+		void setKey(const std::wstring& key) { fileKey = key; }
+		void setPath(const std::wstring& path) { filePath = path; }
 
 	private:
 		//map에서의 리소스 키, 경로

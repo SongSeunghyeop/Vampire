@@ -94,6 +94,12 @@
     <Filter Include="Engine\GameObject\Objects\EnemyPool">
       <UniqueIdentifier>{37ccc47c-1fbd-4827-8ae2-f3f6c7b0dc09}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\GameObject\Objects\Fields">
+      <UniqueIdentifier>{16786cdd-6f6d-43c2-8e19-e562845841f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject\Objects\UI">
+      <UniqueIdentifier>{aedc2759-9911-4a1f-b59f-a959d2281dea}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -162,14 +168,8 @@
     <ClInclude Include="myGameObject.h">
       <Filter>Engine\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="Field.h">
-      <Filter>Engine\GameObject\Objects</Filter>
-    </ClInclude>
     <ClInclude Include="myTransform.h">
       <Filter>Engine\Component\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="menu.h">
-      <Filter>Engine\GameObject\Objects</Filter>
     </ClInclude>
     <ClInclude Include="InGameOption.h">
       <Filter>Engine\Scene\InGameUI</Filter>
@@ -189,9 +189,6 @@
     <ClInclude Include="TitleUI.h">
       <Filter>Engine\Scene\TitleScene\TitleUI</Filter>
     </ClInclude>
-    <ClInclude Include="CharacterSelect.h">
-      <Filter>Engine\GameObject\Objects\Intro &amp; Title</Filter>
-    </ClInclude>
     <ClInclude Include="Krochi.h">
       <Filter>Engine\GameObject\Objects\Players</Filter>
     </ClInclude>
@@ -208,6 +205,18 @@
       <Filter>Engine\Component\Components</Filter>
     </ClInclude>
     <ClInclude Include="myAnimator.h">
+      <Filter>Engine\Component\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Field.h">
+      <Filter>Engine\GameObject\Objects\Fields</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterSelect.h">
+      <Filter>Engine\GameObject\Objects\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="InGameMenu.h">
+      <Filter>Engine\GameObject\Objects\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="myCollider.h">
       <Filter>Engine\Component\Components</Filter>
     </ClInclude>
   </ItemGroup>
@@ -260,14 +269,8 @@
     <ClCompile Include="myGameObject.cpp">
       <Filter>Engine\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="Field.cpp">
-      <Filter>Engine\GameObject\Objects</Filter>
-    </ClCompile>
     <ClCompile Include="myTransform.cpp">
       <Filter>Engine\Component\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="menu.cpp">
-      <Filter>Engine\GameObject\Objects</Filter>
     </ClCompile>
     <ClCompile Include="InGameOption.cpp">
       <Filter>Engine\Scene\InGameUI</Filter>
@@ -287,9 +290,6 @@
     <ClCompile Include="TitleUI.cpp">
       <Filter>Engine\Scene\TitleScene\TitleUI</Filter>
     </ClCompile>
-    <ClCompile Include="CharacterSelect.cpp">
-      <Filter>Engine\GameObject\Objects\Intro &amp; Title</Filter>
-    </ClCompile>
     <ClCompile Include="Krochi.cpp">
       <Filter>Engine\GameObject\Objects\Players</Filter>
     </ClCompile>
@@ -306,6 +306,18 @@
       <Filter>Engine\Component\Components</Filter>
     </ClCompile>
     <ClCompile Include="myAnimator.cpp">
+      <Filter>Engine\Component\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Field.cpp">
+      <Filter>Engine\GameObject\Objects\Fields</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterSelect.cpp">
+      <Filter>Engine\GameObject\Objects\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="InGameMenu.cpp">
+      <Filter>Engine\GameObject\Objects\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="myCollider.cpp">
       <Filter>Engine\Component\Components</Filter>
     </ClCompile>
   </ItemGroup>

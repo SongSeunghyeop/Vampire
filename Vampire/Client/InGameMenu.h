@@ -5,11 +5,11 @@
 
 namespace my
 {
-	class Menu : public GameObject
+	class InGameMenu : public GameObject
 	{
 	public:
-		Menu();
-		~Menu();
+		InGameMenu();
+		~InGameMenu();
 
 		virtual void Initialize();
 		virtual void Update();

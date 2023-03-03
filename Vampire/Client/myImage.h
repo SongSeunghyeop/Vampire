@@ -6,6 +6,7 @@ namespace my
 	class Image : public Resource // 이미지리소스
 	{
 	public:
+		static Image* Create(const std::wstring& name, UINT widht, UINT height);
 		Image();
 		~Image();
 

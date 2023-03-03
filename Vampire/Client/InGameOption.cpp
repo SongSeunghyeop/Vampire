@@ -1,7 +1,7 @@
 #include "InGameOption.h"
 #include "myScene.h"
 #include "mySceneManager.h"
-#include "Menu.h"
+#include "InGameMenu.h"
 
 namespace my
 {
@@ -15,7 +15,7 @@ namespace my
 	}
 	void InGameOption::Initialize()
 	{
-		Menu* menu = new Menu();
+		InGameMenu* menu = new InGameMenu();
 		menu->SetName(L"Title");
 		AddGameObj(menu, eLayerType::UI);
 		Scene::Initialize();
