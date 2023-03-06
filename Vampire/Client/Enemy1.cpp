@@ -6,7 +6,7 @@
 #pragma comment(lib, "msimg32.lib")
 namespace my
 {
-	Vector2 Enemy1::getRandomPos()
+	int Enemy1::getRandomPos()
 	{
 		static bool initialized = false;
 
@@ -14,17 +14,13 @@ namespace my
 			srand(time(NULL)); // 처음 한 번만 호출
 			initialized = true;
 		}
-		Vector2 randomPos;
-		randomPos.x = rand() % 1200 + 301; // 1부터 1000 사이의 랜덤한 정수 생성
-		randomPos.y = rand() % 650 + 101;// 1부터 1000 사이의 랜덤한 정수 생성
+		int randomPos =  rand() % 1500; // 1부터 1000 사이의 랜덤한 정수 생성
 		return randomPos;
 	}
 
 	Enemy1::Enemy1()
 	{
-		Vector2 rand = getRandomPos();
 
-		EnemyPos = rand;
 	}
 	Enemy1::~Enemy1()
 	{
@@ -32,30 +28,58 @@ namespace my
 	}
 	void Enemy1::Initialize()
 	{
-		Enemy1_Img = ResourceManager::Load<Image>(L"Enemy1", L"..\\Resources\\Enemy1.bmp");
+		EnemyR_Img = ResourceManager::Load<Image>(L"EnemyR", L"..\\Resources\\Enemy_R.bmp");
+		EnemyL_Img = ResourceManager::Load<Image>(L"EnemyL", L"..\\Resources\\Enemy_L.bmp");
+
+		EnemyAnimator = AddComponent<Animator>();
+		EnemyAnimator->CreateAnimation(L"RightWalk",EnemyR_Img,Vector2::Zero,1,1,1,Vector2::Zero,0.3f, 254, 0, 255);
+		EnemyAnimator->CreateAnimation(L"LeftWalk",EnemyL_Img,Vector2::Zero,1,1,1,Vector2::Zero,0.3f, 254, 0, 255);
+
+		Transform* tr = GetComponent<Transform>();
+		EnemyPos.x = Enemy1::getRandomPos();
+		EnemyPos.y = -10;
+		tr->setPos(EnemyPos);
+		Vector2 Enemy_Scale(0.8f, 0.8f);
+		tr->setScale(Enemy_Scale);
+
+		Collider* collider = AddComponent<Collider>();
+		collider->setCenter(Vector2(-28, -64));
+		collider->setSize(Vector2(43, 50));
+
 		GameObject::Initialize();
 	}
 	void Enemy1::Update()
 	{
+		Transform* tr = GetComponent<Transform>();
+		Collider* collider = AddComponent<Collider>();
+		EnemyPos = tr->getPos();
 		Ppos = Krochi::getPlayerPos();
 
-		GameObject::Update();
-
-		if(EnemyPos.x > Ppos.x )
+		if (EnemyPos.x > Ppos.x + 20)
+		{
 			EnemyPos.x -= 40.0f * Time::getDeltaTime();
-		if (EnemyPos.x < Ppos.x)
+			EnemyAnimator->Play(L"LeftWalk", true);
+		}
+		if (EnemyPos.x < Ppos.x + 20)
+		{
 			EnemyPos.x += 40.0f * Time::getDeltaTime();
-		if (EnemyPos.y > Ppos.y)
+			EnemyAnimator->Play(L"RightWalk", true);
+		}
+		if (EnemyPos.y > Ppos.y + 35)
+		{
 			EnemyPos.y -= 40.0f * Time::getDeltaTime();
-		if (EnemyPos.y < Ppos.y)
+		}
+		if (EnemyPos.y < Ppos.y + 35)
+		{
 			EnemyPos.y += 40.0f * Time::getDeltaTime();
+		}
+		tr->setPos(EnemyPos);
 
+		GameObject::Update();
 	}
 	void Enemy1::Render(HDC hdc)
 	{
 		GameObject::Render(hdc);
-
-		TransparentBlt(hdc, EnemyPos.x, EnemyPos.y, 68,68, Enemy1_Img->GetHdc(), 0, 0, Enemy1_Img->GetWidth(), Enemy1_Img->GetHeight(), RGB(32, 32, 32));
 	}
 	void Enemy1::Release()
 	{

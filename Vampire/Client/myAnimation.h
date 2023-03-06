@@ -1,6 +1,7 @@
 #pragma once
 #include "myEntity.h"
 
+
 namespace my
 {
 	class Image;
@@ -31,18 +32,19 @@ namespace my
 		void Initialize();
 		void Update();
 		void Render(HDC hdc);
-		void Create(Image* sheet, Vector2 leftTop, UINT coulmn, UINT row, UINT spriteLength, Vector2 offset, float duration);
+		void Create(Image* sheet, Vector2 leftTop, UINT coulmn, UINT row, UINT spriteLength, Vector2 offset, float duration, int r, int g, int b);
 		void Reset();
 
 		bool IsComplete() { return mbComplete; }
-		void SetAnimator(Animator* animator) { mAnimator = animator; }
+		void setAnimator(Animator* animator) { mAnimator = animator; }
 
 	private:
 		Animator* mAnimator;
 		Image* mSheetImage;
-		std::vector<Sprite> mSpriteSheet;
+		std::vector<Sprite> mSpriteSheets;
 		float mTime;
 		bool mbComplete;
 		int mSpriteIndex;
+		MyRGB delRGB;
 	};
 }

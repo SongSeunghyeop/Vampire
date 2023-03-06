@@ -7,9 +7,9 @@ namespace my
 	Collider::Collider()
 		: Component(eComponentType::COLLIDER)
 		, mCenter(Vector2::Zero)
-		, mScale(Vector2::One)
 		, mPos(Vector2::Zero)
 		, mSize(50.0f, 60.0f)
+		,mRgb(0,255,0)
 	{
 
 	}
@@ -28,7 +28,7 @@ namespace my
 
 	void Collider::Render(HDC hdc)
 	{
-		HPEN pen = CreatePen(BS_SOLID, 2, RGB(0, 255, 0));
+		HPEN pen = CreatePen(BS_SOLID, 2, RGB(mRgb.r, mRgb.g, mRgb.b));
 		HPEN oldPen = (HPEN)SelectObject(hdc, pen);
 		HBRUSH brush = (HBRUSH)GetStockObject(NULL_BRUSH);
 		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, brush);
@@ -41,5 +41,7 @@ namespace my
 	}
 	void Collider::Release()
 	{
+
 	}
+
 }

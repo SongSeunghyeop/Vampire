@@ -2,6 +2,17 @@
 
 namespace my
 {
+	class MyRGB
+	{
+	public:
+		MyRGB(int r, int g, int b)
+		{
+			this->r = r;
+			this->g = g;
+			this->b = b;
+		};
+		int r, g, b;
+	};
 	struct Vector2 {
 
 		static Vector2 Up;
@@ -27,7 +38,6 @@ namespace my
 
 			return temp;
 		}
-
 		Vector2 operator-(const Vector2& other)
 		{
 			Vector2 temp;
@@ -36,13 +46,11 @@ namespace my
 
 			return temp;
 		}
-
 		void operator+=(const Vector2& other)
 		{
 			x += other.x;
 			y += other.y;
 		}
-
 		void operator-=(const Vector2& other)
 		{
 			x -= other.x;

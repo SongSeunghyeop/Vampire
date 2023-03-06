@@ -15,6 +15,7 @@ namespace my
 		GameObject();
 		virtual ~GameObject();
 
+
 		template <typename T>
 		T* AddComponent()
 		{
@@ -34,6 +35,7 @@ namespace my
 			}
 				return NULL;
 		}
+
 	private:
 		std::vector<Component*> mComponents;
 	};

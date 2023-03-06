@@ -100,6 +100,9 @@
     <Filter Include="Engine\GameObject\Objects\UI">
       <UniqueIdentifier>{aedc2759-9911-4a1f-b59f-a959d2281dea}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Component\Components\Collider">
+      <UniqueIdentifier>{2f8eb23a-14f0-4bc5-9873-1fd6b0e79112}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -216,8 +219,17 @@
     <ClInclude Include="InGameMenu.h">
       <Filter>Engine\GameObject\Objects\UI</Filter>
     </ClInclude>
+    <ClInclude Include="Krochi_after.h">
+      <Filter>Engine\GameObject\Objects\Players</Filter>
+    </ClInclude>
+    <ClInclude Include="Krochi_after2.h">
+      <Filter>Engine\GameObject\Objects\Players</Filter>
+    </ClInclude>
     <ClInclude Include="myCollider.h">
-      <Filter>Engine\Component\Components</Filter>
+      <Filter>Engine\Component\Components\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="myCollisionManager.h">
+      <Filter>Engine\Component\Components\Collider</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -317,8 +329,17 @@
     <ClCompile Include="InGameMenu.cpp">
       <Filter>Engine\GameObject\Objects\UI</Filter>
     </ClCompile>
+    <ClCompile Include="Krochi_after.cpp">
+      <Filter>Engine\GameObject\Objects\Players</Filter>
+    </ClCompile>
+    <ClCompile Include="Krochi_after2.cpp">
+      <Filter>Engine\GameObject\Objects\Players</Filter>
+    </ClCompile>
     <ClCompile Include="myCollider.cpp">
-      <Filter>Engine\Component\Components</Filter>
+      <Filter>Engine\Component\Components\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="myCollisionManager.cpp">
+      <Filter>Engine\Component\Components\Collider</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

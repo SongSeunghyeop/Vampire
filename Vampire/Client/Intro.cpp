@@ -35,15 +35,16 @@ namespace my
 		Rectangle(hdc, -1, -1, 3000, 1500);
 		HBRUSH oldbrush = (HBRUSH)SelectObject(hdc, black);
 		DeleteObject(oldbrush);
-		StretchBlt(hdc, 120, 0, 1260, 750, titleImg->GetHdc(), 0, 0, titleImg->GetWidth(), titleImg->GetHeight(), SRCCOPY);
+		StretchBlt(hdc, 150, 0, 1200, 750, titleImg->GetHdc(), 0, 0, 1200, 750, SRCCOPY);
 		TransparentBlt(hdc, 500, 600, 500, 60, IntroM->GetHdc(), 0, 0, IntroM->GetWidth(), IntroM->GetHeight(), RGB(0, 0, 0));
-		mSecond += 0.01f;
+		
+		mSecond += 0.15f * Time::getDeltaTime();
 
-		if (mSecond > 0.4f)
+		if (mSecond > 0.1f)
 		{
-			StretchBlt(hdc, 120, 0, 1260, 750, titleImg->GetHdc(), 0, 0, titleImg->GetWidth(), titleImg->GetHeight(), SRCCOPY);
+			StretchBlt(hdc, 150, 0, 1200, 750, titleImg->GetHdc(), 0, 0, 1200, 750, SRCCOPY);
 		}
-		if (mSecond > 0.7f)
+		if (mSecond > 0.2f)
 		{
 			mSecond = 0.00f;
 		}

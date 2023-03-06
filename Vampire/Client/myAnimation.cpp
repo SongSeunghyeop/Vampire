@@ -3,6 +3,7 @@
 #include "myImage.h"
 #include "myAnimator.h"
 #include "myGameObject.h"
+#include "myTransform.h"
 
 namespace my
 {
@@ -12,16 +13,19 @@ namespace my
         , mTime(0.0f)
         , mbComplete(false)
         , mSpriteIndex(0)
+        , delRGB(0, 0, 0)
     {
 
     }
 
     Animation::~Animation()
     {
+
     }
 
     void Animation::Initialize()
     {
+
     }
 
     void Animation::Update()
@@ -30,11 +34,11 @@ namespace my
             return;
 
         mTime += Time::getDeltaTime();
-        if (mSpriteSheet[mSpriteIndex].duration < mTime)
+        if (mSpriteSheets[mSpriteIndex].duration < mTime)
         {
             mTime = 0.0f;
 
-            if (mSpriteSheet.size() <= mSpriteIndex + 1)
+            if (mSpriteSheets.size() <= mSpriteIndex + 1)
             {
                 mbComplete = true;
             }
@@ -47,27 +51,26 @@ namespace my
 
     void Animation::Render(HDC hdc)
     {
-        Transform* tr
-            = mAnimator->getOwner()->GetComponent<Transform>();
+        Transform* tr = mAnimator->getOwner()->GetComponent<Transform>();
         Vector2 scale = tr->getScale();
         Vector2 pos = tr->getPos();
 
-        pos += mSpriteSheet[mSpriteIndex].offset;
-        pos.x -= mSpriteSheet[mSpriteIndex].size.x / 2.0f;
-        pos.y -= mSpriteSheet[mSpriteIndex].size.y;
-
+        pos += mSpriteSheets[mSpriteIndex].offset;
+        pos.x -= mSpriteSheets[mSpriteIndex].size.x / 2.0f;
+        pos.y -= mSpriteSheets[mSpriteIndex].size.y;
+ 
         TransparentBlt(hdc, pos.x, pos.y
-            , mSpriteSheet[mSpriteIndex].size.x * scale.x
-            , mSpriteSheet[mSpriteIndex].size.y * scale.y
+            , mSpriteSheets[mSpriteIndex].size.x * scale.x
+            , mSpriteSheets[mSpriteIndex].size.y * scale.y
             , mSheetImage->GetHdc()
-            , mSpriteSheet[mSpriteIndex].leftTop.x, mSpriteSheet[mSpriteIndex].leftTop.y
-            , mSpriteSheet[mSpriteIndex].size.x, mSpriteSheet[mSpriteIndex].size.y,
-            RGB(255, 0, 255));
+            , mSpriteSheets[mSpriteIndex].leftTop.x, mSpriteSheets[mSpriteIndex].leftTop.y
+            , mSpriteSheets[mSpriteIndex].size.x, mSpriteSheets[mSpriteIndex].size.y,
+            RGB(delRGB.r, delRGB.g, delRGB.b));
     }
 
     void Animation::Create(Image* sheet, Vector2 leftTop
         , UINT coulmn, UINT row, UINT spriteLength
-        , Vector2 offset, float duration)
+        , Vector2 offset, float duration, int r, int g, int b)
     {
         mSheetImage = sheet;
 
@@ -75,7 +78,7 @@ namespace my
         Vector2 size = Vector2::One;//(2.0f,2.0f)
         size.x = mSheetImage->GetWidth() / (float)coulmn;
         size.y = mSheetImage->GetHeight() / (float)row;
-
+  
         for (size_t i = 0; i < spriteLength; i++)
         {
             Sprite spriteInfo;
@@ -86,8 +89,12 @@ namespace my
             spriteInfo.offset = offset;
             spriteInfo.duration = duration;
 
-            mSpriteSheet.push_back(spriteInfo);
+            mSpriteSheets.push_back(spriteInfo);
         }
+
+        delRGB.r = r;
+        delRGB.g = g;
+        delRGB.b = b;
     }
 
     void Animation::Reset()

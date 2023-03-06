@@ -39,7 +39,7 @@ namespace my
 		Rectangle(hdc, -1, -1, 3000, 1500);
 		HBRUSH oldbrush = (HBRUSH)SelectObject(hdc, black);
 		DeleteObject(oldbrush);
-		StretchBlt(hdc, 120, 0, 1260, 750, titleImg->GetHdc(), 0, 0, titleImg->GetWidth(), titleImg->GetHeight(), SRCCOPY);
+		StretchBlt(hdc, 150, 0, 1200, 750, titleImg->GetHdc(), 0, 0, titleImg->GetWidth(), titleImg->GetHeight(), SRCCOPY);
 		TransparentBlt(hdc, 450, 80, 600, 680, SelectUI->GetHdc(), 0, 0, SelectUI->GetWidth(), SelectUI->GetHeight(), RGB(182, 185, 184));
 		TransparentBlt(hdc, 650, 5, 200, 65, money->GetHdc(), 0, 0,  money->GetWidth(), money->GetHeight(), RGB(32, 32, 32));
 		TransparentBlt(hdc, 500, 5, 100, 65, Exit->GetHdc(), 0, 0, Exit->GetWidth(), Exit->GetHeight(), RGB(182, 185, 184));

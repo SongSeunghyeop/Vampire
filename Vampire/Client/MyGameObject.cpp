@@ -17,6 +17,7 @@ namespace my
 		}
 	}
 
+
 	void GameObject::Initialize()
 	{
 		for (Component* mcomp : mComponents)

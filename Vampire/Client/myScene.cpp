@@ -4,7 +4,7 @@ namespace my
 {
 	void Scene::Initialize()
 	{
-		for (Layer& layer : mLayer)
+		for (Layer& layer : mLayers)
 		{
 			layer.Initialize();
 		}
@@ -12,7 +12,7 @@ namespace my
 
 	void Scene::Update()
 	{
-		for (Layer& layer : mLayer)
+		for (Layer& layer : mLayers)
 		{
 			layer.Update();
 		}
@@ -20,7 +20,7 @@ namespace my
 
 	void Scene::Render(HDC hdc)
 	{
-		for (Layer& layer : mLayer)
+		for (Layer& layer : mLayers)
 		{
 			layer.Render(hdc);
 		}
@@ -28,7 +28,7 @@ namespace my
 
 	void Scene::Release()
 	{
-		for (Layer& layer : mLayer)
+		for (Layer& layer : mLayers)
 		{
 			layer.Release();
 		}
@@ -43,20 +43,19 @@ namespace my
 
 	}
 
-	void Scene::AddGameObj(GameObject* obj, eLayerType Layer)
+	void Scene::AddGameObj(GameObject* obj, eLayerType layer)
 	{
-		mLayer[(UINT)Layer].AddGameObj(obj);
+		mLayers[(UINT)layer].AddGameObject(obj);
 	}
-
-	void Scene::DelGameObj(GameObject* obj, eLayerType Layer)
+	const std::vector<GameObject*>& Scene::GetGameObj(eLayerType layer)
 	{
-		mLayer[(UINT)Layer].DelGameObj(obj);
+		return mLayers[(UINT)layer].GetGameObjects();
 	}
 
 	Scene::Scene()
 	{
 		//mLayer.reserve(5);
-		mLayer.resize((UINT)eLayerType::END);
+		mLayers.resize((UINT)eLayerType::END);
 	}
 
 	Scene::~Scene()

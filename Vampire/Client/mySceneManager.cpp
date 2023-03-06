@@ -20,11 +20,11 @@ namespace my
 		mScenes[(UINT)eSceneType::Play] = new PlayScene(); 
 		mScenes[(UINT)eSceneType::InGameMenu] = new InGameOption(); 
 
-		mScenes[(UINT)eSceneType::Intro]->SetName(L"INTRO");
-		mScenes[(UINT)eSceneType::Title]->SetName(L"TITLE");
-		mScenes[(UINT)eSceneType::TitleUI]->SetName(L"TITLEUI");
-		mScenes[(UINT)eSceneType::Play]->SetName(L"PLAY");
-		mScenes[(UINT)eSceneType::InGameMenu]->SetName(L"MENU");
+		mScenes[(UINT)eSceneType::Intro]->setName(L"INTRO");
+		mScenes[(UINT)eSceneType::Title]->setName(L"TITLE");
+		mScenes[(UINT)eSceneType::TitleUI]->setName(L"TITLEUI");
+		mScenes[(UINT)eSceneType::Play]->setName(L"PLAY");
+		mScenes[(UINT)eSceneType::InGameMenu]->setName(L"MENU");
 
 		activeScene = mScenes[(UINT)eSceneType::Intro];
 

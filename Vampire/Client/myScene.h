@@ -18,12 +18,11 @@ namespace my
 		virtual void OnEnter();
 		virtual void OnExit ();
 
-		void AddGameObj(GameObject* obj, eLayerType Layer);
-		void DelGameObj(GameObject* obj, eLayerType Layer);
+		void AddGameObj(GameObject* obj, eLayerType layer);
+		const std::vector<GameObject*>& GetGameObj(eLayerType layer);
 
-		//void GotoBack(GameObject* obj, eLayerType Layer);
 	protected:
-		std::vector <Layer> mLayer;
+		std::vector <Layer> mLayers;
 	};
 }
 

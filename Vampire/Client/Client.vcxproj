@@ -132,10 +132,13 @@
     <ClInclude Include="Enemy1.h" />
     <ClInclude Include="EnemyPool.h" />
     <ClInclude Include="Intro.h" />
+    <ClInclude Include="Krochi_after.h" />
+    <ClInclude Include="Krochi_after2.h" />
     <ClInclude Include="LevelUP.h" />
     <ClInclude Include="myAnimation.h" />
     <ClInclude Include="myAnimator.h" />
     <ClInclude Include="myCollider.h" />
+    <ClInclude Include="myCollisionManager.h" />
     <ClInclude Include="myIntroScene.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="CommonInclude.h" />
@@ -173,10 +176,13 @@
     <ClCompile Include="Enemy1.cpp" />
     <ClCompile Include="EnemyPool.cpp" />
     <ClCompile Include="Intro.cpp" />
+    <ClCompile Include="Krochi_after.cpp" />
+    <ClCompile Include="Krochi_after2.cpp" />
     <ClCompile Include="LevelUP.cpp" />
     <ClCompile Include="myAnimation.cpp" />
     <ClCompile Include="myAnimator.cpp" />
     <ClCompile Include="myCollider.cpp" />
+    <ClCompile Include="myCollisionManager.cpp" />
     <ClCompile Include="myIntroScene.cpp" />
     <ClCompile Include="Krochi.cpp" />
     <ClCompile Include="myEntity.cpp" />

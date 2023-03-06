@@ -15,10 +15,9 @@ namespace my
 		virtual void Render(HDC hdc);
 		virtual void Release();
 
-		void AddGameObj(GameObject* obj);
-		void DelGameObj(GameObject* obj);
-
+		void AddGameObject(GameObject* gameObj);
+		const std::vector<GameObject*>& GetGameObjects() { return mGameObjects; }
 	private:
-		std::vector<GameObject*> mGameobj;
+		std::vector<GameObject*> mGameObjects;
 	};
 }

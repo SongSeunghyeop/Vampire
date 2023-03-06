@@ -16,7 +16,7 @@ namespace my
 	void InGameOption::Initialize()
 	{
 		InGameMenu* menu = new InGameMenu();
-		menu->SetName(L"Title");
+		menu->setName(L"Title");
 		AddGameObj(menu, eLayerType::UI);
 		Scene::Initialize();
 	}

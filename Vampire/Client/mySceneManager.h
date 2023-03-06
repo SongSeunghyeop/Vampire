@@ -12,6 +12,7 @@ namespace my
 		static void Release();
 
 		static void LoadScene(eSceneType type);
+		static Scene* getActiveScene() { return activeScene; }
 
 	private:
 		static std::vector<Scene*> mScenes;

@@ -9,8 +9,8 @@ namespace my
 		Entity();
 		virtual ~Entity();
 
-		void SetName(const std::wstring& name) { mName = name; }
-		std::wstring& GetName() { return mName; }
+		void setName(const std::wstring& name) { mName = name; }
+		std::wstring& getName() { return mName; }
 	private:
 		std::wstring mName;
 	};

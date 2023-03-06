@@ -3,6 +3,7 @@
 #include "mySceneManager.h"
 #include "Intro.h"
 #include "CharactorSelect.h"
+#include "myCollisionManager.h"
 
 namespace my
 {
@@ -18,7 +19,7 @@ namespace my
 	void IntroScene::Initialize()
 	{
 		Intro* intro = new Intro();
-		intro->SetName(L"Title");
+		intro->setName(L"Title");
 		AddGameObj(intro, eLayerType::FIELD);
 		Scene::Initialize();
 	}

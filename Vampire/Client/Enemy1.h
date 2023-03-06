@@ -1,5 +1,7 @@
 #pragma once
 #include "MyGameObject.h"
+#include "myAnimator.h"
+#include "myTransform.h"
 #include "myImage.h" 
 #include "Krochi.h"
 
@@ -16,12 +18,15 @@ namespace my
 		virtual void Render(HDC hdc);
 		virtual void Release();
 
-		Vector2 getRandomPos();
+		int getRandomPos();
 
 	private:
-		Image* Enemy1_Img;
+		Image* EnemyR_Img;
+		Image* EnemyL_Img;
 		Vector2 EnemyPos;
 		Vector2 Ppos;
+		Animator *EnemyAnimator;
+
 	};
 }
 

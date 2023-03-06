@@ -29,23 +29,26 @@ namespace my
 		virtual void Render(HDC hdc);
 		virtual void Release();
 		
-		static Vector2 getPlayerPos() { return Krochi::Playerpos; }
-
+		static Vector2 getPlayerPos() 
+		{ 
+			return Krochi::Playerpos;
+		}
+		static ePlayerState getPlayerState() { return Krochi::mState; }
+		static bool getDirect() { return Krochi::Right; }
 	private:
-		Animator* playerAnimator;
-		ePlayerState mState;
+		static ePlayerState mState;
+		static Vector2 Playerpos;
+		static bool Right;
 
+		Animator* playerAnimator;
 		Image* playerImg_R;
 		Image* playerImg_L;
-		static Vector2 Playerpos;
 		Vector2 winPos;
 
-		void move_R();
-		void move_L();
+		void move();
 		void shoot();
 		void death();
-		void idle_R();
-		void idle_L();
+		void idle();
 	};
 }
 

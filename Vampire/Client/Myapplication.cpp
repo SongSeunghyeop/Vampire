@@ -1,5 +1,6 @@
 #include "myApplication.h"
 #include "mySceneManager.h"
+#include "myCollisionManager.h"
 #include "Time.h"
 #include "myInput.h"
 
@@ -20,11 +21,11 @@ namespace my
 		this->mhdc = GetDC(hwnd); // HDC : 비트맵에 그려주는 역ㅂ할 
 		                                              // getDC : 현재 윈도우가 갖고있는 비트맵을 할당받는 DC가 목적지로 삼는 것
 		AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false); // 해상도를 입력하면, 그에 맞게 수정
-		
 		GetClientRect(mhwnd, &rect);
 		WindowPos.x = rect.right - rect.left;
 		WindowPos.y = rect.bottom - rect.top;
-		SetWindowPos(mhwnd, NULL, 20,0, (WindowPos.x), (WindowPos.y), 0); // 윈도우 크기 및 위치 조정
+
+		SetWindowPos(mhwnd, NULL, 0,0, (WindowPos.x), (WindowPos.y), 0); // 윈도우 크기 및 위치 조정
 		ShowWindow(hwnd, true); // 윈도우 해상도 조절을 위한 함수(타이틀바, 테두리,메뉴바 등을 포함한 해상도이므로, 조절이 필요)
 		//윈도우 전체 덮을 흰색 사각형
 
@@ -47,6 +48,7 @@ namespace my
 		Time::Update();
 		Input::Update();
 		SceneManager::Update();
+		CollisionManager::Update();
 	}
 	void Application::Render()
 	{

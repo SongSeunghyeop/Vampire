@@ -17,7 +17,7 @@ namespace my
 	void TitleScene::Initialize()
 	{
 		Title *title = new Title();
-		title->SetName(L"Title");
+		title->setName(L"Title");
 		AddGameObj(title, eLayerType::FIELD);
 		Scene::Initialize();
 	}

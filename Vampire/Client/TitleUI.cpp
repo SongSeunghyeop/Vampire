@@ -17,7 +17,7 @@ namespace my
 	void TitleUI::Initialize()
 	{
 		CharacterSelect* cs = new CharacterSelect();
-		cs->SetName(L"Title");
+		cs->setName(L"Title");
 		AddGameObj(cs, eLayerType::FIELD);
 		Scene::Initialize();
 	}

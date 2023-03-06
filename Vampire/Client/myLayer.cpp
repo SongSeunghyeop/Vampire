@@ -8,7 +8,7 @@ namespace my
 	}
 	Layer::~Layer()
 	{
-		for (GameObject* gameObj : mGameobj)
+		for (GameObject* gameObj : mGameObjects)
 		{
 			delete gameObj;
 			gameObj = nullptr;
@@ -17,7 +17,7 @@ namespace my
 
 	void Layer::Initialize()
 	{
-		for (GameObject* gameobj : mGameobj)
+		for (GameObject* gameobj : mGameObjects)
 		{
 			if (gameobj == NULL) continue;
 
@@ -26,7 +26,7 @@ namespace my
 	}
 	void Layer::Update()
 	{
-		for (GameObject* gameobj : mGameobj)
+		for (GameObject* gameobj : mGameObjects)
 		{
 			if (gameobj == NULL) continue;
 
@@ -35,7 +35,7 @@ namespace my
 	}
 	void Layer::Render(HDC hdc)
 	{
-		for (GameObject* gameobj : mGameobj)
+		for (GameObject* gameobj : mGameObjects)
 		{
 			if (gameobj == NULL) continue;
 
@@ -44,22 +44,18 @@ namespace my
 	}
 	void Layer::Release()
 	{
-		for (GameObject* gameobj : mGameobj)
+		for (GameObject* gameobj : mGameObjects)
 		{
 			if (gameobj == NULL) continue;
 
 			gameobj->Release();
 		}
 	}
-	void Layer::AddGameObj(GameObject* obj)
+	void Layer::AddGameObject(GameObject* gameObj)
 	{
-		if (obj == NULL) return;
+		if (gameObj == nullptr)
+			return;
 
-		mGameobj.push_back(obj);
-	}
-	void Layer::DelGameObj(GameObject* obj)
-	{
-		if (obj == NULL) return;
-		mGameobj.pop_back();
+		mGameObjects.push_back(gameObj);
 	}
 }
