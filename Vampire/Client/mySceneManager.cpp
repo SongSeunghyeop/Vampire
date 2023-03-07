@@ -42,6 +42,11 @@ namespace my
 
 	void SceneManager::Render(HDC hdc)
 	{
+		HBRUSH black = (HBRUSH)CreateSolidBrush(RGB(0, 0, 0));
+		Rectangle(hdc, -1, -1, 3000, 1500);
+		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, black);
+		DeleteObject(oldBrush);
+
 		activeScene->Render(hdc);
 	}
 

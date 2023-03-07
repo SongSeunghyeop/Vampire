@@ -11,7 +11,7 @@ namespace my
 {
 	Krochi_after2::Krochi_after2()
 	{
-		Right_after = Krochi::getDirect();
+		Right_after = Krochi::getPlayerDirect();
 	}
 	Krochi_after2::~Krochi_after2()
 	{
@@ -24,17 +24,14 @@ namespace my
 		playerImg_N = ResourceManager::Load<Image>(L"PlayerN", L"..\\Resources\\Player_None.bmp");
 
 		Transform* tr = GetComponent<Transform>();
-		afterPos.x = myapplication.getWindowPos().x / 2 - 30;
-		afterPos.y = myapplication.getWindowPos().y / 2 - 30;
-
-		tr->setPos(afterPos);
+		tr->setPos(Vector2(730, 350));
 
 		playerAnimator = AddComponent<Animator>(); // 애니메이터 컴포넌트 배열에 동적할당 및 초기화
-		playerAnimator->CreateAnimation(L"RightAfter", playerImg_RA1, Vector2::Zero, 3, 1, 3, Vector2::Zero, 0.3, 255, 0, 255);
-		playerAnimator->CreateAnimation(L"RightIdleAfter", playerImg_RA1, Vector2::Zero, 3, 1, 1, Vector2::Zero, 0.3, 255, 0, 255);
-		playerAnimator->CreateAnimation(L"LeftAfter", playerImg_LA1, Vector2::Zero, 3, 1, 3, Vector2::Zero, 0.3, 255, 0, 255);
-		playerAnimator->CreateAnimation(L"LeftIdleAfter", playerImg_LA1, Vector2::Zero, 3, 1, 1, Vector2::Zero, 0.3, 255, 0, 255);
-		playerAnimator->CreateAnimation(L"None", playerImg_N, Vector2::Zero, 1, 1, 1, Vector2::Zero, 0.3, 255, 0, 255);
+		playerAnimator->CreateAnimation(L"RightAfter", playerImg_RA1, Vector2::Zero, 3, 1, 3, 0.3, 255, 0, 255);
+		playerAnimator->CreateAnimation(L"RightIdleAfter", playerImg_RA1, Vector2::Zero, 3, 1, 1, 0.3, 255, 0, 255);
+		playerAnimator->CreateAnimation(L"LeftAfter", playerImg_LA1, Vector2::Zero, 3, 1, 3, 0.3, 255, 0, 255);
+		playerAnimator->CreateAnimation(L"LeftIdleAfter", playerImg_LA1, Vector2::Zero, 3, 1, 1, 0.3, 255, 0, 255);
+		playerAnimator->CreateAnimation(L"None", playerImg_N, Vector2::Zero, 1, 1, 1, 0.3, 255, 0, 255);
 		after_State = Krochi::ePlayerState::Idle;
 
 		GameObject::Initialize();
@@ -63,7 +60,7 @@ namespace my
 	}
 	void Krochi_after2::idle()
 	{
-		Right_after = Krochi::getDirect();
+		Right_after = Krochi::getPlayerDirect();
 
 		Transform* tr = GetComponent<Transform>();
 		afterPos = tr->getPos();
@@ -97,7 +94,7 @@ namespace my
 
 	void Krochi_after2::move()
 	{
-		Right_after = Krochi::getDirect();
+		Right_after = Krochi::getPlayerDirect();
 
 		Transform* tr = GetComponent<Transform>();
 

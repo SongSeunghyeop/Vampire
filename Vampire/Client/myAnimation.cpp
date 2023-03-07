@@ -55,7 +55,6 @@ namespace my
         Vector2 scale = tr->getScale();
         Vector2 pos = tr->getPos();
 
-        pos += mSpriteSheets[mSpriteIndex].offset;
         pos.x -= mSpriteSheets[mSpriteIndex].size.x / 2.0f;
         pos.y -= mSpriteSheets[mSpriteIndex].size.y;
  
@@ -70,7 +69,7 @@ namespace my
 
     void Animation::Create(Image* sheet, Vector2 leftTop
         , UINT coulmn, UINT row, UINT spriteLength
-        , Vector2 offset, float duration, int r, int g, int b)
+        , float duration, int r, int g, int b)
     {
         mSheetImage = sheet;
 
@@ -86,7 +85,6 @@ namespace my
             spriteInfo.leftTop.x = leftTop.x + (size.x * i);
             spriteInfo.leftTop.y = leftTop.y;
             spriteInfo.size = size;
-            spriteInfo.offset = offset;
             spriteInfo.duration = duration;
 
             mSpriteSheets.push_back(spriteInfo);

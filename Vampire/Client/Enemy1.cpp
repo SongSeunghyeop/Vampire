@@ -14,7 +14,7 @@ namespace my
 			srand(time(NULL)); // 처음 한 번만 호출
 			initialized = true;
 		}
-		int randomPos =  rand() % 1500; // 1부터 1000 사이의 랜덤한 정수 생성
+		int randomPos =  rand() % 500 + 500; // 1부터 1000 사이의 랜덤한 정수 생성
 		return randomPos;
 	}
 
@@ -32,12 +32,12 @@ namespace my
 		EnemyL_Img = ResourceManager::Load<Image>(L"EnemyL", L"..\\Resources\\Enemy_L.bmp");
 
 		EnemyAnimator = AddComponent<Animator>();
-		EnemyAnimator->CreateAnimation(L"RightWalk",EnemyR_Img,Vector2::Zero,1,1,1,Vector2::Zero,0.3f, 254, 0, 255);
-		EnemyAnimator->CreateAnimation(L"LeftWalk",EnemyL_Img,Vector2::Zero,1,1,1,Vector2::Zero,0.3f, 254, 0, 255);
+		EnemyAnimator->CreateAnimation(L"RightWalk",EnemyR_Img,Vector2::Zero,1,1,1,0.3f, 254, 0, 255);
+		EnemyAnimator->CreateAnimation(L"LeftWalk",EnemyL_Img,Vector2::Zero,1,1,1,0.3f, 254, 0, 255);
 
 		Transform* tr = GetComponent<Transform>();
 		EnemyPos.x = Enemy1::getRandomPos();
-		EnemyPos.y = -10;
+		EnemyPos.y = Enemy1::getRandomPos();
 		tr->setPos(EnemyPos);
 		Vector2 Enemy_Scale(0.8f, 0.8f);
 		tr->setScale(Enemy_Scale);
@@ -51,25 +51,25 @@ namespace my
 	void Enemy1::Update()
 	{
 		Transform* tr = GetComponent<Transform>();
-		Collider* collider = AddComponent<Collider>();
 		EnemyPos = tr->getPos();
-		Ppos = Krochi::getPlayerPos();
+		Ppos.x = Krochi::getPlayerPos().x + 25;
+		Ppos.y = Krochi::getPlayerPos().y + 30;
 
-		if (EnemyPos.x > Ppos.x + 20)
+		if (EnemyPos.x > Ppos.x)
 		{
 			EnemyPos.x -= 40.0f * Time::getDeltaTime();
 			EnemyAnimator->Play(L"LeftWalk", true);
 		}
-		if (EnemyPos.x < Ppos.x + 20)
+		if (EnemyPos.x < Ppos.x)
 		{
 			EnemyPos.x += 40.0f * Time::getDeltaTime();
 			EnemyAnimator->Play(L"RightWalk", true);
 		}
-		if (EnemyPos.y > Ppos.y + 35)
+		if (EnemyPos.y > Ppos.y)
 		{
 			EnemyPos.y -= 40.0f * Time::getDeltaTime();
 		}
-		if (EnemyPos.y < Ppos.y + 35)
+		if (EnemyPos.y < Ppos.y)
 		{
 			EnemyPos.y += 40.0f * Time::getDeltaTime();
 		}

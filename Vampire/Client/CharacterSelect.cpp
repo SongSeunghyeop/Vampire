@@ -35,15 +35,11 @@ namespace my
 		Transform* trans = GetComponent<Transform>();
 		Vector2 pos = trans->getPos();
 
-		HBRUSH black = CreateSolidBrush(RGB(0, 0, 0));
-		Rectangle(hdc, -1, -1, 3000, 1500);
-		HBRUSH oldbrush = (HBRUSH)SelectObject(hdc, black);
-		DeleteObject(oldbrush);
 		StretchBlt(hdc, 150, 0, 1200, 750, titleImg->GetHdc(), 0, 0, titleImg->GetWidth(), titleImg->GetHeight(), SRCCOPY);
-		TransparentBlt(hdc, 450, 80, 600, 680, SelectUI->GetHdc(), 0, 0, SelectUI->GetWidth(), SelectUI->GetHeight(), RGB(182, 185, 184));
-		TransparentBlt(hdc, 650, 5, 200, 65, money->GetHdc(), 0, 0,  money->GetWidth(), money->GetHeight(), RGB(32, 32, 32));
-		TransparentBlt(hdc, 500, 5, 100, 65, Exit->GetHdc(), 0, 0, Exit->GetWidth(), Exit->GetHeight(), RGB(182, 185, 184));
-		TransparentBlt(hdc, 900, 5, 100, 65, Option->GetHdc(), 0, 0, Option->GetWidth(), Option->GetHeight(), RGB(32, 32, 32));
+		TransparentBlt(hdc, 659, 8, money->GetWidth() * 1.3f, money->GetHeight() * 1.3f, money->GetHdc(), 0, 0, money->GetWidth(), money->GetHeight(), RGB(255, 0, 255));
+		TransparentBlt(hdc, 501, 6, Exit->GetWidth() * 2.0f, Exit->GetHeight() * 2.0f, Exit->GetHdc(), 0, 0, Exit->GetWidth(), Exit->GetHeight(), RGB(255, 0, 255));
+		TransparentBlt(hdc, 899, 6, Option->GetWidth() * 2.0f, Option->GetHeight() * 2.0f, Option->GetHdc(), 0, 0, Option->GetWidth(), Option->GetHeight(), RGB(255, 0, 255));
+		TransparentBlt(hdc, 450, 80, SelectUI->GetWidth(), SelectUI->GetHeight(), SelectUI->GetHdc(), 0, 0, SelectUI->GetWidth(), SelectUI->GetHeight(), RGB(255, 0, 255));
 	}
 	void CharacterSelect::Release()
 	{

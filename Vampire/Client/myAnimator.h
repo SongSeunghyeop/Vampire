@@ -46,10 +46,10 @@ namespace my
 			, Image* sheet
 			, Vector2 leftTop
 			, UINT coulmn, UINT row, UINT spriteLength
-			, Vector2 offset, float duration, int r, int g, int b);
+			, float duration, int r, int g, int b);
 
 		// 폴더에 들어있는 스프라이트들을 이용해서 애니메이션 제작해주는 함수
-		void CreateAnimations(const std::wstring& path, Vector2 offset, float duration);
+		void CreateAnimations(const std::wstring& path, float duration);
 
 		Animation* FindAnimation(const std::wstring& name);
 		void Play(const std::wstring& name, bool loop);

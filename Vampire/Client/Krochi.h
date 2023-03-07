@@ -10,6 +10,7 @@
 namespace my
 {
 	class Animator;
+
 	class Krochi : public GameObject
 	{
 	public:
@@ -29,12 +30,9 @@ namespace my
 		virtual void Render(HDC hdc);
 		virtual void Release();
 		
-		static Vector2 getPlayerPos() 
-		{ 
-			return Krochi::Playerpos;
-		}
+		static Vector2 getPlayerPos() { return Krochi::Playerpos; }
 		static ePlayerState getPlayerState() { return Krochi::mState; }
-		static bool getDirect() { return Krochi::Right; }
+		static bool getPlayerDirect() { return Krochi::Right; }
 	private:
 		static ePlayerState mState;
 		static Vector2 Playerpos;

@@ -1,6 +1,7 @@
 #pragma once
 #include "MyGameObject.h"
 #include "myImage.h" 
+#include "myApplication.h"
 
 namespace my
 {

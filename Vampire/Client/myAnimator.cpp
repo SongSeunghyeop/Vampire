@@ -49,7 +49,7 @@ namespace my
 	void Animator::CreateAnimation(const std::wstring& name
 		, Image* sheet, Vector2 leftTop
 		, UINT coulmn, UINT row, UINT spriteLength
-		, Vector2 offset, float duration, int r, int g, int b)
+		, float duration, int r, int g, int b)
 	{
 		Animation* animation = FindAnimation(name);
 
@@ -57,14 +57,14 @@ namespace my
 			return;
 
 		animation = new Animation();
-		animation->Create(sheet, leftTop, coulmn, row, spriteLength, offset, duration, r, g, b);
+		animation->Create(sheet, leftTop, coulmn, row, spriteLength, duration, r, g, b);
 		animation->setName(name);
 		animation->setAnimator(this);
 
 		mAnimations.insert(std::make_pair(name, animation));
 	}
 
-	void Animator::CreateAnimations(const std::wstring& path, Vector2 offset, float duration)
+	void Animator::CreateAnimations(const std::wstring& path, float duration)
 	{
 		UINT width = 0;
 		UINT height = 0;

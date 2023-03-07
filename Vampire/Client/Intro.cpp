@@ -31,10 +31,6 @@ namespace my
 		Transform* trans = GetComponent<Transform>(); 
 		Vector2 pos = trans->getPos();
 
-		HBRUSH black = CreateSolidBrush(RGB(0, 0, 0));
-		Rectangle(hdc, -1, -1, 3000, 1500);
-		HBRUSH oldbrush = (HBRUSH)SelectObject(hdc, black);
-		DeleteObject(oldbrush);
 		StretchBlt(hdc, 150, 0, 1200, 750, titleImg->GetHdc(), 0, 0, 1200, 750, SRCCOPY);
 		TransparentBlt(hdc, 500, 600, 500, 60, IntroM->GetHdc(), 0, 0, IntroM->GetWidth(), IntroM->GetHeight(), RGB(0, 0, 0));
 		
@@ -48,7 +44,6 @@ namespace my
 		{
 			mSecond = 0.00f;
 		}
-	
 	}
 	void Intro::Release()
 	{

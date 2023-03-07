@@ -18,7 +18,7 @@ namespace my
 	void Application::Initialize(HWND hwnd)
 	{
 		this->mhwnd = hwnd; // 핸들
-		this->mhdc = GetDC(hwnd); // HDC : 비트맵에 그려주는 역ㅂ할 
+		this->mhdc = GetDC(hwnd); // HDC : 비트맵에 그려주는 역할 
 		                                              // getDC : 현재 윈도우가 갖고있는 비트맵을 할당받는 DC가 목적지로 삼는 것
 		AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false); // 해상도를 입력하면, 그에 맞게 수정
 		GetClientRect(mhwnd, &rect);
@@ -45,6 +45,10 @@ namespace my
 	}
 	void Application::Update()
 	{
+		GetClientRect(mhwnd, &rect);
+		WindowPos.x = rect.right - rect.left;
+		WindowPos.y = rect.bottom - rect.top;
+
 		Time::Update();
 		Input::Update();
 		SceneManager::Update();
@@ -55,10 +59,6 @@ namespace my
 		Time::Render(backHdc);
 		Input::Render(backHdc);
 		SceneManager::Render(backHdc); // 전부다 백버퍼에 랜더
-
-		GetClientRect(mhwnd, &rect);
-		WindowPos.x = rect.right - rect.left;
-		WindowPos.y = rect.bottom - rect.top;
 
 		//백버퍼의 그림 원본(구현용)에 복사 ( 흰색의 화면까지 전체가 계속 포함되어서 복사가 되는 것이므로 깜빡이지 않는다 
 		StretchBlt(mhdc, 0, 0, WindowPos.x, WindowPos.y, backHdc, 0, 0,1500,750, SRCCOPY); // 구현용 hdc에 그대로 복사

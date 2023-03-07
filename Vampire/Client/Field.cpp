@@ -1,10 +1,11 @@
 #include "myResourceManager.h"
 #include "Field.h"
 #include "Time.h"
-#include "myInput.h"
 #include "myImage.h"
 #include "myTransform.h"
+#include "Krochi.h"
 
+extern my::Application myapplication;
 namespace my
 {
 	Field::Field()
@@ -18,7 +19,12 @@ namespace my
 	void Field::Initialize()
 	{
 		fieldImg = ResourceManager::Load<Image>(L"Field", L"..\\Resources\\Field.bmp");
+		Transform* tr = GetComponent<Transform>();
+		Vector2 pPos = Krochi::getPlayerPos();
+		pPos.x -= 500;
+		pPos.y -= 250;
 
+		tr->setPos(pPos);
 		GameObject::Initialize();
 	}
 	void Field::Update()
@@ -27,12 +33,14 @@ namespace my
 	}
 	void Field::Render(HDC hdc)
 	{
+		Transform* tr = GetComponent<Transform>();
+		Vector2 pPos = Krochi::getPlayerPos();
+
+		tr->setPos(pPos);
+
 		GameObject::Render(hdc);
 
-		Transform* trans = GetComponent<Transform>();
-		Vector2 pos = trans->getPos();
-
-		BitBlt(hdc, pos.x, pos.y, fieldImg->GetWidth(), fieldImg->GetHeight(), fieldImg->GetHdc(), 0, 0, SRCCOPY);
+		StretchBlt(hdc, 0, 0, 1500, 750, fieldImg->GetHdc(), pPos.x, pPos.y, 1000, 500, SRCCOPY);
 	}
 	void Field::Release()
 	{
