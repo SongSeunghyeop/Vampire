@@ -2,6 +2,7 @@
 #include "MyGameObject.h"
 #include "myImage.h" 
 #include "myTransform.h"
+#include "myAnimator.h"
 
 namespace my
 {
@@ -19,12 +20,12 @@ namespace my
 	private:
 		Image* titleImg;
 		Image* start;
-		Image* start2;
-		Image* button1;
+		Image* start_M;
 		Image* money;
 		Image* Exit;
 		Image* Option;
 		Image* SelectUI;
+		Animator* arrowAnimator;
 	};
 }
 

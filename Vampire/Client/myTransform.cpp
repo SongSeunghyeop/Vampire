@@ -27,10 +27,20 @@ namespace my
 	{
 		mPos = pos;
 	}
+	void Transform::setPos(int a, int b)
+	{
+		mPos.x = a;
+		mPos.y = b;
+	}
 	void Transform::setScale(Vector2 scale)
 	{
 		this->mScale.x = scale.x;
 		this->mScale.y = scale.y;
+	}
+	void Transform::setScale(float a,float b)
+	{
+		this->mScale.x = a;
+		this->mScale.y = b;
 	}
 	Vector2 Transform::getPos()
 	{

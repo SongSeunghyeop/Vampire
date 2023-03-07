@@ -36,7 +36,7 @@ namespace my
 		mState = ePlayerState::Idle;
 
 		Collider* collider = AddComponent<Collider>();
-		collider->setCenter(Vector2(-13,-33));
+		collider->setCenter(Vector2(-13,-31));
 		collider->setRGB(255, 0, 255);
 
 		GameObject::Initialize();
@@ -94,6 +94,10 @@ namespace my
 		{
 			mState = ePlayerState::Move;
 		}
+		if (Input::GetKey(eKeyCode::A) && Input::GetKey(eKeyCode::D))
+		{
+			mState = ePlayerState::Idle;
+		}
 	}
 
 	void Krochi::move()
@@ -130,20 +134,24 @@ namespace my
 		if (Input::GetKey(eKeyCode::A))
 		{
 			Right = false;
-			Playerpos.x -= 150.0f * Time::getDeltaTime();
+			Playerpos.x -= 140.0f * Time::getDeltaTime();
 		}
 		if (Input::GetKey(eKeyCode::D))
 		{
 			Right = true;
-			Playerpos.x += 150.0f * Time::getDeltaTime();
+			Playerpos.x += 140.0f * Time::getDeltaTime();
 		}
 		if (Input::GetKey(eKeyCode::W))
 		{
-			Playerpos.y -= 150.0f * Time::getDeltaTime();
+			Playerpos.y -= 140.0f * Time::getDeltaTime();
 		}
 		if (Input::GetKey(eKeyCode::S))
 		{
-			Playerpos.y += 150.0f * Time::getDeltaTime();
+			Playerpos.y += 140.0f * Time::getDeltaTime();
+		}
+		if (Input::GetKey(eKeyCode::A) && Input::GetKey(eKeyCode::D))
+		{
+			mState = ePlayerState::Idle;
 		}
 
 		tr->setPos(Playerpos);

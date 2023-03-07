@@ -18,10 +18,9 @@ namespace my
 
 	private:
 		Image* titleImg;
-		Image* money;
-		Image* Exit;
-		Image* Option;
 		Image* SelectUI;
+		Image* start;
+		Image* start_M;
 	};
 }
 

@@ -60,24 +60,22 @@ namespace my
 	}
 	void Krochi_after2::idle()
 	{
-		Right_after = Krochi::getPlayerDirect();
-
 		Transform* tr = GetComponent<Transform>();
 		afterPos = tr->getPos();
 
-		if (afterPos.x < Krochi::getPlayerPos().x - 0.5)
+		if (afterPos.x < Krochi::getPlayerPos().x - 1)
 		{
 			afterPos.x += 180.0f * Time::getDeltaTime();
 		}
-		if (afterPos.x > Krochi::getPlayerPos().x + 0.5)
+		if (afterPos.x > Krochi::getPlayerPos().x + 1)
 		{
 			afterPos.x -= 180.0f * Time::getDeltaTime();
 		}
-		if (afterPos.y < Krochi::getPlayerPos().y - 0.5)
+		if (afterPos.y < Krochi::getPlayerPos().y - 1)
 		{
 			afterPos.y += 180.0f * Time::getDeltaTime();
 		}
-		if (afterPos.y > Krochi::getPlayerPos().y + 0.5)
+		if (afterPos.y > Krochi::getPlayerPos().y + 1)
 		{
 			afterPos.y -= 180.0f * Time::getDeltaTime();
 		}
@@ -85,6 +83,7 @@ namespace my
 			playerAnimator->Play(L"None", true);
 
 		tr->setPos(afterPos);
+
 
 		if (Krochi::getPlayerState() == Krochi::ePlayerState::Move)
 		{
@@ -95,6 +94,13 @@ namespace my
 	void Krochi_after2::move()
 	{
 		Right_after = Krochi::getPlayerDirect();
+
+		if (Right_after)
+			playerAnimator->Play(L"RightAfter", true);
+
+		if (!Right_after)
+			playerAnimator->Play(L"LeftAfter", true);
+
 
 		Transform* tr = GetComponent<Transform>();
 
@@ -116,12 +122,6 @@ namespace my
 		}
 
 		tr->setPos(afterPos);
-
-		if (Right_after)
-			playerAnimator->Play(L"RightAfter", true);
-
-		if (!Right_after)
-			playerAnimator->Play(L"LeftAfter", true);
 
 		if (Krochi::getPlayerState() == Krochi::ePlayerState::Idle)
 		{

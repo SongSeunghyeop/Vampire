@@ -15,7 +15,9 @@ namespace my
 		virtual void Release();
 
 		void setPos(Vector2 pos);
+		void setPos(int a, int b);
 		void setScale(Vector2 scale);
+		void setScale(float a, float b);
 		Vector2 getPos();
 		Vector2 getScale();
 

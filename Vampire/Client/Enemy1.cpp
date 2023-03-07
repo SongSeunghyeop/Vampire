@@ -14,7 +14,7 @@ namespace my
 			srand(time(NULL)); // 처음 한 번만 호출
 			initialized = true;
 		}
-		int randomPos =  rand() % 500 + 500; // 1부터 1000 사이의 랜덤한 정수 생성
+		int randomPos =  rand() % 300 + 700; // 1부터 1000 사이의 랜덤한 정수 생성
 		return randomPos;
 	}
 
@@ -57,21 +57,21 @@ namespace my
 
 		if (EnemyPos.x > Ppos.x)
 		{
-			EnemyPos.x -= 40.0f * Time::getDeltaTime();
+			EnemyPos.x -= 30.0f * Time::getDeltaTime();
 			EnemyAnimator->Play(L"LeftWalk", true);
 		}
 		if (EnemyPos.x < Ppos.x)
 		{
-			EnemyPos.x += 40.0f * Time::getDeltaTime();
+			EnemyPos.x += 30.0f * Time::getDeltaTime();
 			EnemyAnimator->Play(L"RightWalk", true);
 		}
 		if (EnemyPos.y > Ppos.y)
 		{
-			EnemyPos.y -= 40.0f * Time::getDeltaTime();
+			EnemyPos.y -= 30.0f * Time::getDeltaTime();
 		}
 		if (EnemyPos.y < Ppos.y)
 		{
-			EnemyPos.y += 40.0f * Time::getDeltaTime();
+			EnemyPos.y += 30.0f * Time::getDeltaTime();
 		}
 		tr->setPos(EnemyPos);
 
