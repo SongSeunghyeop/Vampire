@@ -18,6 +18,7 @@ namespace my
 
 	private:
 		Image* menuImg;
+
 	};
 }
 

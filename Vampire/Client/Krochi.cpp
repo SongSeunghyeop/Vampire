@@ -36,7 +36,7 @@ namespace my
 		mState = ePlayerState::Idle;
 
 		Collider* collider = AddComponent<Collider>();
-		collider->setCenter(Vector2(-13,-31));
+		collider->setCenter(Vector2(-13,-34));
 		collider->setRGB(255, 0, 255);
 
 		GameObject::Initialize();
@@ -134,20 +134,20 @@ namespace my
 		if (Input::GetKey(eKeyCode::A))
 		{
 			Right = false;
-			Playerpos.x -= 140.0f * Time::getDeltaTime();
+			Playerpos.x -= 180.0f * Time::getDeltaTime();
 		}
 		if (Input::GetKey(eKeyCode::D))
 		{
 			Right = true;
-			Playerpos.x += 140.0f * Time::getDeltaTime();
+			Playerpos.x += 180.0f * Time::getDeltaTime();
 		}
 		if (Input::GetKey(eKeyCode::W))
 		{
-			Playerpos.y -= 140.0f * Time::getDeltaTime();
+			Playerpos.y -= 180.0f * Time::getDeltaTime();
 		}
 		if (Input::GetKey(eKeyCode::S))
 		{
-			Playerpos.y += 140.0f * Time::getDeltaTime();
+			Playerpos.y += 180.0f * Time::getDeltaTime();
 		}
 		if (Input::GetKey(eKeyCode::A) && Input::GetKey(eKeyCode::D))
 		{

@@ -105,19 +105,19 @@ namespace my
 
 		Transform* tr = GetComponent<Transform>();
 
-		if (afterPos.x < Krochi::getPlayerPos().x - 6)
+		if (afterPos.x < Krochi::getPlayerPos().x - 5)
 		{
 			afterPos.x += 180.0f * Time::getDeltaTime();
 		}
-		if (afterPos.x > Krochi::getPlayerPos().x + 6)
+		if (afterPos.x > Krochi::getPlayerPos().x + 5)
 		{
 			afterPos.x -= 180.0f * Time::getDeltaTime();
 		}
-		if (afterPos.y < Krochi::getPlayerPos().y - 6)
+		if (afterPos.y < Krochi::getPlayerPos().y - 5)
 		{
 			afterPos.y += 180.0f * Time::getDeltaTime();
 		}
-		if (afterPos.y > Krochi::getPlayerPos().y + 6)
+		if (afterPos.y > Krochi::getPlayerPos().y + 5)
 		{
 			afterPos.y -= 180.0f * Time::getDeltaTime();
 		}

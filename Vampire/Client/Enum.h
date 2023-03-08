@@ -4,9 +4,8 @@ enum class eSceneType
 {
 	Intro,
 	Title,
-	TitleUI,
 	Play,
-	InGameMenu,
+	Option,
 	Ending,
 	Max,
 };

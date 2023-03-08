@@ -1,27 +1,26 @@
 #pragma once
-#include "TitleUI.h"
-#include "Title.h"
 #include "myScene.h"
+#include "mySceneManager.h"
 #include "myInput.h"
+#include "InGameMenu.h"
 
 namespace my
 {
-	class TitleScene : public Scene
+	class Option : public Scene
 	{
 	public:
-		TitleScene();
-		~TitleScene();
+		Option();
+		~Option();
 
 		virtual void Initialize();
 		virtual void Update();
 		virtual void Render(HDC hdc);
 		virtual void Release();
 
-		virtual void OnEnter();
-		virtual void OnExit();
+	/*	virtual void OnEnter();
+		virtual void OnExit();*/
 
 	private:
-		Title* title;
-		TitleUI* cs;
+		InGameMenu* menu;
 	};
 }

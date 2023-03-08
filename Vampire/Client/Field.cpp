@@ -33,14 +33,9 @@ namespace my
 	}
 	void Field::Render(HDC hdc)
 	{
-		Transform* tr = GetComponent<Transform>();
-		Vector2 pPos = Krochi::getPlayerPos();
-
-		tr->setPos(pPos);
-
 		GameObject::Render(hdc);
 
-		StretchBlt(hdc, 0, 0, 1500, 750, fieldImg->GetHdc(), pPos.x, pPos.y, 1000, 500, SRCCOPY);
+		StretchBlt(hdc, 0, 0, 1500, 750, fieldImg->GetHdc(), 0, 0, 1000, 500, SRCCOPY);
 	}
 	void Field::Release()
 	{

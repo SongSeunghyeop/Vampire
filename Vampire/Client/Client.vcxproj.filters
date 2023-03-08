@@ -73,14 +73,8 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Engine\Scene\InGameUI">
-      <UniqueIdentifier>{085e0e05-2a7d-413c-b0b9-b414ed1a5863}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\Scene\IntroScene">
       <UniqueIdentifier>{f340e9a4-1620-4ec0-a70d-34076ac3b803}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Scene\TitleScene\TitleUI">
-      <UniqueIdentifier>{d72ff972-4155-4c06-a1dc-fdb1417ad520}</UniqueIdentifier>
     </Filter>
     <Filter Include="Engine\GameObject\Objects\Players">
       <UniqueIdentifier>{bad7682c-4502-495e-9147-269fa1c452ca}</UniqueIdentifier>
@@ -102,6 +96,9 @@
     </Filter>
     <Filter Include="Engine\Component\Components\Collider">
       <UniqueIdentifier>{2f8eb23a-14f0-4bc5-9873-1fd6b0e79112}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Scene\Option">
+      <UniqueIdentifier>{2ff2f9ed-4184-4bf1-89d0-ee44a5bace24}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -165,32 +162,17 @@
     <ClInclude Include="myImage.h">
       <Filter>Image</Filter>
     </ClInclude>
-    <ClInclude Include="myTitleScene.h">
-      <Filter>Engine\Scene\TitleScene</Filter>
-    </ClInclude>
     <ClInclude Include="myGameObject.h">
       <Filter>Engine\GameObject</Filter>
     </ClInclude>
     <ClInclude Include="myTransform.h">
       <Filter>Engine\Component\Components</Filter>
     </ClInclude>
-    <ClInclude Include="InGameOption.h">
-      <Filter>Engine\Scene\InGameUI</Filter>
-    </ClInclude>
     <ClInclude Include="Title.h">
       <Filter>Engine\GameObject\Objects\Intro &amp; Title</Filter>
     </ClInclude>
-    <ClInclude Include="LevelUP.h">
-      <Filter>Engine\Scene\InGameUI</Filter>
-    </ClInclude>
-    <ClInclude Include="Treasure.h">
-      <Filter>Engine\Scene\InGameUI</Filter>
-    </ClInclude>
     <ClInclude Include="myIntroScene.h">
       <Filter>Engine\Scene\IntroScene</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleUI.h">
-      <Filter>Engine\Scene\TitleScene\TitleUI</Filter>
     </ClInclude>
     <ClInclude Include="Krochi.h">
       <Filter>Engine\GameObject\Objects\Players</Filter>
@@ -213,9 +195,6 @@
     <ClInclude Include="Field.h">
       <Filter>Engine\GameObject\Objects\Fields</Filter>
     </ClInclude>
-    <ClInclude Include="CharacterSelect.h">
-      <Filter>Engine\GameObject\Objects\UI</Filter>
-    </ClInclude>
     <ClInclude Include="InGameMenu.h">
       <Filter>Engine\GameObject\Objects\UI</Filter>
     </ClInclude>
@@ -230,6 +209,21 @@
     </ClInclude>
     <ClInclude Include="myCollisionManager.h">
       <Filter>Engine\Component\Components\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="myTitleScene.h">
+      <Filter>Engine\Scene\TitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleUI.h">
+      <Filter>Engine\GameObject\Objects\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelUP.h">
+      <Filter>Engine\GameObject\Objects\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Treasure.h">
+      <Filter>Engine\GameObject\Objects\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="myOption.h">
+      <Filter>Engine\Scene\Option</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -275,32 +269,17 @@
     <ClCompile Include="myImage.cpp">
       <Filter>Image</Filter>
     </ClCompile>
-    <ClCompile Include="myTitleScene.cpp">
-      <Filter>Engine\Scene\TitleScene</Filter>
-    </ClCompile>
     <ClCompile Include="myGameObject.cpp">
       <Filter>Engine\GameObject</Filter>
     </ClCompile>
     <ClCompile Include="myTransform.cpp">
       <Filter>Engine\Component\Components</Filter>
     </ClCompile>
-    <ClCompile Include="InGameOption.cpp">
-      <Filter>Engine\Scene\InGameUI</Filter>
-    </ClCompile>
     <ClCompile Include="Title.cpp">
       <Filter>Engine\GameObject\Objects\Intro &amp; Title</Filter>
     </ClCompile>
-    <ClCompile Include="LevelUP.cpp">
-      <Filter>Engine\Scene\InGameUI</Filter>
-    </ClCompile>
-    <ClCompile Include="Treasure.cpp">
-      <Filter>Engine\Scene\InGameUI</Filter>
-    </ClCompile>
     <ClCompile Include="myIntroScene.cpp">
       <Filter>Engine\Scene\IntroScene</Filter>
-    </ClCompile>
-    <ClCompile Include="TitleUI.cpp">
-      <Filter>Engine\Scene\TitleScene\TitleUI</Filter>
     </ClCompile>
     <ClCompile Include="Krochi.cpp">
       <Filter>Engine\GameObject\Objects\Players</Filter>
@@ -323,9 +302,6 @@
     <ClCompile Include="Field.cpp">
       <Filter>Engine\GameObject\Objects\Fields</Filter>
     </ClCompile>
-    <ClCompile Include="CharacterSelect.cpp">
-      <Filter>Engine\GameObject\Objects\UI</Filter>
-    </ClCompile>
     <ClCompile Include="InGameMenu.cpp">
       <Filter>Engine\GameObject\Objects\UI</Filter>
     </ClCompile>
@@ -340,6 +316,21 @@
     </ClCompile>
     <ClCompile Include="myCollisionManager.cpp">
       <Filter>Engine\Component\Components\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="myTitleScene.cpp">
+      <Filter>Engine\Scene\TitleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleUI.cpp">
+      <Filter>Engine\GameObject\Objects\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelUP.cpp">
+      <Filter>Engine\GameObject\Objects\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Treasure.cpp">
+      <Filter>Engine\GameObject\Objects\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="myOption.cpp">
+      <Filter>Engine\Scene\Option</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

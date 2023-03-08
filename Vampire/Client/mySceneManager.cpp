@@ -1,9 +1,8 @@
 #include "mySceneManager.h"
-#include "myPlayScene.h"
-#include "myTitleScene.h"
 #include "myIntroScene.h"
-#include "TitleUI.h"
-#include "InGameOption.h"
+#include "myTitleScene.h"
+#include "myOption.h"
+#include "myPlayScene.h"
 
 namespace my 
 {
@@ -16,15 +15,13 @@ namespace my
 																			 // 현재 max는 4개이므로 4개의 배열을 0으로 초기화
 		mScenes[(UINT)eSceneType::Intro] = new IntroScene(); 
 		mScenes[(UINT)eSceneType::Title] = new TitleScene(); 
-		mScenes[(UINT)eSceneType::TitleUI] = new TitleUI(); 
 		mScenes[(UINT)eSceneType::Play] = new PlayScene(); 
-		mScenes[(UINT)eSceneType::InGameMenu] = new InGameOption(); 
+		mScenes[(UINT)eSceneType::Option] = new Option(); 
 
 		mScenes[(UINT)eSceneType::Intro]->setName(L"INTRO");
 		mScenes[(UINT)eSceneType::Title]->setName(L"TITLE");
-		mScenes[(UINT)eSceneType::TitleUI]->setName(L"TITLEUI");
 		mScenes[(UINT)eSceneType::Play]->setName(L"PLAY");
-		mScenes[(UINT)eSceneType::InGameMenu]->setName(L"MENU");
+		mScenes[(UINT)eSceneType::Option]->setName(L"OPTION");
 
 		activeScene = mScenes[(UINT)eSceneType::Intro];
 
@@ -42,10 +39,10 @@ namespace my
 
 	void SceneManager::Render(HDC hdc)
 	{
-		HBRUSH black = (HBRUSH)CreateSolidBrush(RGB(0, 0, 0));
+		/*HBRUSH black = (HBRUSH)CreateSolidBrush(RGB(0, 0, 0));
 		Rectangle(hdc, -1, -1, 3000, 1500);
 		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, black);
-		DeleteObject(oldBrush);
+		DeleteObject(oldBrush);*/
 
 		activeScene->Render(hdc);
 	}

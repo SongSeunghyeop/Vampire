@@ -16,7 +16,7 @@ namespace my
 	}
 	void InGameMenu::Initialize()
 	{
-		menuImg = ResourceManager::Load<Image>(L"Menu", L"..\\Resources\\menu.bmp");
+		menuImg = ResourceManager::Load<Image>(L"InGameMenu", L"..\\Resources\\Option.bmp");
 
 		GameObject::Initialize();
 	}
@@ -28,10 +28,8 @@ namespace my
 	{
 		GameObject::Render(hdc);
 
-		Transform* trans = GetComponent<Transform>();
-		Vector2 pos = trans->getPos();
-
-		StretchBlt(hdc, 200, 100, 1100, 550, menuImg->GetHdc(), 0, 0, menuImg->GetWidth(), menuImg->GetHeight(), SRCCOPY);
+		TransparentBlt(hdc, 470, 50, menuImg->GetWidth(), menuImg->GetHeight(), 
+			menuImg->GetHdc(), 0, 0, menuImg->GetWidth(), menuImg->GetHeight(), RGB(255,0,255));
 	}
 	void InGameMenu::Release()
 	{

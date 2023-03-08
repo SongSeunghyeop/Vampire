@@ -20,8 +20,10 @@ namespace my
 		krochi = new Krochi(); // 플레이어 생성
 		krochi_after = new Krochi_after(); // 플레이어 생성
 		krochi_after2 = new Krochi_after2(); // 플레이어 생성
+
 		krochi->setName(L"Player");
 		field->setName(L"Field");
+
 		AddGameObj(field, eLayerType::FIELD);
 		AddGameObj(krochi, eLayerType::PLAYER);
 		AddGameObj(krochi_after, eLayerType::PLAYER_AFTER);
@@ -43,7 +45,8 @@ namespace my
 
 		if (Input::GetKeyState(eKeyCode::ESC) == eKeyState::Down)
 		{
-			SceneManager::LoadScene(eSceneType::InGameMenu);
+			SceneManager::LoadScene(eSceneType::Option);
+			Input::SetKeyState(eKeyCode::ESC, eKeyState::None);
 		}
 	}
 	void PlayScene::Render(HDC hdc)

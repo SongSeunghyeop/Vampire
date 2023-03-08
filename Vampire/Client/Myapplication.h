@@ -1,5 +1,6 @@
 #pragma once
 #include "VampireEngine.h"
+#include "Krochi.h"
 //게임의 전체를 총괄
 
 namespace my
@@ -28,7 +29,6 @@ namespace my
 	private:
 		RECT rect;
 		Vector2 WindowPos;
-
 		HWND mhwnd;
 		HDC mhdc; // 원본(구현용)
 		HBITMAP backBuffer; 

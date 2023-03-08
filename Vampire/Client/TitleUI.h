@@ -1,10 +1,11 @@
 #pragma once
-#include "myScene.h"
-#include "myInput.h"
+#include "MyGameObject.h"
+#include "myImage.h" 
+#include "myTransform.h"
 
 namespace my
 {
-	class TitleUI : public Scene
+	class TitleUI : public GameObject
 	{
 	public:
 		TitleUI();
@@ -15,9 +16,12 @@ namespace my
 		virtual void Render(HDC hdc);
 		virtual void Release();
 
-		virtual void OnEnter();
-		virtual void OnExit();
-
+		static bool PlayButton;
 	private:
+		Image* titleImg;
+		Image* SelectUI;
+		Image* start;
+		Image* start_M;
 	};
 }
+

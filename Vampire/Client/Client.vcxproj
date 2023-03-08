@@ -128,7 +128,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CharacterSelect.h" />
+    <ClInclude Include="myOption.h" />
+    <ClInclude Include="TitleUI.h" />
     <ClInclude Include="Enemy1.h" />
     <ClInclude Include="EnemyPool.h" />
     <ClInclude Include="Intro.h" />
@@ -155,14 +156,12 @@
     <ClInclude Include="myImage.h" />
     <ClInclude Include="myInput.h" />
     <ClInclude Include="myLayer.h" />
-    <ClInclude Include="InGameOption.h" />
     <ClInclude Include="myPlayScene.h" />
     <ClInclude Include="myResource.h" />
     <ClInclude Include="myResourceManager.h" />
     <ClInclude Include="myScene.h" />
     <ClInclude Include="mySceneManager.h" />
     <ClInclude Include="myTitleScene.h" />
-    <ClInclude Include="TitleUI.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Title.h" />
     <ClInclude Include="myTransform.h" />
@@ -172,7 +171,8 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CharacterSelect.cpp" />
+    <ClCompile Include="myOption.cpp" />
+    <ClCompile Include="TitleUI.cpp" />
     <ClCompile Include="Enemy1.cpp" />
     <ClCompile Include="EnemyPool.cpp" />
     <ClCompile Include="Intro.cpp" />
@@ -196,7 +196,6 @@
     <ClCompile Include="myImage.cpp" />
     <ClCompile Include="myInput.cpp" />
     <ClCompile Include="myLayer.cpp" />
-    <ClCompile Include="InGameOption.cpp" />
     <ClCompile Include="myPlayScene.cpp" />
     <ClCompile Include="myResource.cpp" />
     <ClCompile Include="myResourceManager.cpp" />
@@ -206,7 +205,6 @@
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="Title.cpp" />
     <ClCompile Include="myTransform.cpp" />
-    <ClCompile Include="TitleUI.cpp" />
     <ClCompile Include="Treasure.cpp" />
   </ItemGroup>
   <ItemGroup>

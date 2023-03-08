@@ -1,8 +1,7 @@
 #include "myTitleScene.h"
 #include "myScene.h"
 #include "mySceneManager.h"
-#include "Title.h"
-#include "CharactorSelect.h"
+
 
 namespace my
 {
@@ -18,17 +17,25 @@ namespace my
 	{
 		Title *title = new Title();
 		title->setName(L"Title");
-		AddGameObj(title, eLayerType::FIELD);
+
+		AddGameObj(title, eLayerType::BACKGROUND);
+
 		Scene::Initialize();
 	}
 	void TitleScene::Update()
 	{
-		for (UINT i = 0; i < (UINT)eKeyCode::END; i++)
+		if (Title::TitleUIButton)
 		{
-			if (Input::GetKeyState((eKeyCode)i) == eKeyState::Down)
-			{
-				SceneManager::LoadScene(eSceneType::TitleUI); // 바로 화면 전환
-			}
+			Title::TitleUIButton = false;
+
+			TitleUI* titleUI = new TitleUI;
+			titleUI->setName(L"TitleUI");
+			AddGameObj(titleUI, eLayerType::BACKGROUND);
+		}
+		if (TitleUI::PlayButton)
+		{
+			TitleUI::PlayButton = false;
+			SceneManager::LoadScene(eSceneType::Play);
 		}
 
 		Scene::Update();

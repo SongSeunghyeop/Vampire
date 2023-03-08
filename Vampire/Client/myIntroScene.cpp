@@ -27,7 +27,7 @@ namespace my
 	{
 		Scene::Update();
 
-		for (UINT i = 0; i < (UINT)eKeyCode::END; i++)
+		for (UINT i = 0; i < (UINT)eKeyCode::LBUTTON; i++)
 		{
         	if (Input::GetKeyState((eKeyCode)i) == eKeyState::Down)
 			{

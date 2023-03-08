@@ -8,7 +8,7 @@ namespace my
 		: Component(eComponentType::COLLIDER)
 		, mCenter(Vector2::Zero)
 		, mPos(Vector2::Zero)
-		, mSize(53.0f, 63.0f)
+		, mSize(53.0f, 69.0f)
 		,mRgb(0,255,0)
 	{
 

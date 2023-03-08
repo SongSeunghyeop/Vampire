@@ -3,6 +3,7 @@
 #include "myImage.h" 
 #include "myTransform.h"
 #include "myAnimator.h"
+#include "TitleUI.h"
 
 namespace my
 {
@@ -16,16 +17,15 @@ namespace my
 		virtual void Update();
 		virtual void Render(HDC hdc);
 		virtual void Release();
+		static bool TitleUIButton;
 
 	private:
 		Image* titleImg;
 		Image* start;
 		Image* start_M;
-		Image* money;
 		Image* Exit;
 		Image* Option;
 		Image* SelectUI;
-		Animator* arrowAnimator;
 	};
 }
 
