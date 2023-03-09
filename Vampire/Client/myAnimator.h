@@ -56,13 +56,15 @@ namespace my
 
 		Events* FindEvents(const std::wstring& name);
 
-		/*std::function<void>& GetStartEvent(const std::wstring& name);
-		std::function<void>& GetCompleteEvent(const std::wstring& name);
-		std::function<void>& GetEndEvent(const std::wstring& name);*/
+		std::function<void()>& GetStartEvent(const std::wstring& name);
+		std::function<void()>& GetCompleteEvent(const std::wstring& name);
+		std::function<void()>& GetEndEvent(const std::wstring& name);
+		bool IsComplte() { return activeAnimation->IsComplete(); }
 
 	private:
 		std::map<std::wstring, Animation*> mAnimations;
 		std::map<std::wstring, Events*> mEvents;
+
 		Animation* activeAnimation;
 		Image* mSpriteSheet;
 		bool mbLoop;

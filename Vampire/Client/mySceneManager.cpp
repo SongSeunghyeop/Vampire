@@ -7,7 +7,7 @@
 namespace my 
 {
 	std::vector<Scene*> SceneManager::mScenes = {};
-	Scene* SceneManager::activeScene = {};
+	Scene* SceneManager::activeScene = nullptr;
 
 	void SceneManager::Initialize()
 	{
@@ -23,13 +23,15 @@ namespace my
 		mScenes[(UINT)eSceneType::Play]->setName(L"PLAY");
 		mScenes[(UINT)eSceneType::Option]->setName(L"OPTION");
 
-		activeScene = mScenes[(UINT)eSceneType::Intro];
-
 		for (Scene* scene : mScenes)
 		{
 			if (scene == NULL) continue;
+
+			activeScene = scene;
 			scene->Initialize();
  		}
+
+		activeScene = mScenes[(UINT)eSceneType::Intro];
 	}
 
 	void SceneManager::Update()
@@ -39,11 +41,6 @@ namespace my
 
 	void SceneManager::Render(HDC hdc)
 	{
-		/*HBRUSH black = (HBRUSH)CreateSolidBrush(RGB(0, 0, 0));
-		Rectangle(hdc, -1, -1, 3000, 1500);
-		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, black);
-		DeleteObject(oldBrush);*/
-
 		activeScene->Render(hdc);
 	}
 
@@ -58,8 +55,13 @@ namespace my
 	}
 	void SceneManager::LoadScene(eSceneType type) // ¾÷µ¥ÀÌÆ®,·»´õ·¯ÀÇ ´ë»óÀ» ¹Ù²Ù¾îÁÜ
 	{
-		//activeScene->OnExit();
+		// ÇöÀç¾À
+		activeScene->OnExit();
+
+		CollisionManager::clear();
+		//´ÙÀ½¾À
 		activeScene = mScenes[(UINT)type];
-		//activeScene->OnEnter();
+		activeScene->OnEnter();
+
 	}
 }

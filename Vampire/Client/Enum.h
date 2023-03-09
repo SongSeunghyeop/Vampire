@@ -13,17 +13,14 @@ enum class eSceneType
 enum class eLayerType
 { // 그려지는 순서
 	BACKGROUND,
-	FIELD,
 	ITEMS,
-	ENEMY,
-	MAINITEMS,
-	PLAYER_AFTER2,
-	PLAYER_AFTER,
+	PLAYERAFTER,
 	PLAYER,
+	ENEMY,
 	EFFECT,
 	DAMAGE,
 	UI,
-	END,
+	END = 16,
 };
 
 enum class eComponentType

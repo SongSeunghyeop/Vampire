@@ -13,13 +13,14 @@ namespace my
 		virtual void Initialize();
 		virtual void Update();
 		virtual void Render(HDC hdc);
+		virtual void Destroy();
 		virtual void Release();
 
 		virtual void OnEnter();
 		virtual void OnExit ();
 
 		void AddGameObj(GameObject* obj, eLayerType layer);
-		const std::vector<GameObject*>& GetGameObj(eLayerType layer);
+		std::vector<GameObject*>& GetGameObj(eLayerType layer);
 
 	protected:
 		std::vector <Layer> mLayers;

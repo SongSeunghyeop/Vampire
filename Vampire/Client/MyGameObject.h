@@ -7,14 +7,24 @@ namespace my
 	class GameObject : public Entity
 	{
 	public:
+		enum class eState
+		{
+			Active,
+			Pause,
+			Death,
+		};
+
+		GameObject();
+		virtual ~GameObject();
+
 	    virtual void Initialize();
 	    virtual void Update();
 	    virtual void Render(HDC hdc);
 	    virtual void Release();
 
-		GameObject();
-		virtual ~GameObject();
-
+		virtual void onCollisionEnter(class Collider* other);
+		virtual void onCollisionStay(class Collider* other);
+		virtual void onCollisionExit(class Collider* other);
 
 		template <typename T>
 		T* AddComponent()
@@ -35,9 +45,12 @@ namespace my
 			}
 				return NULL;
 		}
+		eState getState() { return mState; }
+		void setState(eState state) { mState = state; }
 
 	private:
 		std::vector<Component*> mComponents;
+		eState mState;
 	};
 }
 

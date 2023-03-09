@@ -7,6 +7,7 @@
 #include "EnemyPool.h"
 #include "Field.h"
 #include "myCollisionManager.h"
+#include "myObject.h"
 
 namespace my
 {
@@ -25,10 +26,6 @@ namespace my
 		virtual void OnExit();
 
 	private:
-		Field* field;
-		Krochi* krochi;
-		Krochi_after* krochi_after;
-		Krochi_after2* krochi_after2;
 		Enemy1* enemy1;
 		EnemyPool* enemyPool;
 	};

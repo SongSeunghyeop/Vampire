@@ -2,12 +2,22 @@
 
 namespace my
 {
+	Scene::Scene()
+	{
+		mLayers.reserve(5);
+		mLayers.resize((UINT)eLayerType::END);
+	}
+	Scene::~Scene()
+	{
+
+	}
+
 	void Scene::Initialize()
 	{
-		for (Layer& layer : mLayers)
+	/*	for (Layer& layer : mLayers)
 		{
 			layer.Initialize();
-		}
+		}*/
 	}
 
 	void Scene::Update()
@@ -26,12 +36,42 @@ namespace my
 		}
 	}
 
-	void Scene::Release()
+	void Scene::Destroy()
 	{
+		std::vector<GameObject*> deleteGameObjects = {};
 		for (Layer& layer : mLayers)
 		{
-			layer.Release();
+			std::vector<GameObject*>& gameObjects
+				= layer.GetGameObjects();
+
+			for (std::vector<GameObject*>::iterator iter = gameObjects.begin()
+				; iter != gameObjects.end(); )
+			{
+				if ((*iter)->getState() == GameObject::eState::Death)
+				{
+					deleteGameObjects.push_back((*iter));
+					iter = gameObjects.erase(iter);
+				}
+				else
+				{
+					iter++;
+				}
+			}
 		}
+
+		for (GameObject* deathObj : deleteGameObjects)
+		{
+			delete deathObj;
+			deathObj = nullptr;
+		}
+	}
+
+	void Scene::Release()
+	{
+	/*	for (Layer& layer : mLayers)
+		{
+			layer.Release();
+		}*/
 	}
 
 	void Scene::OnEnter()
@@ -47,19 +87,9 @@ namespace my
 	{
 		mLayers[(UINT)layer].AddGameObject(obj);
 	}
-	const std::vector<GameObject*>& Scene::GetGameObj(eLayerType layer)
+	std::vector<GameObject*>& Scene::GetGameObj(eLayerType layer)
 	{
 		return mLayers[(UINT)layer].GetGameObjects();
 	}
 
-	Scene::Scene()
-	{
-		//mLayer.reserve(5);
-		mLayers.resize((UINT)eLayerType::END);
-	}
-
-	Scene::~Scene()
-	{
-
-	}
 }

@@ -1,6 +1,6 @@
 #pragma once
 #include "myEntity.h"
-
+#include "myCamera.h"
 
 namespace my
 {

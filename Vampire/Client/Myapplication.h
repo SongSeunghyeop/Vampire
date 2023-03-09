@@ -1,6 +1,6 @@
 #pragma once
 #include "VampireEngine.h"
-#include "Krochi.h"
+
 //게임의 전체를 총괄
 
 namespace my
@@ -19,12 +19,11 @@ namespace my
 
 		HWND GetHwnd() { return mhwnd; }
 		HDC		GetHdc() { return mhdc; }
+		UINT GetWidth() { return mWidth; }
+		UINT GetHeight() { return mHeight; }
 
 	public:
-		Vector2 getWindowPos() 
-		{
-			return WindowPos;
-		}
+		Vector2 getWindowPos() { return WindowPos; }
 
 	private:
 		RECT rect;
@@ -34,5 +33,8 @@ namespace my
 		HBITMAP backBuffer; 
 		HDC backHdc; // 메모리상의 백버퍼 (보이지 않음)
 		Vector2 mPos;
+
+		int mWidth;
+		int mHeight;
 	};
 }

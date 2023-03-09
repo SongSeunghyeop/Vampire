@@ -18,10 +18,7 @@ namespace my
 	}
 	void IntroScene::Initialize()
 	{
-		Intro* intro = new Intro();
-		intro->setName(L"Intro");
-		AddGameObj(intro, eLayerType::BACKGROUND);
-		Scene::Initialize();
+		object::Instantiate<Intro>(Vector2::Zero, eLayerType::BACKGROUND);
 	}
 	void IntroScene::Update()
 	{

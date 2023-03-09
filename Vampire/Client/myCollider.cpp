@@ -4,12 +4,15 @@
 
 namespace my
 {
+	UINT Collider::ColliderNumber;
+
 	Collider::Collider()
 		: Component(eComponentType::COLLIDER)
 		, mCenter(Vector2::Zero)
 		, mPos(Vector2::Zero)
 		, mSize(53.0f, 69.0f)
 		,mRgb(0,255,0)
+		, mID(ColliderNumber++)
 	{
 
 	}
@@ -28,11 +31,12 @@ namespace my
 
 	void Collider::Render(HDC hdc)
 	{
-		HPEN pen = CreatePen(BS_SOLID, 2, RGB(mRgb.r, mRgb.g, mRgb.b));
+		HPEN pen = CreatePen(BS_SOLID, 2, RGB(mRgb.r, mRgb.g, mRgb.b));	
 		HPEN oldPen = (HPEN)SelectObject(hdc, pen);
 		HBRUSH brush = (HBRUSH)GetStockObject(NULL_BRUSH);
 		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, brush);
 
+		Vector2 pos = Camera::CaluatePos(mPos);
 		Rectangle(hdc, mPos.x, mPos.y, mPos.x + mSize.x, mPos.y + mSize.y);
 
 		(HPEN)SelectObject(hdc, oldPen);
@@ -43,5 +47,16 @@ namespace my
 	{
 
 	}
-
+	void Collider::onCollisionEnter(Collider* other)
+	{
+		getOwner()->onCollisionEnter(other);
+	}
+	void Collider::onCollisionStay(Collider* other)
+	{
+		getOwner()->onCollisionStay(other);
+	}
+	void Collider::onCollisionExit(Collider* other)
+	{
+		getOwner()->onCollisionExit(other);
+	}
 }

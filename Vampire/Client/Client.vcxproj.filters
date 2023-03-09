@@ -100,6 +100,9 @@
     <Filter Include="Engine\Scene\Option">
       <UniqueIdentifier>{2ff2f9ed-4184-4bf1-89d0-ee44a5bace24}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Camera">
+      <UniqueIdentifier>{1a8ad8e2-ee37-42db-a9a0-402c6d1fe43e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -225,6 +228,12 @@
     <ClInclude Include="myOption.h">
       <Filter>Engine\Scene\Option</Filter>
     </ClInclude>
+    <ClInclude Include="myObject.h">
+      <Filter>Engine\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="myCamera.h">
+      <Filter>Engine\Camera</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -331,6 +340,9 @@
     </ClCompile>
     <ClCompile Include="myOption.cpp">
       <Filter>Engine\Scene\Option</Filter>
+    </ClCompile>
+    <ClCompile Include="myCamera.cpp">
+      <Filter>Engine\Camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

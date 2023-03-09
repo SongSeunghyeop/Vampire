@@ -5,6 +5,7 @@
 namespace my
 {
 	WORD CollisionManager::mMatrix[(UINT)eLayerType::END] = {}; // 전체 레이어를 배열로 만든다
+	std::map<UINT64, bool> CollisionManager::mCollisionMap;
 
 	void CollisionManager::Update()
 	{
@@ -24,8 +25,8 @@ namespace my
 
 	void CollisionManager::LayerCollision(Scene* scene, eLayerType left, eLayerType right)
 	{
-		const std::vector<GameObject*>& lefts = scene->GetGameObj(left);
-		const std::vector<GameObject*>& rights = scene->GetGameObj(right);
+		std::vector<GameObject*>& lefts = scene->GetGameObj(left);
+		std::vector<GameObject*>& rights = scene->GetGameObj(right);
 
 		for (auto leftObject : lefts)
 		{
@@ -39,17 +40,57 @@ namespace my
 				if (rightCollider == nullptr)
 					continue;
 
-				if (leftObject == rightObject) // 두 오브젝트가 같다면 
-					continue;
+				//if (leftObject == rightObject) // 두 오브젝트가 같다면 
+				//	continue;
 
-				if (Intersect(leftCollider, rightCollider))
-				{
-					// 충돌 O
-				}
-				else
-				{
-					// 충돌 X
-				}
+				ColliderCollision(leftCollider, rightCollider, left, right);
+			}
+		}
+	}
+
+	void CollisionManager::ColliderCollision(Collider* leftCol, Collider* rightCol, eLayerType left, eLayerType right)
+	{
+		ColliderID colliderID = {};
+		colliderID.left = (UINT)leftCol->GetID();
+		colliderID.right = (UINT)rightCol->GetID();
+
+		//static std::map<UINT64, bool> mCollisionMap;
+		std::map<UINT64, bool>::iterator iter
+			= mCollisionMap.find(colliderID.id);
+
+		if (iter == mCollisionMap.end())
+		{
+			mCollisionMap.insert(std::make_pair(colliderID.id, false));
+			iter = mCollisionMap.find(colliderID.id);
+		}
+
+		if (Intersect(leftCol, rightCol))
+		{
+			// 최초 충돌 시작했을때 enter
+			if (iter->second == false)
+			{
+				leftCol->onCollisionEnter(rightCol);
+				rightCol->onCollisionEnter(leftCol);
+
+				iter->second = true;
+			}
+			else // 충돌 중인상태 stay
+			{
+				leftCol->onCollisionStay(rightCol);
+				rightCol->onCollisionStay(leftCol);
+			}
+		}
+		else
+		{
+			// Exit
+			// 이전프레임 충돌 O
+			// 현재는 충돌 X 
+			if (iter->second == true)
+			{
+				leftCol->onCollisionExit(rightCol);
+				rightCol->onCollisionExit(leftCol);
+
+				iter->second = false;
 			}
 		}
 	}
@@ -64,8 +105,8 @@ namespace my
 		Vector2 leftSize = left->getSize(); // 크기 받아옴
 		Vector2 rightSize = right->getSize();
 
-		if (fabs(leftPos.x - rightPos.x) < (leftSize.x / 2.0f) + (rightSize.x / 2.0f) // 두 객체의 반지름의 합보다 
-			&& fabs(leftPos.y - rightPos.y) < (leftSize.y / 2.0f) + (rightSize.y / 2.0f))
+		if (fabs(leftPos.x - rightPos.x ) < (leftSize.x / 2.0f) + (rightSize.x / 2.0f) - 5 // 두 객체의 반지름의 합보다 
+			&& fabs(leftPos.y - rightPos.y) < (leftSize.y / 2.0f) + (rightSize.y / 2.0f) - 5)
 		{
 			return true;
 		}
@@ -78,7 +119,7 @@ namespace my
 		UINT col = 0;
 
 		UINT ileft = (UINT)left;
-		UINT iright = (UINT)right;
+		UINT iright = (UINT)right;  
 
 		if (left <= right)
 		{
@@ -100,7 +141,8 @@ namespace my
 
 	void CollisionManager::clear()
 	{
-
+		memset(mMatrix, 0, sizeof(WORD) * (UINT)eLayerType::END);
+		mCollisionMap.clear();
 	}
 }
 

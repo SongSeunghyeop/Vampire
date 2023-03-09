@@ -14,8 +14,7 @@ namespace my
 	{
 		menu = new InGameMenu();
 		AddGameObj(menu, eLayerType::UI);
-
-		Scene::Initialize();
+		menu->Initialize();
 	}
 	void Option::Update()
 	{

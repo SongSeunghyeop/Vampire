@@ -55,6 +55,7 @@ namespace my
         Vector2 scale = tr->getScale();
         Vector2 pos = tr->getPos();
 
+        pos = Camera::CaluatePos(pos);
         pos.x -= mSpriteSheets[mSpriteIndex].size.x / 2.0f;
         pos.y -= mSpriteSheets[mSpriteIndex].size.y;
  
@@ -101,5 +102,4 @@ namespace my
         mTime = 0.0f;
         mbComplete = false;
     }
-
 }

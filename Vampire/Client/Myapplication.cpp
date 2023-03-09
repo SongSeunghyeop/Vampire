@@ -20,7 +20,11 @@ namespace my
 		this->mhwnd = hwnd; // 핸들
 		this->mhdc = GetDC(hwnd); // HDC : 비트맵에 그려주는 역할 
 		                                              // getDC : 현재 윈도우가 갖고있는 비트맵을 할당받는 DC가 목적지로 삼는 것
+		mWidth = 1600;
+		mHeight = 900;
+		rect = { 0,0,mWidth,mHeight };
 		AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false); // 해상도를 입력하면, 그에 맞게 수정
+
 		GetClientRect(mhwnd, &rect);
 		WindowPos.x = rect.right - rect.left;
 		WindowPos.y = rect.bottom - rect.top;
@@ -37,6 +41,7 @@ namespace my
 		Time::Initialize();
 		Input::Initialize();
 		SceneManager::Initialize();
+		Camera::Initiailize();
 	}
 	void Application::Run()
 	{
@@ -51,6 +56,8 @@ namespace my
 
 		Time::Update();
 		Input::Update();
+		Camera::Update();
+
 		SceneManager::Update();
 		CollisionManager::Update();
 	}

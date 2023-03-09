@@ -9,10 +9,11 @@ extern my::Application myapplication;
 namespace my
 {
 	Vector2 Krochi::Playerpos;
+	bool Krochi::Player_coll;
 
 	Krochi::Krochi()
 	{
-		Right = true;
+
 	}
 	Krochi::~Krochi()
 	{
@@ -22,6 +23,8 @@ namespace my
 	{
 		playerImg_R = ResourceManager::Load<Image>(L"PlayerR1", L"..\\Resources\\Player_RightRun.bmp");
 		playerImg_L = ResourceManager::Load<Image>(L"PlayerL1", L"..\\Resources\\Player_LeftRun.bmp");
+		damaged_R = ResourceManager::Load<Image>(L"damaged_R", L"..\\Resources\\Coll_RightRun.bmp");
+		damaged_L = ResourceManager::Load<Image>(L"damaged_L", L"..\\Resources\\Coll_LeftRun.bmp");
 
 		Transform* tr = GetComponent<Transform>();
     	tr->setPos(Vector2(730,350));
@@ -32,7 +35,12 @@ namespace my
 		playerAnimator->CreateAnimation(L"Idle_L", playerImg_L, Vector2::Zero, 3, 1, 1, 0.3, 255, 0, 255);
 		playerAnimator->CreateAnimation(L"RightRun", playerImg_R, Vector2::Zero, 3,1,3, 0.3, 255, 0, 255);
 		playerAnimator->CreateAnimation(L"LeftRun", playerImg_L, Vector2::Zero, 3,1,3, 0.3, 255, 0, 255);
+		playerAnimator->CreateAnimation(L"Damaged_IdleR", damaged_R, Vector2::Zero, 3,1,1, 0.3, 255, 0, 255);
+		playerAnimator->CreateAnimation(L"Damaged_IdleL", damaged_L, Vector2::Zero, 3,1,1, 0.3, 255, 0, 255);
+		playerAnimator->CreateAnimation(L"Damaged_RunR", damaged_R, Vector2::Zero, 3,1,3, 0.3, 255, 0, 255);
+		playerAnimator->CreateAnimation(L"Damaged_RunL", damaged_L, Vector2::Zero, 3,1,3, 0.3, 255, 0, 255);
 		playerAnimator->Play(L"Idle_R", true);
+		Right = true;
 		mState = ePlayerState::Idle;
 
 		Collider* collider = AddComponent<Collider>();
@@ -71,10 +79,14 @@ namespace my
 		Transform* tr = GetComponent<Transform>();
 		Playerpos = tr->getPos();
 
-		if (Right)
+		if (Right && !Krochi::Player_coll)
 			playerAnimator->Play(L"Idle_R", true);
-		if (!Right)
+		if (!Right && !Krochi::Player_coll)
 			playerAnimator->Play(L"Idle_L", true);
+		if (Right && Krochi::Player_coll)
+			playerAnimator->Play(L"Damaged_IdleR", true);
+		if (!Right && Krochi::Player_coll)
+			playerAnimator->Play(L"Damaged_IdleL", true);
 
 		if (Input::GetKey(eKeyCode::A) || Input::GetKeyDown(eKeyCode::A))
 		{
@@ -105,12 +117,14 @@ namespace my
 		Transform* tr = GetComponent<Transform>();
 		Playerpos = tr->getPos();
 
-		if (Right)
-		{
+		if (Right && !Krochi::Player_coll)
 			playerAnimator->Play(L"RightRun", true);
-		}
-		if(!Right)
+		if(!Right && !Krochi::Player_coll)
 			playerAnimator->Play(L"LeftRun", true);
+		if (Right && Krochi::Player_coll)
+			playerAnimator->Play(L"Damaged_RunR", true);
+		if (!Right && Krochi::Player_coll)
+			playerAnimator->Play(L"Damaged_RunL", true);
 
 		if (Input::GetKeyUp(eKeyCode::A))
 		{
@@ -155,5 +169,20 @@ namespace my
 		}
 
 		tr->setPos(Playerpos);
+	}
+
+	void Krochi::onCollisionEnter(Collider* other)
+	{
+		Krochi::Player_coll = true;
+	}
+
+	void Krochi::onCollisionStay(Collider* other)
+	{
+		Krochi::Player_coll = true;
+	}
+
+	void Krochi::onCollisionExit(Collider* other)
+	{
+		Krochi::Player_coll = false;
 	}
 }

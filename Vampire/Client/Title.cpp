@@ -49,10 +49,10 @@ namespace my
 
 		StretchBlt(hdc, 150, 0, 1200, 750, titleImg->GetHdc(), 0, 0, titleImg->GetWidth(), titleImg->GetHeight(), SRCCOPY);
 		TransparentBlt(hdc, 990, 430, start->GetWidth() * 1.4, start->GetHeight() * 1.4, start->GetHdc(), 0, 0, start->GetWidth(), start->GetHeight(), RGB(255, 0, 255));
-		TransparentBlt(hdc, 1068, 440, start_M->GetWidth() * 1.1, start_M->GetHeight() * 1.0, start_M->GetHdc(), 0, 0, start_M->GetWidth(), start_M->GetHeight(), RGB(255, 0, 255));
+		TransparentBlt(hdc, 1068, 440, start_M->GetWidth() * 1.1, start_M->GetHeight(), start_M->GetHdc(), 0, 0, start_M->GetWidth(), start_M->GetHeight(), RGB(255, 0, 255));
 		TransparentBlt(hdc, 990, 515, start->GetWidth() * 1.4, start->GetHeight() * 1.4, start->GetHdc(), 0, 0, start->GetWidth(), start->GetHeight(), RGB(255, 0, 255));
 		TransparentBlt(hdc, 990, 600, start->GetWidth() * 1.4, start->GetHeight() * 1.4, start->GetHdc(), 0, 0, start->GetWidth(), start->GetHeight(), RGB(255, 0, 255));
-		
+		 
 		GameObject::Render(hdc);
 	}
 	void Title::Release()

@@ -128,6 +128,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="myCamera.h" />
+    <ClInclude Include="myObject.h" />
     <ClInclude Include="myOption.h" />
     <ClInclude Include="TitleUI.h" />
     <ClInclude Include="Enemy1.h" />
@@ -171,6 +173,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="myCamera.cpp" />
     <ClCompile Include="myOption.cpp" />
     <ClCompile Include="TitleUI.cpp" />
     <ClCompile Include="Enemy1.cpp" />

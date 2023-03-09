@@ -3,6 +3,7 @@
 #include "Title.h"
 #include "myScene.h"
 #include "myInput.h"
+#include "myObject.h"
 
 namespace my
 {

@@ -1,6 +1,7 @@
 #pragma once
 #include "myScene.h"
 #include "myInput.h"
+#include "myObject.h"
 
 namespace my
 {

@@ -15,12 +15,7 @@ namespace my
 	}
 	void TitleScene::Initialize()
 	{
-		Title *title = new Title();
-		title->setName(L"Title");
-
-		AddGameObj(title, eLayerType::BACKGROUND);
-
-		Scene::Initialize();
+		object::Instantiate<Title>(Vector2::Zero, eLayerType::BACKGROUND);
 	}
 	void TitleScene::Update()
 	{

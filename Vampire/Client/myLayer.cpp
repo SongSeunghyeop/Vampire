@@ -17,39 +17,49 @@ namespace my
 
 	void Layer::Initialize()
 	{
-		for (GameObject* gameobj : mGameObjects)
+	/*	for (GameObject* gameObj : mGameObjects)
 		{
-			if (gameobj == NULL) continue;
+			if (gameObj == nullptr)
+				continue;
 
-			gameobj->Initialize();
-		}
+			if (gameObj->getState()
+				!= GameObject::eState::Active)
+				continue;
+
+			gameObj->Initialize();
+		}*/
 	}
 	void Layer::Update()
 	{
-		for (GameObject* gameobj : mGameObjects)
+		for (GameObject* gameObj : mGameObjects)
 		{
-			if (gameobj == NULL) continue;
+			if (gameObj == nullptr)
+				continue;
 
-			gameobj->Update();
+			if (gameObj->getState()
+				!= GameObject::eState::Active)
+				continue;
+
+			gameObj->Update();
 		}
 	}
 	void Layer::Render(HDC hdc)
 	{
-		for (GameObject* gameobj : mGameObjects)
+		for (GameObject* gameObj : mGameObjects)
 		{
-			if (gameobj == NULL) continue;
+			if (gameObj == nullptr)
+				continue;
 
-			gameobj->Render(hdc);
+			if (gameObj->getState()
+				!= GameObject::eState::Active)
+				continue;
+
+			gameObj->Render(hdc);
 		}
 	}
 	void Layer::Release()
 	{
-		for (GameObject* gameobj : mGameObjects)
-		{
-			if (gameobj == NULL) continue;
 
-			gameobj->Release();
-		}
 	}
 	void Layer::AddGameObject(GameObject* gameObj)
 	{

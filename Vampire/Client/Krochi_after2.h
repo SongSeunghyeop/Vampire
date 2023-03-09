@@ -27,14 +27,14 @@ namespace my
 		Krochi::ePlayerState after_State;
 
 		Image* playerImg_RA1;
-		Image* playerImg_RA2;
 		Image* playerImg_LA1;
-		Image* playerImg_LA2;
 		Image* playerImg_N;
+		Image* Damaged_R;
+		Image* Damaged_L;
 
 		Vector2 afterPos;
 		bool Right_after;
-
+		float delay;
 		void move();
 		void shoot();
 		void death();

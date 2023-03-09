@@ -18,6 +18,10 @@ namespace my
 		virtual void Render(HDC hdc);
 		virtual void Release();
 
+		virtual void onCollisionStay(class Collider* other) override;
+		virtual void onCollisionExit(class Collider* other) override;
+		virtual void onCollisionEnter(class Collider* other) override;
+		
 		int getRandomPos();
 
 	private:
@@ -26,7 +30,7 @@ namespace my
 		Vector2 EnemyPos;
 		Vector2 Ppos;
 		Animator *EnemyAnimator;
-
+		bool coll;
 	};
 }
 
