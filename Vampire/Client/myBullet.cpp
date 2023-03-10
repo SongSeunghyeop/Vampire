@@ -20,8 +20,8 @@ namespace my
 		bulletPos = tr->getPos();
 
 		Collider* collider = AddComponent<Collider>();
-		collider->setCenter(Vector2(0, 0));
-		collider->setSize(Vector2(32, 32));
+		collider->setCenter(Vector2(1, 0));
+		collider->setSize(Vector2(33, 31));
 		collider->setRGB(0, 0, 255);
 		GameObject::Initialize();
 	}
