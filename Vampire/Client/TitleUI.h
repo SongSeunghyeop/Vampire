@@ -22,6 +22,7 @@ namespace my
 		Image* SelectUI;
 		Image* start;
 		Image* start_M;
+		Image* info;
 	};
 }
 

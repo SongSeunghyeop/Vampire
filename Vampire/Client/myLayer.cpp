@@ -15,20 +15,6 @@ namespace my
 		}
 	}
 
-	void Layer::Initialize()
-	{
-	/*	for (GameObject* gameObj : mGameObjects)
-		{
-			if (gameObj == nullptr)
-				continue;
-
-			if (gameObj->getState()
-				!= GameObject::eState::Active)
-				continue;
-
-			gameObj->Initialize();
-		}*/
-	}
 	void Layer::Update()
 	{
 		for (GameObject* gameObj : mGameObjects)

@@ -40,6 +40,7 @@ namespace my
 		EnemyPos.y = Enemy1::getRandomPos();
 		tr->setPos(EnemyPos);
 		tr->setScale(1,1);
+
 		Collider* collider = AddComponent<Collider>();
 		collider->setCenter(Vector2(-27, -67));
 		collider->setSize(Vector2(53, 65));

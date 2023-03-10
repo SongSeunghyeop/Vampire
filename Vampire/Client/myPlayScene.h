@@ -6,6 +6,7 @@
 #include "Enemy1.h"
 #include "EnemyPool.h"
 #include "Field.h"
+#include "myBullet.h"
 #include "myCollisionManager.h"
 #include "myObject.h"
 
@@ -28,5 +29,6 @@ namespace my
 	private:
 		Enemy1* enemy1;
 		EnemyPool* enemyPool;
+		float pTime;
 	};
 }

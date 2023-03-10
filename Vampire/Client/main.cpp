@@ -5,7 +5,9 @@
 #include "Myapplication.h"
 #include "myResourceManager.h"
 #include "mySceneManager.h"
+#include <crtdbg.h>
 
+#define _CRTDBG_MAP_ALLOC
 #define MAX_LOADSTRING 100
 // 전역 변수: 
 HINSTANCE hInst;                                                            // 현재 인스턴스입니다.
@@ -25,6 +27,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                                          _In_ LPWSTR    lpCmdLine,
                                          _In_ int       nCmdShow)
 {
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
 

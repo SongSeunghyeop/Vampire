@@ -22,8 +22,8 @@ namespace my
 		playerImg_RA1 = ResourceManager::Load<Image>(L"PlayerRA1", L"..\\Resources\\Player_RightAfter.bmp");
 		playerImg_LA1 = ResourceManager::Load<Image>(L"PlayerLA1", L"..\\Resources\\Player_LeftAfter.bmp");
 		playerImg_N = ResourceManager::Load<Image>(L"PlayerN", L"..\\Resources\\Player_None.bmp");
-		Damaged_R = ResourceManager::Load<Image>(L"DamagedAfter_R", L"..\\Resources\\TestR.bmp");
-		Damaged_L = ResourceManager::Load<Image>(L"DamagedAfter_L", L"..\\Resources\\TestL.bmp");
+		Damaged_R = ResourceManager::Load<Image>(L"DamagedAfter_R", L"..\\Resources\\Coll_RightAfter.bmp");
+		Damaged_L = ResourceManager::Load<Image>(L"DamagedAfter_L", L"..\\Resources\\Coll_LeftAfter.bmp");
 
 		Transform* tr = GetComponent<Transform>();
 		tr->setPos(Vector2(730, 350));

@@ -22,8 +22,8 @@ namespace my::object
 		T* gameObj = new T();
 		Scene* scene = SceneManager::getActiveScene();
 		scene->AddGameObj(gameObj, type);
+ 		gameObj->GameObject::GetComponent<Transform>()->setPos(pos);
 		gameObj->Initialize();
-		gameObj->GameObject::GetComponent<Transform>()->setPos(pos);
 		return gameObj;
 	}
 

@@ -23,13 +23,13 @@ namespace my
 	{
 		playerImg_R = ResourceManager::Load<Image>(L"PlayerR1", L"..\\Resources\\Player_RightRun.bmp");
 		playerImg_L = ResourceManager::Load<Image>(L"PlayerL1", L"..\\Resources\\Player_LeftRun.bmp");
-		damaged_R = ResourceManager::Load<Image>(L"damaged_R", L"..\\Resources\\Coll_RightRun.bmp");
-		damaged_L = ResourceManager::Load<Image>(L"damaged_L", L"..\\Resources\\Coll_LeftRun.bmp");
-
+		damaged_R = ResourceManager::Load<Image>(L"damaged_R", L"..\\Resources\\Collision_RightRun.bmp");
+		damaged_L = ResourceManager::Load<Image>(L"damaged_L", L"..\\Resources\\Collision_LeftRun.bmp");
+	
 		Transform* tr = GetComponent<Transform>();
-    	tr->setPos(Vector2(730,350));
-
+		tr->setPos(Vector2(730,350));
 		Playerpos = tr->getPos();
+
 		playerAnimator = AddComponent<Animator>(); // 애니메이터 컴포넌트 배열에 동적할당 및 초기화
 		playerAnimator->CreateAnimation(L"Idle_R", playerImg_R, Vector2::Zero, 3,1,1, 0.3,255,0,255); // 스프라이트 배열로 쪼개진 하나의 애니메이션 생성
 		playerAnimator->CreateAnimation(L"Idle_L", playerImg_L, Vector2::Zero, 3, 1, 1, 0.3, 255, 0, 255);

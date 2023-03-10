@@ -1,6 +1,5 @@
 #pragma once
 #include "VampireEngine.h"
-
 namespace my
 {
 	class GameObject;

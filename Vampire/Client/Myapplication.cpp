@@ -68,6 +68,6 @@ namespace my
 		SceneManager::Render(backHdc); // 전부다 백버퍼에 랜더
 
 		//백버퍼의 그림 원본(구현용)에 복사 ( 흰색의 화면까지 전체가 계속 포함되어서 복사가 되는 것이므로 깜빡이지 않는다 
-		StretchBlt(mhdc, 0, 0, WindowPos.x, WindowPos.y, backHdc, 0, 0, 1500, 750, SRCCOPY); // 구현용 hdc에 그대로 복사
+		StretchBlt(mhdc, 0, 0, WindowPos.x, WindowPos.y, backHdc, 0, 0, 1500, 720, SRCCOPY); // 구현용 hdc에 그대로 복사
 	}
 }

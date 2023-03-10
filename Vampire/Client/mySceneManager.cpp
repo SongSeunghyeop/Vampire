@@ -62,6 +62,5 @@ namespace my
 		//´ÙÀ½¾À
 		activeScene = mScenes[(UINT)type];
 		activeScene->OnEnter();
-
 	}
 }

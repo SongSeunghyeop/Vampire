@@ -103,6 +103,9 @@
     <Filter Include="Engine\Camera">
       <UniqueIdentifier>{1a8ad8e2-ee37-42db-a9a0-402c6d1fe43e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\GameObject\Bullet">
+      <UniqueIdentifier>{c2bc11b2-f8d3-4fbe-93a7-39bf24f954af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -234,6 +237,9 @@
     <ClInclude Include="myCamera.h">
       <Filter>Engine\Camera</Filter>
     </ClInclude>
+    <ClInclude Include="myBullet.h">
+      <Filter>Engine\GameObject\Bullet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -343,6 +349,9 @@
     </ClCompile>
     <ClCompile Include="myCamera.cpp">
       <Filter>Engine\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="myBullet.cpp">
+      <Filter>Engine\GameObject\Bullet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

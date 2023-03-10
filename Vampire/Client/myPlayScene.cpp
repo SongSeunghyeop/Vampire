@@ -28,20 +28,32 @@ namespace my
 			AddGameObj(enemy, eLayerType::ENEMY);
 			enemy->Initialize();
 		}
+
+		pTime = 0.0f;
 	}
+
 	void PlayScene::Update()
 	{
-		Scene::Update();
+		pTime += 0.01f * Time::getDeltaTime();
 
 		if (Input::GetKeyState(eKeyCode::ESC) == eKeyState::Down)
 		{
 			SceneManager::LoadScene(eSceneType::Option);
 			Input::SetKeyState(eKeyCode::ESC, eKeyState::None);
 		}
+		
+		if (pTime >= 0.02f)
+		{
+			object::Instantiate<BaseBullet>(Krochi::getPlayerPos(), eLayerType::EFFECT);
+			pTime = 0.0f;
+		}
+
+		Scene::Update();
 	}
 	void PlayScene::Render(HDC hdc)
 	{
 		Scene::Render(hdc);
+		Scene::Destroy();
 	}
 	void PlayScene::Release()
 	{
@@ -51,7 +63,7 @@ namespace my
 	void PlayScene::OnEnter()
 	{
 		CollisionManager::setLayer(eLayerType::PLAYER, eLayerType::ENEMY, true);
-		//CollisionManager::setLayer(eLayerType::ENEMY, eLayerType::ENEMY, true);
+		CollisionManager::setLayer(eLayerType::ENEMY, eLayerType::EFFECT, true);
 	}
 	void PlayScene::OnExit()
 	{

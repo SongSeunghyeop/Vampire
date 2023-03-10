@@ -17,7 +17,7 @@ namespace my
 	}
 	void Intro::Initialize()
 	{
-		titleImg = ResourceManager::Load<Image>(L"Intro", L"..\\Resources\\Intro.bmp"); // 이미지의 키와 경로 정보를 받음
+		titleImg = ResourceManager::Load<Image>(L"Intro", L"..\\Resources\\Title3.bmp"); // 이미지의 키와 경로 정보를 받음
 		IntroM = ResourceManager::Load<Image>(L"IntroM", L"..\\Resources\\Intro2.bmp"); // 이미지의 키와 경로 정보를 받음
 		GameObject::Initialize();
 	}
@@ -31,14 +31,14 @@ namespace my
 		Transform* trans = GetComponent<Transform>(); 
 		Vector2 pos = trans->getPos();
 
-		StretchBlt(hdc, 150, 0, 1200, 750, titleImg->GetHdc(), 0, 0, 1200, 750, SRCCOPY);
-		TransparentBlt(hdc, 500, 600, 500, 60, IntroM->GetHdc(), 0, 0, IntroM->GetWidth(), IntroM->GetHeight(), RGB(0, 0, 0));
+		StretchBlt(hdc, 110, 0, 1280, 720, titleImg->GetHdc(), 0, 0, titleImg->GetWidth(), titleImg->GetHeight(), SRCCOPY);
+		TransparentBlt(hdc, 500, 500, 500, 55, IntroM->GetHdc(), 0, 0, IntroM->GetWidth(), IntroM->GetHeight(), RGB(0, 0, 0));
 		
-		mSecond += 0.15f * Time::getDeltaTime();
+		mSecond += 0.2f * Time::getDeltaTime();
 
 		if (mSecond > 0.1f)
 		{
-			StretchBlt(hdc, 150, 0, 1200, 750, titleImg->GetHdc(), 0, 0, 1200, 750, SRCCOPY);
+			StretchBlt(hdc, 110, 0, 1280, 720, titleImg->GetHdc(), 0, 0, titleImg->GetWidth(), titleImg->GetHeight(), SRCCOPY);
 		}
 		if (mSecond > 0.2f)
 		{

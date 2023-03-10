@@ -4,6 +4,7 @@
 #include "myTransform.h"
 #include "myInput.h"
 #include "Time.h"
+#include "Krochi.h"
 
 extern my::Application myapplication;
 
