@@ -28,13 +28,14 @@ namespace my
 		Damaged_L = ResourceManager::Load<Image>(L"DamagedAfter_L", L"..\\Resources\\Coll_LeftAfter.bmp");
 
 		Transform* tr = GetComponent<Transform>();
-		tr->setPos(Vector2(730, 350));
+		tr->setPos(Krochi::getPlayerPos());
+
 		playerAnimator = AddComponent<Animator>(); // 애니메이터 컴포넌트 배열에 동적할당 및 초기화
-		playerAnimator->CreateAnimation(L"RightAfter", playerImg_RA1, Vector2::Zero, 3,1,3,  0.3, 255, 0, 255);
-		playerAnimator->CreateAnimation(L"LeftAfter", playerImg_LA1, Vector2::Zero, 3,1,3, 0.3, 255, 0, 255);
-		playerAnimator->CreateAnimation(L"None", playerImg_N, Vector2::Zero, 1,1,1, 0.3, 255, 0, 255);
-		playerAnimator->CreateAnimation(L"DamagedAfter_R", Damaged_R, Vector2::Zero, 3,1,3, 0.3, 255, 0, 255);
-		playerAnimator->CreateAnimation(L"DamagedAfter_L", Damaged_L, Vector2::Zero, 3,1,3, 0.3, 255, 0, 255);
+		playerAnimator->CreateAnimation(L"RightAfter", playerImg_RA1, Vector2::Zero, 3,1,3,  0.3f, 255, 0, 255);
+		playerAnimator->CreateAnimation(L"LeftAfter", playerImg_LA1, Vector2::Zero, 3,1,3, 0.3f, 255, 0, 255);
+		playerAnimator->CreateAnimation(L"None", playerImg_N, Vector2::Zero, 1,1,1, 0.3f, 255, 0, 255);
+		playerAnimator->CreateAnimation(L"DamagedAfter_R", Damaged_R, Vector2::Zero, 3,1,3, 0.3f, 255, 0, 255);
+		playerAnimator->CreateAnimation(L"DamagedAfter_L", Damaged_L, Vector2::Zero, 3,1,3, 0.3f, 255, 0, 255);
 		after_State = Krochi::ePlayerState::Idle;
 		delay = 0.0f;
 		GameObject::Initialize();

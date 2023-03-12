@@ -17,9 +17,9 @@ namespace my
 
 	void Camera::Initiailize()
 	{
-		mResolution.x = myapplication.GetWidth();
-		mResolution.y = myapplication.GetHeight();
-		mLookPosition = (mResolution / 2.0f);
+		mResolution.x = 1500 - 14;
+		mResolution.y = 720 - 17;
+ 		mLookPosition = (mResolution / 2.0f);
 	}
 
 	void Camera::Update()
@@ -31,5 +31,12 @@ namespace my
 		}
 
 		mDistance = mLookPosition - (mResolution / 2.0f);
+	}
+	void Camera::Clear()
+	{
+		/*mResolution.x = myapplication.GetWidth();
+		mResolution.y = myapplication.GetHeight();*/
+		//mLookPosition = (mResolution / 2.0f);
+		mDistance = Vector2::Zero;
 	}
 }

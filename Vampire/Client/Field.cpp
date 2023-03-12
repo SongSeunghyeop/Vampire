@@ -19,12 +19,7 @@ namespace my
 	void Field::Initialize()
 	{
 		fieldImg = ResourceManager::Load<Image>(L"Field", L"..\\Resources\\Field.bmp");
-		Transform* tr = GetComponent<Transform>();
-		Vector2 pPos = Krochi::getPlayerPos();
-		pPos.x -= 500;
-		pPos.y -= 250;
 
-		tr->setPos(pPos);
 		GameObject::Initialize();
 	}
 	void Field::Update()
@@ -33,10 +28,11 @@ namespace my
 	}
 	void Field::Render(HDC hdc)
 	{
-		GameObject::Render(hdc);
+		Vector2 pos = Camera::CaluatePos(Vector2::Zero);
 
-		StretchBlt(hdc, 0, 0, 1500, 750, fieldImg->GetHdc(), 0, 0, 1000, 500, SRCCOPY);
-	}
+		StretchBlt(hdc, pos.x - 300, pos.y - 500, fieldImg->GetWidth(), fieldImg->GetHeight(), fieldImg->GetHdc(), 0, 0, fieldImg->GetWidth(), fieldImg->GetHeight(), SRCCOPY);
+		GameObject::Render(hdc);
+ 	}
 	void Field::Release()
 	{
 		GameObject::Release();

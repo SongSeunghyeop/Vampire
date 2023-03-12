@@ -5,16 +5,11 @@ namespace my
 	Layer::Layer()
 	{
 
-	}
+  	}
 	Layer::~Layer()
 	{
-		for (GameObject* gameObj : mGameObjects)
-		{
-			delete gameObj;
-			gameObj = nullptr;
-		}
-	}
 
+	}
 	void Layer::Update()
 	{
 		for (GameObject* gameObj : mGameObjects)
@@ -45,7 +40,12 @@ namespace my
 	}
 	void Layer::Release()
 	{
-
+		for (GameObject* gameObj : mGameObjects)
+		{
+			gameObj->Release();
+			delete gameObj;
+			gameObj = NULL;
+		}
 	}
 	void Layer::AddGameObject(GameObject* gameObj)
 	{

@@ -1,6 +1,6 @@
  #pragma once
 #include <math.h>
-#define PI 3.141592
+#define PI 3.141592f
 
 class MyRGB
 {
@@ -24,7 +24,6 @@ struct Vector2
 	float x, y;
 
 	Vector2() : x(0.0f), y(0.0f) { }
-	Vector2(int a, int b) : x(a), y(b) { }
 	Vector2(float a, float b) : x(a), y(b) { }
 
 	Vector2(const Vector2&) = default;
@@ -95,7 +94,7 @@ namespace my::math
 	//float x = dir.x * cosf(PI / 5.0f) - dir.y * sinf(PI / 5.0f);
 	//float y = dir.x * sinf(PI / 5.0f) + dir.y * cosf(PI / 5.0f);
 
-	inline static Vector2 Rotate(Vector2 vector, float degree)
+	inline static Vector2 Rotate(Vector2 vector, int degree)
 	{
 		float radian = (degree / 180.0f) * PI;
 		vector.Normalize();

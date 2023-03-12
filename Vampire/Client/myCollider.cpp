@@ -4,7 +4,7 @@
 
 namespace my
 {
-	UINT Collider::ColliderNumber;
+	UINT Collider::ColliderNumber = 0;
 
 	Collider::Collider()
 		: Component(eComponentType::COLLIDER)
@@ -16,17 +16,21 @@ namespace my
 	{
 
 	}
-
 	Collider::~Collider()
 	{
+
 	}
+
 	void Collider::Initialize()
 	{
-	}
+		Transform* tr = getOwner()->GetComponent<Transform>();
+		mPos = tr->getPos() +mCenter;
+ 	}
 	void Collider::Update()
 	{
 		Transform* tr = getOwner()->GetComponent<Transform>();
-		mPos = tr->getPos() + mCenter;
+		mPos = tr->getPos() +mCenter;
+
 	}
 
 	void Collider::Render(HDC hdc)
@@ -35,9 +39,8 @@ namespace my
 		HPEN oldPen = (HPEN)SelectObject(hdc, pen);
 		HBRUSH brush = (HBRUSH)GetStockObject(NULL_BRUSH);
 		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, brush);
-
 		Vector2 pos = Camera::CaluatePos(mPos);
-		Rectangle(hdc, mPos.x, mPos.y, mPos.x + mSize.x, mPos.y + mSize.y);
+		Rectangle(hdc, pos.x , pos.y, pos.x + mSize.x, pos.y + mSize.y);
 
 		(HPEN)SelectObject(hdc, oldPen);
 		(HBRUSH)SelectObject(hdc, oldBrush);

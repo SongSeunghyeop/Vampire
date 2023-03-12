@@ -1,7 +1,6 @@
 #pragma once
 #include "MyGameObject.h"
 #include "MyApplication.h"
-#include "myImage.h" 
 #include "myTransform.h"
 #include "myCollider.h"
 #include "myAnimator.h"
@@ -39,6 +38,7 @@ namespace my
 		static ePlayerState getPlayerState() { return Krochi::mState; }
 		static bool getPlayerDirect() { return Krochi::Right; }
 		static bool getPlayerColl() { return Krochi::Player_coll; }
+		static void setPlayerColl(bool b) { Krochi::Player_coll = b; }
 
 	private:
 

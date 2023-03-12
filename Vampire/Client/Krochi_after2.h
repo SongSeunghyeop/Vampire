@@ -35,6 +35,7 @@ namespace my
 		Vector2 afterPos;
 		bool Right_after;
 		float delay;
+
 		void move();
 		void shoot();
 		void death();

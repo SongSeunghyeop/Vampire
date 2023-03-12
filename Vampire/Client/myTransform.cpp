@@ -20,8 +20,9 @@ namespace my
 	void Transform::Render(HDC hdc)
 	{
 	}
-	void Transform::Release()
+	void Transform::Release()	
 	{
+
 	}
 	void Transform::setPos(Vector2 pos)
 	{

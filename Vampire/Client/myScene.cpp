@@ -4,20 +4,16 @@ namespace my
 {
 	Scene::Scene()
 	{
-		mLayers.reserve(5);
 		mLayers.resize((UINT)eLayerType::END);
 	}
 	Scene::~Scene()
 	{
-
+	
 	}
 
 	void Scene::Initialize()
 	{
-	/*	for (Layer& layer : mLayers)
-		{
-			layer.Initialize();
-		}*/
+
 	}
 
 	void Scene::Update()
@@ -68,8 +64,11 @@ namespace my
 
 	void Scene::Release()
 	{
-	
+		for (Layer& layer : mLayers)
+		{
+			layer.Release();
 
+		}
 	}
 
 	void Scene::OnEnter()
@@ -78,7 +77,7 @@ namespace my
 	}
 	void Scene::OnExit()
 	{
-
+	
 	}
 
 	void Scene::AddGameObj(GameObject* obj, eLayerType layer)

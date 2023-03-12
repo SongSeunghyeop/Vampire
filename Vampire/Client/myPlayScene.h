@@ -7,8 +7,10 @@
 #include "EnemyPool.h"
 #include "Field.h"
 #include "myBullet.h"
+#include "Level_bar.h"
 #include "myCollisionManager.h"
 #include "myObject.h"
+#include "myCamera.h"
 
 namespace my
 {
@@ -26,9 +28,12 @@ namespace my
 		virtual void OnEnter();
 		virtual void OnExit();
 
+		static float player_health;
+
 	private:
 		Enemy1* enemy1;
 		EnemyPool* enemyPool;
 		float pTime;
+	
 	};
 }

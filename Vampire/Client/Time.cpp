@@ -34,7 +34,7 @@ namespace my
 			HWND hWnd = myapplication.GetHwnd();
 
 			wchar_t szFloat[50] = {};
-			float FPS = 1.0f / (float)deltaTime;
+			double FPS = 1.0f / deltaTime;
 			swprintf_s(szFloat, 50, L"FPS : %d", (UINT)FPS);
 			//int iLen = wcsnlen_s(szFloat, 50);
 			SetWindowText(hWnd, szFloat);

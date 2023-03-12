@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Level_bar.h" />
     <ClInclude Include="myBullet.h" />
     <ClInclude Include="myCamera.h" />
     <ClInclude Include="myObject.h" />
@@ -174,6 +175,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Level_bar.cpp" />
     <ClCompile Include="myBullet.cpp" />
     <ClCompile Include="myCamera.cpp" />
     <ClCompile Include="myOption.cpp" />

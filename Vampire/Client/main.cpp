@@ -6,7 +6,11 @@
 #include "myResourceManager.h"
 #include "mySceneManager.h"
 #include <crtdbg.h>
-
+//----DEBUG MEMORY
+#ifdef _DEBUG
+#define new new( _CLIENT_BLOCK, __FILE__, __LINE__ )
+#endif
+//----
 #define _CRTDBG_MAP_ALLOC
 #define MAX_LOADSTRING 100
 // 전역 변수: 
@@ -28,6 +32,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                                          _In_ int       nCmdShow)
 {
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+
+  //  _crtBreakAlloc = 334;
 
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);

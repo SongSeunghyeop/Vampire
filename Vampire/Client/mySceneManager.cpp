@@ -13,7 +13,7 @@ namespace my
 	{
 		mScenes.resize((UINT)eSceneType::Max); // 할당을 해주고 전체를 0으로 초기화해준다 예를들어, resize(5,0)이면 5개의 배열을 0으로 초기화
 																			 // 현재 max는 4개이므로 4개의 배열을 0으로 초기화
-		mScenes[(UINT)eSceneType::Intro] = new IntroScene(); 
+ 		mScenes[(UINT)eSceneType::Intro] = new IntroScene(); 
 		mScenes[(UINT)eSceneType::Title] = new TitleScene(); 
 		mScenes[(UINT)eSceneType::Play] = new PlayScene(); 
 		mScenes[(UINT)eSceneType::Option] = new Option(); 
@@ -51,10 +51,13 @@ namespace my
 			if (scene == NULL) continue;
 
 			scene->Release();
+			delete scene;
+			scene = NULL;
 		}
 	}
 	void SceneManager::LoadScene(eSceneType type) // 업데이트,렌더러의 대상을 바꾸어줌
 	{
+		Camera::Clear();
 		// 현재씬
 		activeScene->OnExit();
 

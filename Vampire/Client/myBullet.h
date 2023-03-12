@@ -17,10 +17,20 @@ namespace my
 		virtual void Update() override;
 		virtual void Render(HDC hdc) override;
 		virtual void Release() override;
+
+		void onCollisionEnter(Collider* other);
+		void onCollisionStay(Collider* other);
+		void onCollisionExit(Collider* other);
 	private:
 		Vector2 bulletPos;
-		float mTime;
-		Image* Bullet;
+		Vector2 EnemyPos;
+
 		int R;
+		bool BulletColl;
+		float mTime;
+		float effect_Time;
+
+		Image* Bullet;
+		Image* D_effect;
 	};
 }

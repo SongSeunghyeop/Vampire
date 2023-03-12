@@ -16,7 +16,7 @@ namespace my
 	}
 	void InGameMenu::Initialize()
 	{
-		menuImg = ResourceManager::Load<Image>(L"InGameMenu", L"..\\Resources\\Option.bmp");
+		menuImg = ResourceManager::Load<Image>(L"Option", L"..\\Resources\\Option.bmp");
 
 		GameObject::Initialize();
 	}

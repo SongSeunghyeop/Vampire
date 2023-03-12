@@ -11,7 +11,7 @@ namespace my
 	{
 		Scene* scene = SceneManager::getActiveScene(); // 현재의 씬을 동적 할당
 
-		for (UINT row = 0; row < (UINT)eLayerType::END; row++)
+ 		for (UINT row = 0; row < (UINT)eLayerType::END; row++)
 		{
 			for (UINT col = 0; col < (UINT)eLayerType::END; col++) //현재 씬의 전체 레이어
 			{
@@ -105,8 +105,8 @@ namespace my
 		Vector2 leftSize = left->getSize(); // 크기 받아옴
 		Vector2 rightSize = right->getSize();
 
-		if (fabs(leftPos.x - rightPos.x ) < (leftSize.x / 2.0f) + (rightSize.x / 2.0f) - 5 // 두 객체의 반지름의 합보다 
-			&& fabs(leftPos.y - rightPos.y) < (leftSize.y / 2.0f) + (rightSize.y / 2.0f) - 5)
+		if (fabs(leftPos.x - rightPos.x) < (leftSize.x / 2.0f) + (rightSize.x / 2.0f) - 10 // 두 객체의 반지름의 합보다 
+			&& fabs(leftPos.y - rightPos.y) < (leftSize.y / 2.0f) + (rightSize.y / 2.0f) - 10)
 		{
 			return true;
 		}
@@ -121,14 +121,19 @@ namespace my
 		UINT ileft = (UINT)left;
 		UINT iright = (UINT)right;  
 
-		if (left <= right)
+		if (left < right)
 		{
 			row = ileft;
 			col = iright;
 		}
-		else
+		else if(left > right)
 		{
 			row = iright;
+			col = ileft;
+		}
+		else
+		{
+			row = ileft;
 			col = ileft;
 		}
 

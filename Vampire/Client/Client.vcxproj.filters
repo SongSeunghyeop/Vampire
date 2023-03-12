@@ -240,6 +240,9 @@
     <ClInclude Include="myBullet.h">
       <Filter>Engine\GameObject\Bullet</Filter>
     </ClInclude>
+    <ClInclude Include="Level_bar.h">
+      <Filter>Engine\GameObject\Objects\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -352,6 +355,9 @@
     </ClCompile>
     <ClCompile Include="myBullet.cpp">
       <Filter>Engine\GameObject\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Level_bar.cpp">
+      <Filter>Engine\GameObject\Objects\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

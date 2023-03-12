@@ -47,7 +47,7 @@ namespace my
 
 		StretchBlt(hdc, 110, 0, 1280, 720, titleImg->GetHdc(), 0, 0, titleImg->GetWidth(), titleImg->GetHeight(), SRCCOPY);
 		TransparentBlt(hdc, 450, 30, SelectUI->GetWidth(), SelectUI->GetHeight(), SelectUI->GetHdc(), 0, 0, SelectUI->GetWidth(), SelectUI->GetHeight(), RGB(255, 0, 255));
-		TransparentBlt(hdc, 162, 120, info->GetWidth() / 1.3f, info->GetHeight() / 1.3f, info->GetHdc(), 0, 0, info->GetWidth(), info->GetHeight(), RGB(255, 0, 255));
+		TransparentBlt(hdc, 162, 120, info->GetWidth() / 1.3, info->GetHeight() / 1.3, info->GetHdc(), 0, 0, info->GetWidth(), info->GetHeight(), RGB(255, 0, 255));
 		TransparentBlt(hdc, 1107, 550, start->GetWidth() * 1.4, start->GetHeight() * 1.4, start->GetHdc(), 0, 0, start->GetWidth(), start->GetHeight(), RGB(255, 0, 255));
 		TransparentBlt(hdc, 1183, 561, start_M->GetWidth() * 1.1, start_M->GetHeight(), start_M->GetHdc(), 0, 0, start_M->GetWidth(), start_M->GetHeight(), RGB(255, 0, 255));
 		TransparentBlt(hdc, 1107, 628, start->GetWidth() * 1.4, start->GetHeight() * 1.4, start->GetHdc(), 0, 0, start->GetWidth(), start->GetHeight(), RGB(255, 0, 255));

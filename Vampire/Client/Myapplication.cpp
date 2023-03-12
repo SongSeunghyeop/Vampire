@@ -41,7 +41,7 @@ namespace my
 		Time::Initialize();
 		Input::Initialize();
 		SceneManager::Initialize();
-		Camera::Initiailize();
+  		Camera::Initiailize();
 	}
 	void Application::Run()
 	{
@@ -56,16 +56,16 @@ namespace my
 
 		Time::Update();
 		Input::Update();
-		Camera::Update();
+ 		Camera::Update();
 
 		SceneManager::Update();
-		CollisionManager::Update();
+ 		CollisionManager::Update();
 	}
 	void Application::Render()
 	{
 		Time::Render(backHdc);
 		Input::Render(backHdc);
-		SceneManager::Render(backHdc); // 전부다 백버퍼에 랜더
+  		SceneManager::Render(backHdc); // 전부다 백버퍼에 랜더
 
 		//백버퍼의 그림 원본(구현용)에 복사 ( 흰색의 화면까지 전체가 계속 포함되어서 복사가 되는 것이므로 깜빡이지 않는다 
 		StretchBlt(mhdc, 0, 0, WindowPos.x, WindowPos.y, backHdc, 0, 0, 1500, 720, SRCCOPY); // 구현용 hdc에 그대로 복사

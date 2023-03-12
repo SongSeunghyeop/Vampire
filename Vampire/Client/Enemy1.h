@@ -30,7 +30,7 @@ namespace my
 		Vector2 EnemyPos;
 		Vector2 Ppos;
 		Animator *EnemyAnimator;
-		bool coll;
+		bool enemyColl;
 	};
 }
 

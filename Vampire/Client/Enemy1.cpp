@@ -11,7 +11,7 @@ namespace my
 		static bool initialized = false;
 
 		if (!initialized) {
-			srand(time(NULL)); // 처음 한 번만 호출
+			srand((UINT)time(NULL)); // 처음 한 번만 호출
 			initialized = true;
 		}
 		int randomPos =  rand() % 300 + 500; // 1부터 1000 사이의 랜덤한 정수 생성
@@ -36,40 +36,71 @@ namespace my
 		EnemyAnimator->CreateAnimation(L"LeftWalk",EnemyL_Img,Vector2::Zero,1,1,1,0.3f, 254, 0, 255);
 
 		Transform* tr = GetComponent<Transform>();
-		EnemyPos.x = Enemy1::getRandomPos();
-		EnemyPos.y = Enemy1::getRandomPos();
+		EnemyPos.x = (float)Enemy1::getRandomPos();
+		EnemyPos.y = (float)Enemy1::getRandomPos();
 		tr->setPos(EnemyPos);
-		tr->setScale(1,1);
+		tr->setScale(1.0f, 1.0f);
 
-		Collider* collider = AddComponent<Collider>();
-		collider->setCenter(Vector2(-27, -67));
-		collider->setSize(Vector2(53, 65));
+ 		Collider* collider = AddComponent<Collider>();
+		collider->setCenter(Vector2(-28, -65));
+		//collider->setSize(Vector2(110, 130));
+
+		
+		EnemyAnimator->Play(L"RightWalk", true);
 		GameObject::Initialize();
 	}
 	void Enemy1::Update()
 	{
 		Transform* tr = GetComponent<Transform>();
 		EnemyPos = tr->getPos();
-		Ppos.x = Krochi::getPlayerPos().x + 15;
-		Ppos.y = Krochi::getPlayerPos().y + 35;
+		Ppos.x = Krochi::getPlayerPos().x;
+		Ppos.y = Krochi::getPlayerPos().y;
 
-		if (EnemyPos.x > Ppos.x && !coll)
+		if (EnemyPos.x > Ppos.x)
 		{
+			if (!enemyColl) // 플레이어와 충돌
+			{
 			EnemyPos.x -= 45.0f * Time::getDeltaTime();
 			EnemyAnimator->Play(L"LeftWalk", true);
+			}
+			else // 몬스터끼리 충돌 
+			{
+	
+			}
 		}
-		if (EnemyPos.x < Ppos.x && !coll)
+		if (EnemyPos.x < Ppos.x)
 		{
-			EnemyPos.x += 45.0f * Time::getDeltaTime();
-			EnemyAnimator->Play(L"RightWalk", true);
+			if (!enemyColl)
+			{
+				EnemyPos.x += 45.0f * Time::getDeltaTime();
+				EnemyAnimator->Play(L"RightWalk", true);
+			}
+			else
+			{
+			
+			}
 		}
-		if (EnemyPos.y > Ppos.y && !coll)
+		if (EnemyPos.y > Ppos.y)
 		{
-			EnemyPos.y -= 45.0f * Time::getDeltaTime();
+			if (!enemyColl)
+			{
+				EnemyPos.y -= 45.0f * Time::getDeltaTime();
+			}
+			else
+			{
+				
+			}
 		}
-		if (EnemyPos.y < Ppos.y && !coll)
+		if (EnemyPos.y < Ppos.y)
 		{
-			EnemyPos.y += 45.0f * Time::getDeltaTime();
+			if (!enemyColl)
+			{
+				EnemyPos.y += 45.0f * Time::getDeltaTime();
+			}
+			else
+			{
+				
+			}
 		}
 
 		tr->setPos(EnemyPos);
@@ -87,16 +118,16 @@ namespace my
 
 	void Enemy1::onCollisionEnter(Collider* other)
 	{
-		coll = true;
+		enemyColl = true;
 	}
 
 	void Enemy1::onCollisionStay(Collider* other)
 	{
-		coll = true;
+		enemyColl = true;
 	}
 
 	void Enemy1::onCollisionExit(Collider* other)
 	{
-		coll = false;
+		enemyColl = false;
 	}
 }

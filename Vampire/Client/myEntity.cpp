@@ -4,12 +4,12 @@ namespace my
 {
 	Entity::Entity()
 		: mName(L"")
-		, mID((UINT64)this)
+ 		, mID((UINT64)this)
 	{
 
 	}
 	Entity::~Entity()
 	{
-
+		
 	}
 }
