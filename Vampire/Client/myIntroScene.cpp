@@ -1,5 +1,4 @@
 #include "myIntroScene.h"
-#include "myScene.h"
 #include "mySceneManager.h"
 #include "Intro.h"
 #include "CharactorSelect.h"

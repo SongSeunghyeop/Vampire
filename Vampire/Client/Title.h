@@ -1,6 +1,5 @@
 #pragma once
 #include "MyGameObject.h"
-#include "myImage.h" 
 #include "myTransform.h"
 #include "myAnimator.h"
 #include "TitleUI.h"

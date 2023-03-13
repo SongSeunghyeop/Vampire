@@ -33,15 +33,12 @@ namespace my
 		virtual void onCollisionExit(class Collider* other) override;
 		virtual void onCollisionEnter(class Collider* other) override;
 
-		
 		static Vector2 getPlayerPos() { return Krochi::Playerpos; }
 		static ePlayerState getPlayerState() { return Krochi::mState; }
 		static bool getPlayerDirect() { return Krochi::Right; }
 		static bool getPlayerColl() { return Krochi::Player_coll; }
-		static void setPlayerColl(bool b) { Krochi::Player_coll = b; }
 
 	private:
-
 		static ePlayerState mState;
 		static Vector2 Playerpos;
 		static bool Player_coll;
@@ -56,10 +53,11 @@ namespace my
 		Vector2 winPos;
 
 		void move();
-		void shoot();
-		void death();
 		void idle();
-		void idleCompleteEvent();
+
+		//void shoot();
+	    //void death();
+		//void idleCompleteEvent();
 	};
 }
 

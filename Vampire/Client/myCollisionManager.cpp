@@ -40,8 +40,8 @@ namespace my
 				if (rightCollider == nullptr)
 					continue;
 
-				//if (leftObject == rightObject) // 두 오브젝트가 같다면 
-				//	continue;
+				if (leftObject == rightObject) // 두 오브젝트가 같다면 
+					continue;
 
 				ColliderCollision(leftCollider, rightCollider, left, right);
 			}
@@ -104,6 +104,8 @@ namespace my
 		// 거리가 더 길다면 충돌 X, 거리가 더 짧다면 충돌 O
 		Vector2 leftSize = left->getSize(); // 크기 받아옴
 		Vector2 rightSize = right->getSize();
+
+
 
 		if (fabs(leftPos.x - rightPos.x) < (leftSize.x / 2.0f) + (rightSize.x / 2.0f) - 10 // 두 객체의 반지름의 합보다 
 			&& fabs(leftPos.y - rightPos.y) < (leftSize.y / 2.0f) + (rightSize.y / 2.0f) - 10)

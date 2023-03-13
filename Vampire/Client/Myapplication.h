@@ -28,11 +28,11 @@ namespace my
 	private:
 		RECT rect;
 		Vector2 WindowPos;
+		Vector2 mPos;
 		HWND mhwnd;
 		HDC mhdc; // 원본(구현용)
 		HBITMAP backBuffer; 
 		HDC backHdc; // 메모리상의 백버퍼 (보이지 않음)
-		Vector2 mPos;
 
 		int mWidth;
 		int mHeight;

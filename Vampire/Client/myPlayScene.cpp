@@ -7,7 +7,7 @@ namespace my
 {
 	PlayScene::PlayScene()
 	{
-		enemyPool = new EnemyPool(2); // 100개의 적 객체를 미리 생성
+		//enemyPool = new EnemyPool(2); // 100개의 적 객체를 미리 생성
 																  // EnemyPool 클래스에서 가지고 있는 enemy배열에 100개의 객체를 동적 할당
 	}
 	PlayScene::~PlayScene()
@@ -22,6 +22,7 @@ namespace my
 		object::Instantiate<Krochi_after2>(Vector2::Zero, eLayerType::PLAYERAFTER);
 		object::Instantiate<Level_bar>(Vector2::Zero, eLayerType::UI);
 		object::Instantiate<Enemy1>(Vector2::Zero, eLayerType::ENEMY);
+		object::Instantiate<Enemy1>(Vector2(500.0f,500.0f), eLayerType::ENEMY);
 		Camera::setTarget(krochi);
 
 
@@ -32,7 +33,6 @@ namespace my
 		//	AddGameObj(enemy, eLayerType::ENEMY);
 		//	enemy->Initialize();
 		//}
-
 		pTime = 0.0f;
 	}
 
@@ -48,7 +48,8 @@ namespace my
 		
 		if (pTime >= 0.02f)
 		{
-			object::Instantiate<BaseBullet>(Krochi::getPlayerPos(), eLayerType::EFFECT);
+			//object::Instantiate<BaseBullet>(Krochi::getPlayerPos(), eLayerType::EFFECT);
+			object::Instantiate<BaseSkill>(Krochi::getPlayerPos() + Vector2(10.0f,0.0f), eLayerType::EFFECT);
 			pTime = 0.0f;
 		}
 
@@ -58,6 +59,8 @@ namespace my
 	{
 		Scene::Render(hdc);
 		Scene::Destroy();
+
+
 	}
 	void PlayScene::Release()
 	{
@@ -67,6 +70,8 @@ namespace my
 	{
 		CollisionManager::setLayer(eLayerType::PLAYER, eLayerType::ENEMY, true);
 		CollisionManager::setLayer(eLayerType::ENEMY, eLayerType::EFFECT, true);
+		CollisionManager::setLayer(eLayerType::ENEMY, eLayerType::ENEMY, true);
+
 	}
 	void PlayScene::OnExit()
 	{

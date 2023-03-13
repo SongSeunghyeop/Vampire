@@ -26,6 +26,7 @@ namespace my
 	{
 
 	}
+
 	void Enemy1::Initialize()
 	{
 		EnemyR_Img = ResourceManager::Load<Image>(L"EnemyR", L"..\\Resources\\Enemy_R.bmp");
@@ -39,28 +40,27 @@ namespace my
 		EnemyPos.x = (float)Enemy1::getRandomPos();
 		EnemyPos.y = (float)Enemy1::getRandomPos();
 		tr->setPos(EnemyPos);
-		tr->setScale(1.0f, 1.0f);
+		tr->setScale(1.2f, 1.2f);
 
  		Collider* collider = AddComponent<Collider>();
 		collider->setCenter(Vector2(-28, -65));
-		//collider->setSize(Vector2(110, 130));
+		collider->setSize(Vector2(68 , 80));
 
-		
 		EnemyAnimator->Play(L"RightWalk", true);
 		GameObject::Initialize();
 	}
 	void Enemy1::Update()
 	{
 		Transform* tr = GetComponent<Transform>();
-		EnemyPos = tr->getPos();
-		Ppos.x = Krochi::getPlayerPos().x;
-		Ppos.y = Krochi::getPlayerPos().y;
+
+		Ppos.x = Krochi::getPlayerPos().x + 14;
+		Ppos.y = Krochi::getPlayerPos().y + 33;
 
 		if (EnemyPos.x > Ppos.x)
 		{
 			if (!enemyColl) // 플레이어와 충돌
 			{
-			EnemyPos.x -= 45.0f * Time::getDeltaTime();
+			EnemyPos.x -= 100.0f * Time::getDeltaTime();
 			EnemyAnimator->Play(L"LeftWalk", true);
 			}
 			else // 몬스터끼리 충돌 
@@ -72,7 +72,7 @@ namespace my
 		{
 			if (!enemyColl)
 			{
-				EnemyPos.x += 45.0f * Time::getDeltaTime();
+				EnemyPos.x += 100.0f * Time::getDeltaTime();
 				EnemyAnimator->Play(L"RightWalk", true);
 			}
 			else
@@ -84,7 +84,7 @@ namespace my
 		{
 			if (!enemyColl)
 			{
-				EnemyPos.y -= 45.0f * Time::getDeltaTime();
+				EnemyPos.y -= 100.0f * Time::getDeltaTime();
 			}
 			else
 			{
@@ -95,7 +95,7 @@ namespace my
 		{
 			if (!enemyColl)
 			{
-				EnemyPos.y += 45.0f * Time::getDeltaTime();
+				EnemyPos.y += 100.0f * Time::getDeltaTime();
 			}
 			else
 			{
@@ -118,12 +118,17 @@ namespace my
 
 	void Enemy1::onCollisionEnter(Collider* other)
 	{
-		enemyColl = true;
+			enemyColl = true;
 	}
 
 	void Enemy1::onCollisionStay(Collider* other)
 	{
-		enemyColl = true;
+			enemyColl = true;
+
+			if (other->getOwner()->getState() == eState::Death)
+			{
+				enemyColl = false;
+			}
 	}
 
 	void Enemy1::onCollisionExit(Collider* other)

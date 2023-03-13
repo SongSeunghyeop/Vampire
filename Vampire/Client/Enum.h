@@ -20,7 +20,7 @@ enum class eLayerType
 	EFFECT,
 	DAMAGE,
 	UI,
-	END = 16,
+	END,
 };
 
 enum class eComponentType

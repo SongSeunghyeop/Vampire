@@ -20,7 +20,7 @@ namespace my
 	{
 
 	}
-
+	 
 	void Collider::Initialize()
 	{
 		Transform* tr = getOwner()->GetComponent<Transform>();
@@ -30,7 +30,6 @@ namespace my
 	{
 		Transform* tr = getOwner()->GetComponent<Transform>();
 		mPos = tr->getPos() +mCenter;
-
 	}
 
 	void Collider::Render(HDC hdc)
@@ -50,6 +49,7 @@ namespace my
 	{
 
 	}
+
 	void Collider::onCollisionEnter(Collider* other)
 	{
 		getOwner()->onCollisionEnter(other);

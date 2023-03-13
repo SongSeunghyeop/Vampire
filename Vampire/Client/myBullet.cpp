@@ -42,8 +42,8 @@ namespace my
 		dir.Normalize();
 		Vector2 ro = math::Rotate(dir, R);
 		Transform* tr = GetComponent<Transform>();
-		bulletPos.x += 200.0f * ro.x * Time::getDeltaTime();
-		bulletPos.y += 200.0f * ro.y * Time::getDeltaTime();
+		bulletPos.x += 240.0f * ro.x * Time::getDeltaTime();
+		bulletPos.y += 240.0f * ro.y * Time::getDeltaTime();
 		tr->setPos(bulletPos);
 
 		mTime += Time::getDeltaTime();

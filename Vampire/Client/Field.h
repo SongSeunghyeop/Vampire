@@ -18,6 +18,8 @@ namespace my
 
 	private:
 		Image* fieldImg;
+		int width_change;
+		int height_change;
 	};
 }
 

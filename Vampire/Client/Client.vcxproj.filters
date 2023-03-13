@@ -106,6 +106,9 @@
     <Filter Include="Engine\GameObject\Bullet">
       <UniqueIdentifier>{c2bc11b2-f8d3-4fbe-93a7-39bf24f954af}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\GameObject\Skill">
+      <UniqueIdentifier>{005e4193-a7dd-4bed-b9bf-efdbfc0221fe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -243,6 +246,9 @@
     <ClInclude Include="Level_bar.h">
       <Filter>Engine\GameObject\Objects\UI</Filter>
     </ClInclude>
+    <ClInclude Include="Skill_1.h">
+      <Filter>Engine\GameObject\Skill</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -358,6 +364,9 @@
     </ClCompile>
     <ClCompile Include="Level_bar.cpp">
       <Filter>Engine\GameObject\Objects\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Skill_1.cpp">
+      <Filter>Engine\GameObject\Skill</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

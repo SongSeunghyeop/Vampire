@@ -20,8 +20,10 @@ namespace my
 			animation.second = nullptr;
 		}
 	}
+
 	void Animator::Initialize()
 	{
+
 	}
 	void Animator::Update()
 	{
@@ -69,7 +71,6 @@ namespace my
 		UINT width = 0;
 		UINT height = 0;
 		UINT fileCount = 0;
-
 
 		std::filesystem::path fs(path);
 		std::vector<Image*> images = {};
@@ -120,5 +121,4 @@ namespace my
 	{
 		return nullptr;
 	}
-
 }

@@ -7,9 +7,10 @@
 #pragma comment(lib, "msimg32.lib")
 
 extern my::Application myapplication;
+
 namespace my
 {
-	Vector2 Krochi::Playerpos;
+	Vector2 Krochi::Playerpos = Vector2(100.f,100.f);
 	bool Krochi::Player_coll;
 
 	Krochi::Krochi()
@@ -20,6 +21,7 @@ namespace my
 	{
 
 	}
+
 	void Krochi::Initialize()
 	{
 		playerImg_R = ResourceManager::Load<Image>(L"PlayerR1", L"..\\Resources\\Player_RightRun.bmp");
@@ -40,7 +42,7 @@ namespace my
 		Transform* tr = GetComponent<Transform>();
 		Playerpos = myapplication.getWindowPos() / 2;
    		tr->setPos(Playerpos);
-		//Playerpos = tr->getPos();
+
 		Collider* collider = AddComponent<Collider>();
 		collider->setCenter(Vector2(-13,-34));
 		collider->setRGB(255, 0, 255);
@@ -148,23 +150,23 @@ namespace my
 			mState = ePlayerState::Idle;
 		}
 		
-		if (Input::GetKey(eKeyCode::A) && Playerpos.x > 440)
+		if (Input::GetKey(eKeyCode::A))
 		{
 			Right = false;
-			Playerpos.x -= 180.0f * Time::getDeltaTime();
+			Playerpos.x -= 170.0f * Time::getDeltaTime();
 		}
-		if (Input::GetKey(eKeyCode::D) && Playerpos.x < 990)
+		if (Input::GetKey(eKeyCode::D))
 		{
 			Right = true;
-			Playerpos.x += 180.0f * Time::getDeltaTime();
+			Playerpos.x += 170.0f * Time::getDeltaTime();
 		}
-		if (Input::GetKey(eKeyCode::W) && Playerpos.y > -150)
+		if (Input::GetKey(eKeyCode::W))
 		{
-			Playerpos.y -= 180.0f * Time::getDeltaTime();
+			Playerpos.y -= 170.0f * Time::getDeltaTime();
 		}
-		if (Input::GetKey(eKeyCode::S) && Playerpos.y < 1199)
+		if (Input::GetKey(eKeyCode::S))
 		{
-			Playerpos.y += 180.0f * Time::getDeltaTime();
+			Playerpos.y += 170.0f * Time::getDeltaTime();
 		}
 
 	

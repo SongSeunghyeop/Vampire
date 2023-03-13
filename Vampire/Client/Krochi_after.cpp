@@ -1,16 +1,16 @@
 #include "myResourceManager.h"
 #include "Krochi_after.h"
 #include "myInput.h"
-#include "myImage.h"
 
 #pragma comment(lib, "msimg32.lib")
 
-extern my::Application myapplication;
-my::Krochi::ePlayerState my::Krochi::mState;
-bool my::Krochi::Right;
 
 namespace my
 {
+	extern Application myapplication;
+	Krochi::ePlayerState my::Krochi::mState;
+	bool Krochi::Right;
+
 	Krochi_after::Krochi_after()
 	{
 		Right_after = Krochi::getPlayerDirect();
@@ -19,6 +19,7 @@ namespace my
 	{
 
 	}
+
 	void Krochi_after::Initialize()
 	{
 		playerImg_RA1 = ResourceManager::Load<Image>(L"PlayerRA1", L"..\\Resources\\Player_RightAfter.bmp");
@@ -36,8 +37,10 @@ namespace my
 		playerAnimator->CreateAnimation(L"None", playerImg_N, Vector2::Zero, 1,1,1, 0.3f, 255, 0, 255);
 		playerAnimator->CreateAnimation(L"DamagedAfter_R", Damaged_R, Vector2::Zero, 3,1,3, 0.3f, 255, 0, 255);
 		playerAnimator->CreateAnimation(L"DamagedAfter_L", Damaged_L, Vector2::Zero, 3,1,3, 0.3f, 255, 0, 255);
+		
 		after_State = Krochi::ePlayerState::Idle;
 		delay = 0.0f;
+
 		GameObject::Initialize();
 	}
 	void Krochi_after::Update()
@@ -45,12 +48,14 @@ namespace my
 		if (after_State == Krochi::ePlayerState::Idle)
 		{
 			idle();
+			delay = 0.0f;
 		}
 		if (after_State == Krochi::ePlayerState::Move)
 		{
-			delay = 0.0f;
 			move();
+			delay = 0.0f;
 		}
+
 		GameObject::Update();
 	}
 
@@ -69,19 +74,19 @@ namespace my
 
 		if (afterPos.x < Krochi::getPlayerPos().x - 0.5)
 		{
-			afterPos.x += 180.0f * Time::getDeltaTime();
+			afterPos.x += 170.0f * Time::getDeltaTime();
 		}
 		if (afterPos.x > Krochi::getPlayerPos().x + 0.5)
 		{
-			afterPos.x -= 180.0f * Time::getDeltaTime();
+			afterPos.x -= 170.0f * Time::getDeltaTime();
 		}
 		if (afterPos.y < Krochi::getPlayerPos().y - 0.5)
 		{
-			afterPos.y += 180.0f * Time::getDeltaTime();
+			afterPos.y += 170.0f * Time::getDeltaTime();
 		}
 		if (afterPos.y > Krochi::getPlayerPos().y + 0.5)
 		{
-			afterPos.y -= 180.0f * Time::getDeltaTime();
+			afterPos.y -= 170.0f * Time::getDeltaTime();
 		}
 		tr->setPos(afterPos);
 
@@ -117,19 +122,31 @@ namespace my
 
 		if (afterPos.x < Krochi::getPlayerPos().x - 5)
 		{
-			afterPos.x += 180.0f * Time::getDeltaTime();
+			if (Input::GetKey(eKeyCode::D))
+				afterPos.x += 170.0f * Time::getDeltaTime();
+			else
+				afterPos.x = Krochi::getPlayerPos().x;
 		}
 		if (afterPos.x > Krochi::getPlayerPos().x + 5)
 		{
-			afterPos.x -= 180.0f * Time::getDeltaTime();
+			if (Input::GetKey(eKeyCode::A))
+				afterPos.x -= 170.0f * Time::getDeltaTime();
+			else
+				afterPos.x = Krochi::getPlayerPos().x;
 		}
 		if (afterPos.y < Krochi::getPlayerPos().y - 5)
 		{
-			afterPos.y += 180.0f * Time::getDeltaTime();
+			if (Input::GetKey(eKeyCode::S))
+				afterPos.y += 170.0f * Time::getDeltaTime();
+			else
+				afterPos.y = Krochi::getPlayerPos().y;
 		}
 		if (afterPos.y > Krochi::getPlayerPos().y + 5)
 		{
-			afterPos.y -= 180.0f * Time::getDeltaTime();
+			if (Input::GetKey(eKeyCode::W))
+				afterPos.y -= 170.0f * Time::getDeltaTime();
+			else
+				afterPos.y = Krochi::getPlayerPos().y;
 		}
 
 		tr->setPos(afterPos);

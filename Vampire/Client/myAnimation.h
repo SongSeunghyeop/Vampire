@@ -40,9 +40,9 @@ namespace my
 		Animator* mAnimator;
 		Image* mSheetImage;
 		std::vector<Sprite> mSpriteSheets;
+		MyRGB delRGB;
 		float mTime;
 		bool mbComplete;
 		int mSpriteIndex;
-		MyRGB delRGB;
 	};
 }

@@ -13,6 +13,7 @@ namespace my
 	{
 
 	}
+
 	void TitleScene::Initialize()
 	{
 		object::Instantiate<Title>(Vector2::Zero, eLayerType::BACKGROUND);

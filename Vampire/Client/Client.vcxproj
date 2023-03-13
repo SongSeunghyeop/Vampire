@@ -133,6 +133,7 @@
     <ClInclude Include="myCamera.h" />
     <ClInclude Include="myObject.h" />
     <ClInclude Include="myOption.h" />
+    <ClInclude Include="Skill_1.h" />
     <ClInclude Include="TitleUI.h" />
     <ClInclude Include="Enemy1.h" />
     <ClInclude Include="EnemyPool.h" />
@@ -179,6 +180,7 @@
     <ClCompile Include="myBullet.cpp" />
     <ClCompile Include="myCamera.cpp" />
     <ClCompile Include="myOption.cpp" />
+    <ClCompile Include="Skill_1.cpp" />
     <ClCompile Include="TitleUI.cpp" />
     <ClCompile Include="Enemy1.cpp" />
     <ClCompile Include="EnemyPool.cpp" />

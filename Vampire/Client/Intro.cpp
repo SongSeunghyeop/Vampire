@@ -27,10 +27,6 @@ namespace my
 	}
 	void Intro::Render(HDC hdc)
 	{
-		GameObject::Render(hdc);
-		Transform* trans = GetComponent<Transform>(); 
-		Vector2 pos = trans->getPos();
-
 		StretchBlt(hdc, 110, 0, 1280, 720, titleImg->GetHdc(), 0, 0, titleImg->GetWidth(), titleImg->GetHeight(), SRCCOPY);
 		TransparentBlt(hdc, 500, 150, 500, 55, IntroM->GetHdc(), 0, 0, IntroM->GetWidth(), IntroM->GetHeight(), RGB(255, 0, 255));
 		
@@ -44,6 +40,7 @@ namespace my
 		{
 			mSecond = 0.00f;
 		}
+		GameObject::Render(hdc);
 	}
 	void Intro::Release()
 	{

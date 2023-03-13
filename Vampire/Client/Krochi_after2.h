@@ -37,9 +37,10 @@ namespace my
 		float delay;
 
 		void move();
-		void shoot();
-		void death();
 		void idle();
+
+		/*void shoot();
+		void death();*/
 	};
 }
 

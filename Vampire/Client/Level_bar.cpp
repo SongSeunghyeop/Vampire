@@ -23,7 +23,7 @@ namespace my
 		Charactor = ResourceManager::Load<Image>(L"charactor", L"..\\Resources\\Arca.bmp");
 		health = ResourceManager::Load<Image>(L"health", L"..\\Resources\\health.bmp");
 		health_zero = ResourceManager::Load<Image>(L"health_z", L"..\\Resources\\health_zero.bmp");
-
+	
 		GameObject::Initialize();
 	}
 	void Level_bar::Update()

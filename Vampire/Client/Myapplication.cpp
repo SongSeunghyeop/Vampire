@@ -15,6 +15,7 @@ namespace my
 	{
 		SceneManager::Release();
 	}
+
 	void Application::Initialize(HWND hwnd)
 	{
 		this->mhwnd = hwnd; // วฺต้

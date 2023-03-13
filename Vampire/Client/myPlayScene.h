@@ -7,6 +7,7 @@
 #include "EnemyPool.h"
 #include "Field.h"
 #include "myBullet.h"
+#include "Skill_1.h"
 #include "Level_bar.h"
 #include "myCollisionManager.h"
 #include "myObject.h"

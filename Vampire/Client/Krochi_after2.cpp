@@ -1,7 +1,6 @@
 #include "myResourceManager.h"
 #include "Krochi_after2.h"
 #include "myInput.h"
-#include "myImage.h"
 
 #pragma comment(lib, "msimg32.lib")
 
@@ -44,6 +43,7 @@ namespace my
 		if (after_State == Krochi::ePlayerState::Idle)
 		{
 			idle();
+			delay = 0.0f;
 		}
 		if (after_State == Krochi::ePlayerState::Move)
 		{
@@ -68,19 +68,19 @@ namespace my
 
 		if (afterPos.x < Krochi::getPlayerPos().x - 0.5)
 		{
-			afterPos.x += 180.0f * Time::getDeltaTime();
+			afterPos.x += 170.0f * Time::getDeltaTime();
 		}
 		if (afterPos.x > Krochi::getPlayerPos().x + 0.5)
 		{
-			afterPos.x -= 180.0f * Time::getDeltaTime();
+			afterPos.x -= 170.0f * Time::getDeltaTime();
 		}
 		if (afterPos.y < Krochi::getPlayerPos().y - 0.5)
 		{
-			afterPos.y += 180.0f * Time::getDeltaTime();
+			afterPos.y += 170.0f * Time::getDeltaTime();
 		}
 		if (afterPos.y > Krochi::getPlayerPos().y + 0.5)
 		{
-			afterPos.y -= 180.0f * Time::getDeltaTime();
+			afterPos.y -= 170.0f * Time::getDeltaTime();
 		}
 
 		tr->setPos(afterPos);
@@ -116,21 +116,38 @@ namespace my
 
 		Transform* tr = GetComponent<Transform>();
 
+		while (delay <= 0.1f)
+		{
+			delay += 0.4 * Time::getDeltaTime();
+		}
+
 		if (afterPos.x < Krochi::getPlayerPos().x - 10)
 		{
-			afterPos.x += 180.0f * Time::getDeltaTime();
+			if (Input::GetKey(eKeyCode::D))
+				afterPos.x += 170.0f * Time::getDeltaTime();
+			else
+				afterPos.x = Krochi::getPlayerPos().x;
 		}
 		if (afterPos.x > Krochi::getPlayerPos().x + 10)
 		{
-			afterPos.x -= 180.0f * Time::getDeltaTime();
+			if (Input::GetKey(eKeyCode::A))
+				afterPos.x -= 170.0f * Time::getDeltaTime();
+			else
+				afterPos.x = Krochi::getPlayerPos().x;
 		}
 		if (afterPos.y < Krochi::getPlayerPos().y - 10)
 		{
-			afterPos.y += 180.0f * Time::getDeltaTime();
+			if (Input::GetKey(eKeyCode::S))
+				afterPos.y += 170.0f * Time::getDeltaTime();
+			else
+				afterPos.y = Krochi::getPlayerPos().y;
 		}
 		if (afterPos.y > Krochi::getPlayerPos().y + 10)
 		{
-			afterPos.y -= 180.0f * Time::getDeltaTime();
+			if (Input::GetKey(eKeyCode::W))
+				afterPos.y -= 170.0f * Time::getDeltaTime();
+			else
+				afterPos.y = Krochi::getPlayerPos().y;
 		}
 
 		tr->setPos(afterPos);
